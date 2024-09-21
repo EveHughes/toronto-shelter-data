@@ -1,14 +1,16 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
-author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: LINK."
+title: "Analysis of Public Opinion Polls Conducted by the City of Toronto"
+subtitle: "Insights on Front Yard Parking, Traffic Calming, and Boulevard Cafes"
+author:
+  - "Tim Chen"
+thanks: "Code and data are available at: https://github.com/timchen0326/sta304_paper_1."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
-format: pdf
+abstract: "This paper analyzes data from the City of Toronto's public opinion polls on key municipal projects. We use a dataset covering several initiatives, including front yard parking, boulevard cafes, and traffic calming. Our analysis reveals significant variation in voter turnout and approval rates across these different projects. The findings provide insights into community engagement and policy preferences, with potential implications for future urban planning and public consultation processes"
+format: 
+  pdf:
+    toc: true        # Enables Table of Contents
+    toc-depth: 2     # Specifies depth level of headings included in the ToC
 number-sections: true
 bibliography: references.bib
 ---
@@ -19,198 +21,99 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
-library(palmerpenguins)
+# Install and load the required packages
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
 ```
 
 
 # Introduction
 
-You can and should cross-reference sections and sub-sections. We use @citeR and @rohan.
+Public opinion polls are an essential part of local governance, offering insights into how communities perceive proposed municipal projects. In the City of Toronto, polls are regularly conducted on topics such as front yard parking, traffic calming, and the installation of boulevard cafes. These polls not only influence policy decisions but also serve as a proxy for measuring community engagement.
 
-The remainder of this paper is structured as follows. @sec-data....
+The purpose of this paper is to explore the data collected from these polls and to uncover key trends in public opinion. Specifically, we analyze voter turnout, the proportion of favorable outcomes, and how these vary across different types of projects.
 
-
+The remainder of this paper is structured as follows. @sec-data provides a detailed description of the dataset used. @sec-results presents the analysis of the data, including graphical representations of the results. Finally, @sec-dis discusses the findings and concludes with potential implications for future polling processes.
 
 # Data {#sec-data}
 
-Some of our data is of penguins (@fig-bills), from @palmerpenguins.
+The dataset used for this analysis was sourced from @opendatatorotno and conducted using @citeR. It contains information on several public polls, including fields such as the number of ballots cast, ballots in favor, ballots opposed, and poll results. The dataset spans a period from 2015 to 2023 and covers various municipal initiatives.
 
+The following figure shows the distribution of the number of ballots cast for different types of municipal applications, providing an overview of public participation.
 ```{r}
-#| label: fig-bills
-#| fig-cap: Bills of penguins
+#| label: fig-ballots-cast
+#| fig-cap: Distribution of Ballots Cast by Application Type
 #| echo: false
 
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
+data %>%
+  ggplot(aes(x = application_for, y = ballots_cast, fill = application_for)) +
+  geom_boxplot() +
+  labs(x = "Application Type", y = "Number of Ballots Cast", title = "Distribution of Ballots Cast by Application Type") +
   theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 ```
 
-Talk more about it.
-
-And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
+@tbl-poll-results provides a summary of the poll results for different application types, including the number of "In Favour" and "Opposed" results for each type.
 
 ```{r}
-#| label: fig-planes
-#| fig-cap: Relationship between wing length and width
+#| label: tbl-poll-results
 #| echo: false
-#| warning: false
-#| message: false
+#| tbl-cap: "Summary of Poll Results"
+data %>%
+  group_by(application_for, poll_result) %>%
+  summarise(count = n(), .groups = 'drop') %>%
+  knitr::kable(col.names = c("Application Type", "Poll Result", "Count"))
 
-analysis_data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+```
 
-analysis_data |> 
-  ggplot(aes(x = width, y = length)) +
-  geom_point(alpha = 0.8) +
+The dataset also contains information on whether the response rate was met, which is crucial for validating the results of a poll. The following figure shows the proportion of polls that met the response rate requirement.
+
+```{r}
+#| label: fig-response-rate
+#| fig-cap: Response Rate Met by Application Type
+#| echo: false
+
+data %>%
+  ggplot(aes(x = application_for, fill = response_rate_met)) +
+  geom_bar(position = "dodge") +
+  labs(x = "Application Type", y = "Number of Polls", fill = "Response Rate Met", title = "Response Rate Met by Application Type") +
   theme_minimal() +
-  labs(x = "Wing width (mm)",
-       y = "Wing length (mm)")
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
 ```
 
-Talk way more about it. 
+# Results {#sec-results}
 
 
+## Voter Turnout
+Voter turnout, as measured by the number of ballots cast, varies significantly across different application types. For example, Traffic calming initiatives attracted an average of 200 ballots per poll, while front yard parking attracted an average of 100 ballots, as seen in @fig-ballots-cast, while front yard parking proposals generally receive fewer votes. This suggests that residents are more engaged with policies that directly affect public infrastructure and safety.
 
-# Model
+## Poll Results
+The majority of polls analyzed resulted in a favorable outcome ("In Favour"), particularly for front yard parking and boulevard cafes. As shown in , most applications were supported by the public, although there were notable exceptions in the case of traffic calming initiatives, which received a higher number of "Opposed" votes.
 
-The goal of our modelling strategy is twofold. Firstly,...
+## Response Rate
+Meeting the response rate requirement is essential for validating poll results. As shown in @fig-response-rate, response rates were more likely to be met for boulevard cafes and front yard parking polls. This could indicate a higher level of engagement in these areas, possibly due to their direct impact on property use.
 
-Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
+# Discussion {#sec-dis}
 
-## Model set-up
+## Key Findings
+One of the most significant findings in this analysis is the variation in voter turnout based on the type of municipal application. Traffic calming initiatives, which have a direct impact on road use and safety, attracted the highest number of ballots cast, indicating strong public interest in infrastructure-related projects.
 
-Define $y_i$ as the number of seconds that the plane remained aloft. Then $\beta_i$ is the wing width and $\gamma_i$ is the wing length, both measured in millimeters.  
+In contrast, front yard parking polls typically received lower voter turnout, possibly because they are seen as affecting a smaller portion of the population. However, these polls still garnered high levels of support from those who participated.
 
-\begin{align} 
-y_i|\mu_i, \sigma &\sim \mbox{Normal}(\mu_i, \sigma) \\
-\mu_i &= \alpha + \beta_i + \gamma_i\\
-\alpha &\sim \mbox{Normal}(0, 2.5) \\
-\beta &\sim \mbox{Normal}(0, 2.5) \\
-\gamma &\sim \mbox{Normal}(0, 2.5) \\
-\sigma &\sim \mbox{Exponential}(1)
-\end{align}
+## Limitations and Future Work
+One limitation of this study is the potential for missing data. For instance, certain polls lack complete address information, which could impact the analysis of geographic trends in polling results. Future work could explore more granular patterns in voter engagement by incorporating additional demographic and geographic data.
 
-We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
-
-
-### Model justification
-
-We expect a positive relationship between the size of the wings and time spent aloft. In particular...
-
-We can use maths by including latex between dollar signs, for instance $\theta$.
-
-
-# Results
-
-Our results are summarized in @tbl-modelresults.
-
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
-
-library(rstanarm)
-
-first_model <-
-  readRDS(file = here::here("models/first_model.rds"))
-```
-
-```{r}
-#| echo: false
-#| eval: true
-#| label: tbl-modelresults
-#| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
-#| warning: false
-
-modelsummary::modelsummary(
-  list(
-    "First model" = first_model
-  ),
-  statistic = "mad",
-  fmt = 2
-)
-```
-
-
-
-
-# Discussion
-
-## First discussion point {#sec-first-point}
-
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
-
-## Second discussion point
-
-## Third discussion point
-
-## Weaknesses and next steps
-
-Weaknesses and next steps should also be included.
+Additionally, further research could investigate the long-term outcomes of these polls, examining whether the results led to sustained community satisfaction with the implemented policies.
 
 \newpage
 
 \appendix
 
 # Appendix {-}
-
-
-# Additional data details
-
-# Model details {#sec-model-details}
-
-## Posterior predictive check
-
-In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check. This shows...
-
-In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. This shows... 
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-ppcheckandposteriorvsprior
-#| layout-ncol: 2
-#| fig-cap: "Examining how the model fits, and is affected by, the data"
-#| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
-
-pp_check(first_model) +
-  theme_classic() +
-  theme(legend.position = "bottom")
-
-posterior_vs_prior(first_model) +
-  theme_minimal() +
-  scale_color_brewer(palette = "Set1") +
-  theme(legend.position = "bottom") +
-  coord_flip()
-```
-
-## Diagnostics
-
-@fig-stanareyouokay-1 is a trace plot. It shows... This suggests...
-
-@fig-stanareyouokay-2 is a Rhat plot. It shows... This suggests...
-
-```{r}
-#| echo: false
-#| eval: true
-#| message: false
-#| warning: false
-#| label: fig-stanareyouokay
-#| fig-cap: "Checking the convergence of the MCMC algorithm"
-#| fig-subcap: ["Trace plot", "Rhat plot"]
-#| layout-ncol: 2
-
-plot(first_model, "trace")
-
-plot(first_model, "rhat")
-```
-
 
 
 \newpage

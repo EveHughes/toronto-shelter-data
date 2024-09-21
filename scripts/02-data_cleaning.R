@@ -1,44 +1,59 @@
 #### Preamble ####
-# Purpose: Cleans the raw plane data recorded by two observers..... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+# Purpose: Cleans the raw poll data from Polls Conducted by the City dataset
+# Author: [Your Name]
+# Date: [Update to current date]
+# Contact: [Your Email]
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites: Raw data should be available in 'data/raw_data/unedited_data.csv'
+# Any other information needed? None
 
 #### Workspace setup ####
 library(tidyverse)
+library(janitor)
 
 #### Clean data ####
-raw_data <- read_csv("inputs/data/plane_data.csv")
+# Read in the raw poll data
+raw_data <- read_csv("data/raw_data/raw_data.csv")
 
-cleaned_data <-
-  raw_data |>
-  janitor::clean_names() |>
-  select(wing_width_mm, wing_length_mm, flying_time_sec_first_timer) |>
-  filter(wing_width_mm != "caw") |>
+# Clean and select relevant columns
+cleaned_data <- 
+  raw_data %>%
+  # Clean column names
+  clean_names() %>%
+  
+  # Select the columns of interest for analysis
+  select(
+    address, 
+    application_for, 
+    ballots_cast, 
+    ballots_in_favour, 
+    ballots_opposed, 
+    close_date, 
+    poll_result, 
+    response_rate_met
+  ) %>%
+  
+  # Handle missing values by removing rows where address or ballots_cast are missing
+  filter(!is.na(address) & !is.na(ballots_cast)) %>%
+  
+  # Convert data types: dates and ballots
   mutate(
-    flying_time_sec_first_timer = if_else(flying_time_sec_first_timer == "1,35",
-                                   "1.35",
-                                   flying_time_sec_first_timer)
-  ) |>
-  mutate(wing_width_mm = if_else(wing_width_mm == "490",
-                                 "49",
-                                 wing_width_mm)) |>
-  mutate(wing_width_mm = if_else(wing_width_mm == "6",
-                                 "60",
-                                 wing_width_mm)) |>
+    close_date = as.Date(close_date, format = "%Y-%m-%d"),
+    ballots_cast = as.numeric(ballots_cast),
+    ballots_in_favour = as.numeric(ballots_in_favour),
+    ballots_opposed = as.numeric(ballots_opposed)
+  ) %>%
+  
+  # Add a new column for the percentage of ballots in favour
   mutate(
-    wing_width_mm = as.numeric(wing_width_mm),
-    wing_length_mm = as.numeric(wing_length_mm),
-    flying_time_sec_first_timer = as.numeric(flying_time_sec_first_timer)
-  ) |>
-  rename(flying_time = flying_time_sec_first_timer,
-         width = wing_width_mm,
-         length = wing_length_mm
-         ) |> 
-  tidyr::drop_na()
+    percent_in_favour = (ballots_in_favour / ballots_cast) * 100
+  ) %>%
+  
+  # Remove any rows where percent_in_favour might be NA or invalid
+  filter(!is.na(percent_in_favour) & percent_in_favour >= 0)
 
-#### Save data ####
-write_csv(cleaned_data, "outputs/data/analysis_data.csv")
+# View the cleaned data
+head(cleaned_data)
+
+#### Save cleaned data ####
+write_csv(cleaned_data, "data/analysis_data/analysis_data.csv")

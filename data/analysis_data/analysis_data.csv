@@ -1,20 +1,865 @@
-width,length,flying_time
-70,111,1.83
-57,127,2.32
-59,92,2.05
-70,75,1.1
-62,112,2.32
-68,103.5,0.5
-58,108,1.7
-79,114,0.86
-56,186,3.42
-87,68,1.37
-50,118,2.68
-49,186,1.83
-61,116,1.32
-60,127,1
-56,184,2.79
-69,124,1.4
-60,95,1.12
-44,137,1.28
-63,125,1.35
+address,application_for,ballots_cast,ballots_in_favour,ballots_opposed,close_date,poll_result,response_rate_met,percent_in_favour
+8 Brumell Ave,Front Yard Parking,18,16,1,2015-05-31,In Favour,Yes,88.88888888888889
+90 Belsize Dr,Front Yard Parking,30,30,0,2015-06-03,In Favour,Yes,100
+376 Roehampton Ave,Front Yard Parking,43,37,3,2015-06-11,In Favour,Yes,86.04651162790698
+889 Queen St E,Boulevard Cafe,30,19,10,2015-06-05,In Favour,Yes,63.33333333333333
+1747 Eglinton Ave W,Commercial Boulevard Parking,26,13,11,2015-06-09,Response Rate Not Met,No,50
+24 Harlton Cres,Appeal - Front Yard Parking,35,29,1,2015-06-26,In Favour,Yes,82.85714285714286
+291 Deloraine Ave,Front Yard Parking,48,44,3,2015-06-23,In Favour,Yes,91.66666666666666
+353 St Germain Ave,Front Yard Parking,36,32,0,2015-06-18,In Favour,Yes,88.88888888888889
+2152 Danforth Ave,Boulevard Cafe,3,0,3,2015-06-25,Response Rate Not Met,No,0
+866 Bloor St W,Boulevard Cafe,1,1,0,2015-06-30,Response Rate Not Met,No,100
+540 College St (former Toronto),Boulevard Cafe,31,18,11,2015-07-07,Response Rate Not Met,No,58.06451612903226
+100 Sorauren Ave,Boulevard Cafe,27,21,1,2015-07-07,In Favour,Yes,77.77777777777779
+355 Danforth Ave,Boulevard Cafe,30,23,1,2015-07-09,In Favour,Yes,76.66666666666667
+538 Danforth Ave,Boulevard Cafe,50,45,3,2015-07-07,In Favour,Yes,90
+536 Soudan Ave,Appeal - Front Yard Parking,25,23,0,2015-07-10,In Favour,Yes,92
+128 Montgomery Ave (former Toronto),Appeal - Front Yard Parking,29,11,16,2015-07-10,Opposed,Yes,37.93103448275862
+132 Mortimer Ave,Appeal - Front Yard Parking,41,34,2,2015-07-14,In Favour,Yes,82.92682926829268
+38 Henning Ave,Appeal - Front Yard Parking,41,37,1,2015-07-14,In Favour,Yes,90.2439024390244
+481 Woburn Ave,Appeal - Front Yard Parking,31,21,4,2015-07-15,In Favour,Yes,67.74193548387096
+45 Cranbrooke Ave,Appeal - Front Yard Parking,56,31,16,2015-07-15,In Favour,Yes,55.35714285714286
+24 Ramsden Rd,Front Yard Parking,17,16,0,2015-07-24,In Favour,Yes,94.11764705882352
+2002 Queen St E,Boulevard Cafe,26,10,8,2015-07-16,Opposed,Yes,38.46153846153847
+1375 Dundas St W,Boulevard Cafe,35,32,1,2015-07-23,In Favour,Yes,91.42857142857143
+105 Scarborough Rd,Appeal - Front Yard Parking,33,4,23,2015-07-29,Opposed,Yes,12.121212121212121
+85 Astoria Ave,Appeal - Front Yard Parking,20,20,0,2015-07-25,In Favour,Yes,100
+216 Scarborough Rd,Appeal - Front Yard Parking,47,33,5,2015-07-29,In Favour,Yes,70.2127659574468
+212 Wineva Ave,Appeal - Front Yard Parking,48,32,10,2015-07-25,In Favour,Yes,66.66666666666666
+482 Northcliffe Blvd,Appeal - Front Yard Parking,27,20,2,2015-07-29,In Favour,Yes,74.07407407407408
+37 Cavendish St,Appeal - Front Yard Parking,24,20,2,2015-07-30,In Favour,Yes,83.33333333333334
+226 Ava Rd,Appeal - Front Yard Parking,26,24,2,2015-08-01,In Favour,Yes,92.3076923076923
+114 Foxwell St,Appeal - Front Yard Parking,48,45,2,2015-08-01,In Favour,Yes,93.75
+170 Roe Ave,Front Yard Parking,29,20,2,2015-08-06,In Favour,Yes,68.96551724137932
+1159 Davenport Rd,Boulevard Cafe,28,20,6,2015-08-06,In Favour,Yes,71.42857142857143
+792 Queen St E,Boulevard Cafe,30,1,28,2015-08-07,Opposed,Yes,3.3333333333333335
+88 Evans Ave (former Toronto),Appeal - Front Yard Parking,42,35,3,2015-08-08,In Favour,Yes,83.33333333333334
+30 Flanders Rd,Appeal - Front Yard Parking,19,12,4,2015-08-12,In Favour,Yes,63.1578947368421
+1366 Yonge St,Boulevard Cafe,104,57,38,2015-08-22,In Favour,Yes,54.807692307692314
+90 Runnymede Rd,Front Yard Parking,54,46,4,2015-08-26,In Favour,Yes,85.18518518518519
+1090 Bloor St W,Boulevard Cafe,21,14,7,2015-08-27,Response Rate Not Met,No,66.66666666666666
+11 Lonsdale Rd,Front Yard Parking,22,14,7,2015-08-27,In Favour,Yes,63.63636363636363
+9 Lonsdale Rd,Front Yard Parking,20,14,5,2015-08-26,In Favour,Yes,70
+40 Rosethorn Ave,Appeal - Front Yard Parking,54,42,5,2015-08-29,In Favour,Yes,77.77777777777779
+328 Runnymede Rd,Appeal - Front Yard Parking,68,48,12,2015-09-05,In Favour,Yes,70.58823529411765
+16 Heddington Ave,Front Yard Parking,14,14,0,2015-09-05,In Favour,Yes,100
+37 Castlefield Ave,Appeal - Front Yard Parking,45,30,15,2015-09-09,In Favour,Yes,66.66666666666666
+269 Glebeholme Blvd,Appeal - Front Yard Parking,76,38,33,2015-09-12,Opposed,Yes,50
+121 Craighurst Ave,Appeal - Front Yard Parking,60,58,0,2015-09-09,In Favour,Yes,96.66666666666667
+36 Vaughan Rd,Boulevard Cafe,35,11,21,2015-09-23,Opposed,Yes,31.428571428571427
+79 Ellerbeck St,Appeal - Front Yard Parking,51,30,14,2015-10-02,In Favour,Yes,58.82352941176471
+366 Old Orchard Grv,Appeal - Front Yard Parking,54,48,2,2015-10-02,In Favour,Yes,88.88888888888889
+153 Westwood Ave,Appeal - Front Yard Parking,15,13,0,2015-10-02,In Favour,Yes,86.66666666666667
+38 Rambert Cres,Appeal - Front Yard Parking,27,26,0,2015-10-03,In Favour,Yes,96.29629629629629
+24 Royal St,Appeal - Front Yard Parking,70,67,0,2015-10-02,In Favour,Yes,95.71428571428572
+531 Northcliffe Blvd,Appeal - Front Yard Parking,38,29,8,2015-10-03,In Favour,Yes,76.31578947368422
+193 Eastwood Rd,Appeal - Front Yard Parking,12,8,4,2015-10-03,In Favour,Yes,66.66666666666666
+27 Strathearn Blvd,Front Yard Parking,24,15,6,2015-10-03,In Favour,Yes,62.5
+38 Harwood Rd,Front Yard Parking,21,21,0,2015-10-08,In Favour,Yes,100
+52 Bicknell Ave,Front Yard Parking,20,20,0,2015-10-08,In Favour,Yes,100
+76 Alameda Ave,Front Yard Parking,24,19,1,2015-10-08,In Favour,Yes,79.16666666666666
+351 Nairn Ave,Appeal - Front Yard Parking,25,23,0,2015-10-21,In Favour,Yes,92
+263 Glenholme Ave,Front Yard Parking,23,20,0,2015-10-17,In Favour,Yes,86.95652173913044
+216 Glenholme Ave,Appeal - Front Yard Parking,46,33,7,2015-10-22,In Favour,Yes,71.73913043478261
+424 Millwood Rd,Front Yard Parking,45,45,0,2015-10-17,In Favour,Yes,100
+329 St Clements Ave,Front Yard Parking,38,36,0,2015-10-29,In Favour,Yes,94.73684210526315
+93 Kennedy Ave,Appeal - Front Yard Parking,37,28,3,2015-10-23,In Favour,Yes,75.67567567567568
+739 Queen St E,Commercial Boulevard Parking,11,5,5,2015-10-30,Response Rate Not Met,No,45.45454545454545
+2205 Queen St E,Commercial Boulevard Parking,11,5,6,2015-10-24,Opposed,Yes,45.45454545454545
+1330 Gerrard St E,Commercial Boulevard Parking,10,4,6,2015-10-31,Response Rate Not Met,No,40
+377 Winnett Ave,Front Yard Parking,49,39,7,2015-10-24,In Favour,Yes,79.59183673469387
+20 Durham Ave,Front Yard Parking,13,12,0,2015-10-28,In Favour,Yes,92.3076923076923
+10 Hiawatha Rd,Front Yard Parking,32,30,1,2015-10-28,In Favour,Yes,93.75
+158 Lyndhurst Ave,Front Yard Parking,30,21,3,2015-10-29,In Favour,Yes,70
+135 Cedric Ave,Front Yard Parking,34,25,8,2015-10-29,Response Rate Not Met,No,73.52941176470588
+33 Pinewood Ave,Front Yard Parking,54,50,0,2015-10-31,In Favour,Yes,92.5925925925926
+17 Bellefair Ave,Front Yard Parking,63,54,2,2015-11-13,In Favour,Yes,85.71428571428571
+76 Glengarry Ave,Front Yard Parking,47,45,0,2015-11-14,In Favour,Yes,95.74468085106383
+75 Ronald Ave,Front Yard Parking,17,16,0,2015-11-18,In Favour,Yes,94.11764705882352
+284 Atlas Ave,Front Yard Parking,46,39,6,2015-11-13,In Favour,Yes,84.78260869565217
+88 Maclean Ave,Front Yard Parking,21,21,0,2015-11-14,In Favour,Yes,100
+151 Everden Rd,Front Yard Parking,24,24,0,2015-11-14,In Favour,Yes,100
+16 Raymond Ave,Appeal - Front Yard Parking,22,19,3,2015-11-21,In Favour,Yes,86.36363636363636
+442 Armadale Ave,Appeal - Front Yard Parking,39,23,6,2015-11-21,In Favour,Yes,58.97435897435898
+14 Ellis Park Rd,Appeal - Front Yard Parking,23,6,17,2015-11-25,Opposed,Yes,26.08695652173913
+46 Laws St,Appeal - Front Yard Parking,66,43,10,2015-11-25,In Favour,Yes,65.15151515151516
+51 Montgomery Ave (former Toronto),Appeal - Front Yard Parking,15,14,0,2015-11-27,In Favour,Yes,93.33333333333333
+196 Roselawn Ave,Appeal - Front Yard Parking,19,19,0,2015-11-26,In Favour,Yes,100
+107 Lascelles Blvd,Front Yard Parking,31,28,0,2015-12-02,In Favour,Yes,90.32258064516128
+34 Humber Trl,Front Yard Parking,32,31,0,2015-12-02,In Favour,Yes,96.875
+48 Laws St,Front Yard Parking,44,26,10,2015-12-05,In Favour,Yes,59.09090909090909
+39 Roslin Ave,Appeal - Front Yard Parking,36,25,3,2015-12-02,In Favour,Yes,69.44444444444444
+35 Homeview Ave,Front Yard Parking,32,32,0,2015-12-23,In Favour,Yes,100
+95 Deloraine Ave,Front Yard Parking,42,35,1,2015-12-23,In Favour,Yes,83.33333333333334
+191 College St (former Toronto),Boulevard Cafe,37,1,35,2015-12-25,Opposed,Yes,2.7027027027027026
+1430 Dundas St W,Boulevard Cafe,6,3,1,2016-01-06,Response Rate Not Met,No,50
+9 Blakley Ave,Appeal - Front Yard Parking,23,22,0,2016-02-06,In Favour,Yes,95.65217391304348
+143 Beresford Ave,Front Yard Parking,44,41,0,2016-02-06,In Favour,Yes,93.18181818181817
+189 Atlas Ave,Front Yard Parking,41,38,2,2016-02-10,In Favour,Yes,92.6829268292683
+39 Randolph Rd,Front Yard Parking,11,7,4,2016-02-10,In Favour,Yes,63.63636363636363
+51 Kenwood Ave,Appeal - Front Yard Parking,30,26,4,2016-02-11,In Favour,Yes,86.66666666666667
+15 Chryessa Ave,Appeal - Front Yard Parking,33,24,2,2016-02-11,In Favour,Yes,72.72727272727273
+38 Elmer Ave,Appeal - Front Yard Parking,60,44,13,2016-02-11,In Favour,Yes,73.33333333333333
+407 Northcliffe Blvd,Appeal - Front Yard Parking,30,27,2,2016-02-12,In Favour,Yes,90
+136 Roselawn Ave,Front Yard Parking,45,42,0,2016-02-18,In Favour,Yes,93.33333333333333
+82 Morningside Ave (former Toronto),Front Yard Parking,29,28,1,2016-02-18,In Favour,Yes,96.55172413793103
+179 Castlefield Ave,Appeal - Front Yard Parking,39,26,13,2016-02-19,In Favour,Yes,66.66666666666666
+48 Rowntree Ave,Appeal - Front Yard Parking,26,22,1,2016-02-24,In Favour,Yes,84.61538461538461
+247 Tyrrel Ave,Appeal - Front Yard Parking,14,13,0,2016-02-24,In Favour,Yes,92.85714285714286
+60 Mayfield Ave,Appeal - Front Yard Parking,17,17,0,2016-02-18,In Favour,Yes,100
+24 Humberview Rd,Appeal - Front Yard Parking,34,25,7,2016-02-18,In Favour,Yes,73.52941176470588
+308 Durie St,Front Yard Parking,78,57,10,2016-02-17,In Favour,Yes,73.07692307692307
+82 Lawrence Ave W,Appeal - Front Yard Parking,34,33,1,2016-02-20,In Favour,Yes,97.05882352941177
+35 Lawrence Ave W,Appeal - Front Yard Parking,18,16,1,2016-02-20,In Favour,Yes,88.88888888888889
+147 Medland St,Front Yard Parking,46,37,4,2016-02-27,In Favour,Yes,80.43478260869566
+81 Pine Crest Rd,Front Yard Parking,66,45,18,2016-03-02,In Favour,Yes,68.18181818181817
+311 Melrose Ave,Front Yard Parking,40,35,0,2016-02-27,In Favour,Yes,87.5
+473 Woburn Ave,Appeal - Front Yard Parking,45,40,2,2016-02-27,In Favour,Yes,88.88888888888889
+590 Pape Ave,Boulevard Cafe,55,36,17,2016-03-12,In Favour,Yes,65.45454545454545
+113 Melrose Ave,Appeal - Front Yard Parking,66,38,20,2016-03-12,In Favour,Yes,57.57575757575758
+52 Lawrence Ave W,Appeal - Front Yard Parking,18,17,1,2016-03-12,In Favour,Yes,94.44444444444444
+22 Hambly Ave,Appeal - Front Yard Parking,48,25,21,2016-03-17,In Favour,Yes,52.083333333333336
+423 Glenholme Ave,Appeal - Front Yard Parking,28,18,7,2016-03-17,In Favour,Yes,64.28571428571429
+104 Hilton Ave,Appeal - Front Yard Parking,44,26,14,2016-03-18,In Favour,Yes,59.09090909090909
+27 Royal St,Appeal - Front Yard Parking,39,32,3,2016-03-17,In Favour,Yes,82.05128205128204
+41 Raymond Ave,Front Yard Parking,55,44,2,2016-03-23,In Favour,Yes,80
+9 Maple Bush Ave,Appeal - Front Yard Parking,28,21,3,2016-03-23,In Favour,Yes,75
+3 Millerson Ave,Front Yard Parking,15,14,0,2016-03-23,In Favour,Yes,93.33333333333333
+177 Westmount Ave,Front Yard Parking,87,81,1,2016-04-08,In Favour,Yes,93.10344827586206
+165 Dynevor Rd,Commercial Boulevard Parking,6,1,3,2016-06-18,Response Rate Not Met,No,16.666666666666664
+1372 St Clair Ave W,Commercial Boulevard Parking,1,0,0,2016-04-08,Response Rate Not Met,No,0
+7 Ronald Ave,Front Yard Parking,49,43,2,2016-04-07,In Favour,Yes,87.75510204081633
+101 Ronan Ave,Front Yard Parking,46,39,5,2016-04-07,In Favour,Yes,84.78260869565217
+2199 Bloor St W,Boulevard Cafe,10,3,5,2016-04-06,Response Rate Not Met,No,30
+361 Hillsdale Ave E,Appeal - Front Yard Parking,53,27,25,2016-04-09,Opposed,Yes,50.943396226415096
+1417 Danforth Ave,Boulevard Cafe,57,37,15,2016-04-16,In Favour,Yes,64.91228070175438
+336 Gilbert Ave,Appeal - Front Yard Parking,48,32,11,2016-04-22,In Favour,Yes,66.66666666666666
+32 Elmer Ave,Appeal - Front Yard Parking,49,27,18,2016-04-16,In Favour,Yes,55.10204081632652
+61 Edith Dr,Front Yard Parking,30,25,3,2016-04-20,In Favour,Yes,83.33333333333334
+1560 Queen St E,Boulevard Cafe,24,14,5,2016-04-23,Response Rate Not Met,No,58.333333333333336
+320 Brookdale Ave,Appeal - Front Yard Parking,34,6,26,2016-05-05,Opposed,Yes,17.647058823529413
+158 Colbeck St,Front Yard Parking,14,14,0,2016-05-05,In Favour,Yes,100
+1363 Lansdowne Ave,Appeal - Front Yard Parking,99,87,2,2016-05-18,In Favour,Yes,87.87878787878788
+201 Rosemount Ave (former Toronto),Appeal - Front Yard Parking,64,53,9,2016-05-13,In Favour,Yes,82.8125
+409 College St (former Toronto),Boulevard Cafe,15,6,3,2016-06-30,Response Rate Not Met,No,40
+189 Deloraine Ave,Front Yard Parking,46,34,6,2016-05-18,In Favour,Yes,73.91304347826086
+6 Four Oaks Gt,Appeal - Front Yard Parking,23,8,15,2016-05-13,Opposed,Yes,34.78260869565217
+103 Caledonia Rd,Appeal - Front Yard Parking,39,23,10,2016-05-25,In Favour,Yes,58.97435897435898
+155 Hannaford St,Appeal - Front Yard Parking,48,12,31,2016-05-14,Opposed,Yes,25
+10 Elmer Ave,Appeal - Front Yard Parking,36,24,10,2016-05-20,In Favour,Yes,66.66666666666666
+664 Windermere Ave,Front Yard Parking,54,46,4,2016-05-20,In Favour,Yes,85.18518518518519
+68 Lavinia Ave,Front Yard Parking,63,54,2,2016-05-26,In Favour,Yes,85.71428571428571
+1044 Gerrard St E,Boulevard Cafe,37,17,19,2016-05-27,Opposed,Yes,45.94594594594595
+349 Runnymede Rd,Appeal - Front Yard Parking,16,11,4,2016-05-21,In Favour,Yes,68.75
+504 Adelaide St W,Boulevard Cafe,14,12,0,2016-05-25,Response Rate Not Met,No,85.71428571428571
+2018 Queen St E,Boulevard Cafe,27,8,19,2016-05-28,Opposed,Yes,29.629629629629626
+131 Avenue Rd,Boulevard Cafe,12,9,1,2016-05-26,In Favour,Yes,75
+317 Armadale Ave,Front Yard Parking,36,25,5,2016-05-27,In Favour,Yes,69.44444444444444
+31 Methuen Ave,Front Yard Parking,60,52,4,2016-05-27,In Favour,Yes,86.66666666666667
+244 Dunraven Dr,Appeal - Front Yard Parking,29,21,8,2016-05-28,In Favour,Yes,72.41379310344827
+61 Bellevue Ave,Boulevard Cafe,2,2,0,2016-06-02,Response Rate Not Met,No,100
+209 Silverthorn Ave,Front Yard Parking,64,51,0,2016-06-15,In Favour,Yes,79.6875
+1 Roseneath Gdns,Appeal - Front Yard Parking,41,24,6,2016-06-10,In Favour,Yes,58.536585365853654
+21 Lavender Rd,Appeal - Front Yard Parking,14,14,0,2016-06-11,In Favour,Yes,100
+134 Glenholme Ave,Appeal - Front Yard Parking,67,61,6,2016-06-11,In Favour,Yes,91.04477611940298
+48 Duggan Ave,Appeal - Front Yard Parking,73,64,5,2016-06-16,In Favour,Yes,87.67123287671232
+50 Duggan Ave,Appeal - Front Yard Parking,76,67,5,2016-06-16,In Favour,Yes,88.1578947368421
+511 Bloor St W,Boulevard Cafe,23,4,19,2016-07-06,Opposed,Yes,17.391304347826086
+1048 St Clarens Ave,Front Yard Parking,74,57,7,2016-06-23,In Favour,Yes,77.02702702702703
+489 Glenlake Ave,Front Yard Parking,37,33,4,2016-06-29,In Favour,Yes,89.1891891891892
+45 Ardagh St,Appeal - Front Yard Parking,26,21,2,2016-06-30,In Favour,Yes,80.76923076923077
+851 Windermere Ave,Appeal - Front Yard Parking,58,44,5,2016-06-30,In Favour,Yes,75.86206896551724
+213 Greer Rd,Front Yard Parking,24,20,2,2016-07-01,In Favour,Yes,83.33333333333334
+91 Glengrove Ave W,Appeal - Front Yard Parking,17,10,5,2016-07-01,In Favour,Yes,58.82352941176471
+91 Castlewood Rd,Front Yard Parking,41,40,1,2016-07-06,In Favour,Yes,97.5609756097561
+1646 St Clair Ave W,Boulevard Cafe,16,2,13,2016-10-08,Opposed,Yes,12.5
+320 Brookdale Ave,Appeal - Front Yard Parking,19,13,4,2016-07-29,In Favour,Yes,68.42105263157895
+35 Kane Ave,Front Yard Parking,43,41,1,2016-07-13,In Favour,Yes,95.34883720930233
+1 Rainsford Rd,Boulevard Cafe,61,38,18,2016-07-08,In Favour,Yes,62.295081967213115
+800 Dundas St W,Boulevard Cafe,29,14,13,2016-07-15,Response Rate Not Met,No,48.275862068965516
+1444 Dupont St,Boulevard Cafe,9,6,0,2016-07-20,In Favour,Yes,66.66666666666666
+327 Roncesvalles Ave,Boulevard Cafe,20,16,2,2016-07-30,In Favour,Yes,80
+179 Lawrence Ave W,Appeal - Front Yard Parking,33,31,0,2016-07-22,In Favour,Yes,93.93939393939394
+59 Bellefair Ave,Front Yard Parking,96,85,2,2016-07-23,In Favour,Yes,88.54166666666666
+77 Leuty Ave,Front Yard Parking,56,26,23,2016-07-20,Opposed,Yes,46.42857142857143
+252 Glenrose Ave,Appeal - Front Yard Parking,49,37,7,2016-07-21,In Favour,Yes,75.51020408163265
+69 Deloraine Ave,Front Yard Parking,44,34,2,2016-07-22,In Favour,Yes,77.27272727272727
+14 Larkin Ave,Front Yard Parking,49,46,1,2016-07-22,In Favour,Yes,93.87755102040816
+575 Hillsdale Ave E,Front Yard Parking,71,54,14,2016-07-27,In Favour,Yes,76.05633802816901
+2366 Bloor St W,Boulevard Cafe,11,5,5,2016-07-27,Opposed,Yes,45.45454545454545
+347 Windermere Ave,Front Yard Parking,12,10,2,2016-07-27,In Favour,Yes,83.33333333333334
+604 King St W,Boulevard Cafe,7,2,5,2016-10-12,Opposed,Yes,28.57142857142857
+40 Warland Ave,Front Yard Parking,57,39,5,2016-10-20,In Favour,Yes,68.42105263157895
+129 Ronan Ave,Front Yard Parking,41,35,1,2016-10-14,In Favour,Yes,85.36585365853658
+530 Soudan Ave,Appeal - Front Yard Parking,30,30,0,2016-10-13,In Favour,Yes,100
+86 Balmoral Ave,Appeal - Front Yard Parking,71,46,22,2016-10-15,In Favour,Yes,64.7887323943662
+76 Nealon Ave,Front Yard Parking,41,38,2,2016-10-14,In Favour,Yes,92.6829268292683
+171 Blackthorn Ave,Appeal - Front Yard Parking,92,74,8,2016-10-20,In Favour,Yes,80.43478260869566
+439 Manor Rd E,Front Yard Parking,26,26,0,2016-10-15,In Favour,Yes,100
+2 Plains Rd,Appeal - Front Yard Parking,7,6,1,2016-10-19,In Favour,Yes,85.71428571428571
+487 Winnett Ave,Front Yard Parking,35,32,1,2016-10-15,In Favour,Yes,91.42857142857143
+162 Ossington Ave,Boulevard Cafe,28,7,13,2016-10-19,Response Rate Not Met,No,25
+600 King St W,Boulevard Cafe,3,1,2,2016-10-21,Response Rate Not Met,No,33.33333333333333
+1032 Queen St W,Boulevard Cafe,30,2,25,2016-10-26,Opposed,Yes,6.666666666666667
+3076 Dundas St W,Boulevard Cafe,37,25,11,2016-10-29,In Favour,Yes,67.56756756756756
+3074 Dundas St W,Boulevard Cafe,26,17,5,2016-11-02,In Favour,Yes,65.38461538461539
+1595 Dupont St,Boulevard Cafe,29,23,0,2016-11-02,In Favour,Yes,79.3103448275862
+69 Clouston Ave,Appeal - Front Yard Parking,26,17,9,2016-11-02,In Favour,Yes,65.38461538461539
+66 Dynevor Rd,Appeal - Front Yard Parking,63,60,0,2016-11-02,In Favour,Yes,95.23809523809523
+24 Roseneath Gdns,Appeal - Front Yard Parking,46,35,6,2016-10-29,In Favour,Yes,76.08695652173914
+12 Geary Ave,Front Yard Parking,10,10,0,2016-11-02,In Favour,Yes,100
+12 Norway Ave,Front Yard Parking,26,22,1,2016-11-03,In Favour,Yes,84.61538461538461
+11 Spring Grove Ave,Appeal - Front Yard Parking,32,22,8,2016-11-03,In Favour,Yes,68.75
+163 Arlington Ave,Front Yard Parking,50,48,0,2016-11-05,In Favour,Yes,96
+85 Castleton Ave,Front Yard Parking,28,27,1,2016-11-04,In Favour,Yes,96.42857142857143
+115 Humbercrest Blvd,Front Yard Parking,40,30,7,2016-11-03,In Favour,Yes,75
+354 Briar Hill Ave,Front Yard Parking,58,41,1,2016-11-04,In Favour,Yes,70.6896551724138
+175 Chambers Ave,Appeal - Front Yard Parking,31,27,0,2016-11-04,In Favour,Yes,87.09677419354838
+137 Hillsdale Ave E,Appeal - Front Yard Parking,55,48,5,2016-11-05,In Favour,Yes,87.27272727272727
+89 Brookside Ave,Front Yard Parking,71,65,3,2016-11-05,In Favour,Yes,91.54929577464789
+327 Forman Ave,Front Yard Parking,48,44,1,2016-11-05,In Favour,Yes,91.66666666666666
+75 Earlsdale Ave,Appeal - Front Yard Parking,40,31,2,2016-11-10,In Favour,Yes,77.5
+226 Hillsdale Ave E,Appeal - Front Yard Parking,36,30,4,2016-11-10,In Favour,Yes,83.33333333333334
+68 Glen Manor Dr,Appeal - Front Yard Parking,22,16,5,2016-11-10,Response Rate Not Met,No,72.72727272727273
+24 Linnsmore Cres,Front Yard Parking,57,55,0,2016-11-10,In Favour,Yes,96.49122807017544
+350 Brookdale Ave,Front Yard Parking,49,47,0,2016-11-10,In Favour,Yes,95.91836734693877
+86 Robina Ave,Appeal - Front Yard Parking,72,49,4,2016-11-23,In Favour,Yes,68.05555555555556
+120 Blackthorn Ave,Appeal - Front Yard Parking,36,31,2,2016-11-23,In Favour,Yes,86.11111111111111
+11 Grimthorpe Rd,Front Yard Parking,15,13,0,2016-11-16,In Favour,Yes,86.66666666666667
+98 Hatherley Rd,Front Yard Parking,32,21,1,2016-11-16,In Favour,Yes,65.625
+908 Queen St E,Boulevard Cafe,10,4,6,2016-11-24,Opposed,Yes,40
+3 Royal St,Appeal - Front Yard Parking,41,36,3,2016-11-24,In Favour,Yes,87.8048780487805
+5 Somerville Ave,Appeal - Front Yard Parking,40,30,6,2016-11-16,In Favour,Yes,75
+45 Herbert Ave,Appeal - Front Yard Parking,43,24,17,2016-11-23,In Favour,Yes,55.81395348837209
+6 Hollis St,Appeal - Front Yard Parking,26,22,0,2016-11-24,In Favour,Yes,84.61538461538461
+24 Belgravia Ave,Appeal - Front Yard Parking,42,32,8,2016-11-24,In Favour,Yes,76.19047619047619
+45A Benlamond Ave,Appeal - Front Yard Parking,42,29,7,2016-12-07,In Favour,Yes,69.04761904761905
+14 Somerville Ave,Appeal - Front Yard Parking,37,27,5,2016-11-25,In Favour,Yes,72.97297297297297
+33 Livingstone Ave,Appeal - Front Yard Parking,47,27,13,2016-11-26,In Favour,Yes,57.446808510638306
+485 Lauder Ave,Appeal - Front Yard Parking,50,32,16,2016-11-26,In Favour,Yes,64
+8 Norway Ave,Appeal - Front Yard Parking,25,19,1,2016-12-03,In Favour,Yes,76
+535 Queen St W,Boulevard Cafe,28,17,4,2016-12-07,Response Rate Not Met,No,60.71428571428571
+35 Waller Ave,Front Yard Parking,47,43,1,2016-12-03,In Favour,Yes,91.48936170212765
+575 Merton St,Front Yard Parking,57,41,6,2016-12-08,In Favour,Yes,71.9298245614035
+162 Hammersmith Ave,Appeal - Front Yard Parking,45,23,20,2016-12-07,Opposed,Yes,51.11111111111111
+466 Castlefield Ave,Front Yard Parking,49,38,0,2016-12-07,In Favour,Yes,77.55102040816327
+132 Hopedale Ave,Front Yard Parking,33,29,4,2016-12-10,In Favour,Yes,87.87878787878788
+519 Soudan Ave,Front Yard Parking,39,31,4,2016-12-09,In Favour,Yes,79.48717948717949
+91 Ypres Rd,Front Yard Parking,26,25,1,2016-12-08,In Favour,Yes,96.15384615384616
+30 Atlas Ave,Front Yard Parking,27,26,1,2016-12-09,In Favour,Yes,96.29629629629629
+46 Vernon St,Appeal - Front Yard Parking,65,55,5,2016-12-08,In Favour,Yes,84.61538461538461
+114 Beresford Ave,Appeal - Front Yard Parking,44,38,0,2016-12-08,In Favour,Yes,86.36363636363636
+292 Glen Rd,Appeal - Front Yard Parking,47,45,0,2016-12-09,In Favour,Yes,95.74468085106383
+91 Ashdale Ave,Appeal - Front Yard Parking,37,18,12,2016-12-10,Opposed,Yes,48.64864864864865
+691 Mount Pleasant Rd,Commercial Boulevard Parking,23,11,11,2016-12-14,Opposed,Yes,47.82608695652174
+224 Evelyn Ave,Front Yard Parking,38,13,23,2016-12-17,Opposed,Yes,34.21052631578947
+299 Waverley Rd,Front Yard Parking,67,52,10,2016-12-09,In Favour,Yes,77.61194029850746
+27 Westover Hill Rd,Front Yard Parking,41,28,6,2016-12-10,In Favour,Yes,68.29268292682927
+28 Lessard Ave,Front Yard Parking,56,54,0,2016-12-16,In Favour,Yes,96.42857142857143
+1184 Bloor St W,Boulevard Cafe,20,13,0,2016-12-17,Response Rate Not Met,No,65
+450 Woburn Ave,Appeal - Front Yard Parking,47,41,4,2016-12-16,In Favour,Yes,87.2340425531915
+452 Woburn Ave,Appeal - Front Yard Parking,48,42,4,2016-12-17,In Favour,Yes,87.5
+2 Crosby Ave,Front Yard Parking,11,10,0,2016-12-21,In Favour,Yes,90.9090909090909
+42 Norway Ave,Front Yard Parking,32,29,2,2016-12-24,In Favour,Yes,90.625
+1 Astoria Ave,Front Yard Parking,26,26,0,2016-12-24,In Favour,Yes,100
+2620 Danforth Ave,Commercial Boulevard Parking,3,3,0,2017-01-21,Response Rate Not Met,No,100
+364 Atlas Ave,Front Yard Parking,36,35,0,2016-12-23,In Favour,Yes,97.22222222222221
+224 Lonsmount Dr,Front Yard Parking,7,7,0,2016-12-30,In Favour,Yes,100
+88 Guestville Ave,Front Yard Parking,32,31,0,2016-12-23,In Favour,Yes,96.875
+585 Windermere Ave,Front Yard Parking,63,55,8,2016-12-24,In Favour,Yes,87.3015873015873
+215 Wanless Ave,Appeal - Front Yard Parking,33,31,1,2017-01-07,In Favour,Yes,93.93939393939394
+54 Beresford Ave,Appeal - Front Yard Parking,25,20,4,2017-01-11,In Favour,Yes,80
+7 Durie St,Appeal - Front Yard Parking,29,12,17,2017-01-11,Opposed,Yes,41.37931034482759
+61 Forest Hill Rd,Appeal - Front Yard Parking,16,12,4,2017-01-13,In Favour,Yes,75
+220 Roselawn Ave,Appeal - Front Yard Parking,32,30,2,2017-01-21,In Favour,Yes,93.75
+76 Duggan Ave,Appeal - Front Yard Parking,54,50,0,2017-01-18,In Favour,Yes,92.5925925925926
+88 Balmoral Ave,Appeal - Front Yard Parking,53,22,27,2017-01-11,Opposed,Yes,41.509433962264154
+103 Roslin Ave,Appeal - Front Yard Parking,26,12,9,2017-01-18,Opposed,Yes,46.15384615384615
+251 Oakwood Ave,Front Yard Parking,46,40,1,2017-01-18,In Favour,Yes,86.95652173913044
+425 Willard Ave,Front Yard Parking,41,41,0,2017-01-19,In Favour,Yes,100
+13 Chilton Rd,Front Yard Parking,28,24,0,2017-01-19,In Favour,Yes,85.71428571428571
+97 Harbord St,Boulevard Cafe,25,15,7,2017-03-11,In Favour,Yes,60
+111 Auburn Ave,Front Yard Parking,34,29,0,2017-01-20,In Favour,Yes,85.29411764705883
+2256 Bloor St W,Boulevard Cafe,35,25,10,2017-02-09,In Favour,Yes,71.42857142857143
+493A Hopewell Ave,Front Yard Parking,16,13,1,2017-02-10,In Favour,Yes,81.25
+396 Old Orchard Grv,Front Yard Parking,27,25,1,2017-02-10,In Favour,Yes,92.5925925925926
+10 Thornhill Ave,Front Yard Parking,36,33,2,2017-02-11,In Favour,Yes,91.66666666666666
+281 Willow Ave (former Toronto),Front Yard Parking,45,36,4,2017-02-10,In Favour,Yes,80
+248 Glen Manor Dr W,Front Yard Parking,5,4,0,2017-02-18,In Favour,Yes,80
+23 Hollis St,Front Yard Parking,24,24,0,2017-02-11,In Favour,Yes,100
+64 Hounslow Heath Rd,Appeal - Front Yard Parking,34,31,2,2017-03-02,In Favour,Yes,91.17647058823529
+9 Ravenal St,Front Yard Parking,56,54,0,2017-02-24,In Favour,Yes,96.42857142857143
+3 Sykes Ave,Front Yard Parking,13,13,0,2017-02-23,In Favour,Yes,100
+26 Melrose Ave,Front Yard Parking,35,34,0,2017-02-25,In Favour,Yes,97.14285714285714
+560 Willard Ave,Appeal - Front Yard Parking,20,4,16,2017-02-25,Opposed,Yes,20
+40 Deforest Rd,Front Yard Parking,23,22,1,2017-02-25,In Favour,Yes,95.65217391304348
+482 Armadale Ave,Front Yard Parking,52,35,14,2017-03-09,In Favour,Yes,67.3076923076923
+38 Lessard Ave,Appeal - Front Yard Parking,58,53,0,2017-03-08,In Favour,Yes,91.37931034482759
+169 Lee Ave,Front Yard Parking,53,50,2,2017-03-08,In Favour,Yes,94.33962264150944
+257 Broadway Ave,Front Yard Parking,59,57,0,2017-03-15,In Favour,Yes,96.61016949152543
+220 Prescott Ave,Appeal - Front Yard Parking,79,66,5,2017-03-23,In Favour,Yes,83.54430379746836
+96 Hope St,Appeal - Front Yard Parking,28,24,0,2017-03-23,In Favour,Yes,85.71428571428571
+174 Chambers Ave,Front Yard Parking,45,40,0,2017-03-16,In Favour,Yes,88.88888888888889
+108 Gilbert Ave,Appeal - Front Yard Parking,66,53,3,2017-03-18,In Favour,Yes,80.3030303030303
+153 Blackthorn Ave,Appeal - Front Yard Parking,54,40,7,2017-03-23,In Favour,Yes,74.07407407407408
+88 Balmoral Ave,Appeal - Front Yard Parking,85,59,21,2017-03-15,In Favour,Yes,69.41176470588235
+487 Adelaide St W,Boulevard Cafe,3,2,1,2017-03-29,Opposed,Yes,66.66666666666666
+1540 Dupont St,Boulevard Cafe,42,7,28,2017-04-05,Opposed,Yes,16.666666666666664
+42 Chilton Rd,Front Yard Parking,46,29,11,2017-04-12,In Favour,Yes,63.04347826086957
+127 Memorial Park Ave,Front Yard Parking,12,12,0,2017-04-19,In Favour,Yes,100
+157 Craighurst Ave,Front Yard Parking,52,43,2,2017-04-13,In Favour,Yes,82.6923076923077
+25 Mahoney Ave,Front Yard Parking,36,30,0,2017-04-13,In Favour,Yes,83.33333333333334
+87 Bicknell Ave,Front Yard Parking,23,21,0,2017-04-14,In Favour,Yes,91.30434782608695
+220 Winona Dr,Front Yard Parking,33,25,0,2017-04-21,In Favour,Yes,75.75757575757575
+387 Merton St,Front Yard Parking,42,29,8,2017-04-12,In Favour,Yes,69.04761904761905
+458 Quebec Ave,Front Yard Parking,45,36,6,2017-04-14,In Favour,Yes,80
+247 Brookdale Ave,Front Yard Parking,15,15,0,2017-04-22,In Favour,Yes,100
+30 Ravenal St,Appeal - Front Yard Parking,47,41,2,2017-04-19,In Favour,Yes,87.2340425531915
+287 Lauder Ave,Appeal - Front Yard Parking,40,34,5,2017-04-21,In Favour,Yes,85
+299 Kane Ave,Appeal - Front Yard Parking,19,17,2,2017-04-20,In Favour,Yes,89.47368421052632
+253 Wychwood Ave,Front Yard Parking,12,12,0,2017-04-22,In Favour,Yes,100
+198 Warren Rd,Appeal - Front Yard Parking,12,8,2,2017-04-22,In Favour,Yes,66.66666666666666
+888 Danforth Ave,Boulevard Cafe,13,13,0,2017-04-26,In Favour,Yes,100
+160 Pinewood Ave,Front Yard Parking,39,33,2,2017-05-03,In Favour,Yes,84.61538461538461
+71 Ronald Ave,Front Yard Parking,20,17,0,2017-05-03,In Favour,Yes,85
+166 Wineva Ave,Front Yard Parking,46,37,8,2017-04-29,In Favour,Yes,80.43478260869566
+335 Monarch Park Ave,Front Yard Parking,41,31,2,2017-05-05,In Favour,Yes,75.60975609756098
+129 Winnett Ave,Front Yard Parking,37,35,0,2017-05-05,In Favour,Yes,94.5945945945946
+2 Yarrow Rd,Appeal - Front Yard Parking,28,20,4,2017-05-06,In Favour,Yes,71.42857142857143
+47 Ferrier Ave,Front Yard Parking,55,44,10,2017-05-11,In Favour,Yes,80
+1020 Gerrard St E,Boulevard Cafe,6,1,5,2017-05-10,Response Rate Not Met,No,16.666666666666664
+1686 St Clair Ave W,Boulevard Cafe,5,4,1,2017-05-10,Response Rate Not Met,No,80
+51A Auburn Ave,Front Yard Parking,55,43,7,2017-05-13,In Favour,Yes,78.18181818181819
+33 Ravenal St,Appeal - Front Yard Parking,32,28,3,2017-05-18,In Favour,Yes,87.5
+764 Jane St,Appeal - Front Yard Parking,6,6,0,2017-05-18,In Favour,Yes,100
+161 Waverley Rd,Appeal - Front Yard Parking,55,19,33,2017-05-13,Opposed,Yes,34.54545454545455
+22 Norval St,Appeal - Front Yard Parking,31,23,8,2017-05-20,In Favour,Yes,74.19354838709677
+22 Cedar Ave,Appeal - Front Yard Parking,31,10,20,2017-05-13,Opposed,Yes,32.25806451612903
+38A Thelma Ave,Appeal - Front Yard Parking,23,18,3,2017-05-18,In Favour,Yes,78.26086956521739
+131 Cedric Ave,Appeal - Front Yard Parking,58,40,10,2017-05-19,In Favour,Yes,68.96551724137932
+14 Petman Ave,Appeal - Front Yard Parking,32,30,1,2017-05-24,In Favour,Yes,93.75
+95 Ellins Ave,Appeal - Front Yard Parking,11,11,0,2017-05-24,In Favour,Yes,100
+90 Wheeler Ave,Appeal - Front Yard Parking,67,55,7,2017-05-20,In Favour,Yes,82.08955223880598
+55 Glenwood Ave,Front Yard Parking,55,49,4,2017-05-25,In Favour,Yes,89.0909090909091
+263 Lauder Ave,Front Yard Parking,54,39,0,2017-05-25,In Favour,Yes,72.22222222222221
+126 Lambton Ave,Front Yard Parking,44,32,4,2017-05-26,In Favour,Yes,72.72727272727273
+489 Glenlake Ave,Appeal - Front Yard Parking,30,26,2,2017-06-09,In Favour,Yes,86.66666666666667
+36 Keith Ave,Front Yard Parking,21,16,2,2017-06-24,In Favour,Yes,76.19047619047619
+47 Florence Cres,Front Yard Parking,33,29,2,2017-06-22,In Favour,Yes,87.87878787878788
+49 Ardagh St,Front Yard Parking,27,13,8,2017-06-24,Opposed,Yes,48.148148148148145
+37 Alberta Ave,Front Yard Parking,31,20,7,2017-07-01,In Favour,Yes,64.51612903225806
+230 Augusta Ave,Boulevard Cafe,6,5,1,2017-07-05,Response Rate Not Met,No,83.33333333333334
+15 Highview Cres,Appeal - Front Yard Parking,42,27,12,2017-07-08,In Favour,Yes,64.28571428571429
+180 Eglinton Ave E,Boulevard Cafe,48,14,29,2017-07-06,Opposed,Yes,29.166666666666668
+1402 Queen St E,Boulevard Cafe,11,8,3,2017-07-13,In Favour,Yes,72.72727272727273
+955 Mount Pleasant Rd,Boulevard Cafe,21,16,5,2017-07-06,In Favour,Yes,76.19047619047619
+1122 Queen St W,Boulevard Cafe,31,4,18,2017-07-07,Response Rate Not Met,No,12.903225806451612
+2102 Queen St E,Boulevard Cafe,11,9,0,2017-07-12,In Favour,Yes,81.81818181818183
+771 Dundas St W,Boulevard Cafe,7,6,0,2017-07-08,Response Rate Not Met,No,85.71428571428571
+1094 Yonge St,Boulevard Cafe,37,20,15,2017-07-15,In Favour,Yes,54.054054054054056
+1500 St Clair Ave W,Boulevard Cafe,8,1,7,2017-07-13,Response Rate Not Met,No,12.5
+186 Quebec Ave,Appeal - Front Yard Parking,53,18,34,2017-07-26,Opposed,Yes,33.9622641509434
+188 Quebec Ave,Appeal - Front Yard Parking,51,17,33,2017-07-26,Opposed,Yes,33.33333333333333
+121 Browning Ave,Appeal - Front Yard Parking,32,16,12,2017-07-22,Opposed,Yes,50
+839 Queen St W,Boulevard Cafe,3,2,1,2017-07-21,Response Rate Not Met,No,66.66666666666666
+1176 Queen St W,Boulevard Cafe,18,5,9,2017-07-21,Response Rate Not Met,No,27.77777777777778
+3 Weatherell St,Front Yard Parking,32,29,0,2017-07-20,In Favour,Yes,90.625
+12 Ardrossan Pl,Front Yard Parking,28,17,9,2017-07-22,In Favour,Yes,60.71428571428571
+150 Rushton Rd,Front Yard Parking,41,8,30,2017-07-28,Opposed,Yes,19.51219512195122
+1960 Queen St E,Boulevard Cafe,36,23,8,2017-08-11,In Favour,Yes,63.888888888888886
+101 Craighurst Ave,Front Yard Parking,42,37,0,2017-08-30,In Favour,Yes,88.09523809523809
+61 Thurston Rd,Front Yard Parking,22,17,5,2017-08-26,In Favour,Yes,77.27272727272727
+62 Raymond Ave,Front Yard Parking,25,13,6,2017-08-26,Opposed,Yes,52
+349 Windermere Ave,Appeal - Front Yard Parking,16,14,2,2017-08-30,In Favour,Yes,87.5
+11 Hollis St,Front Yard Parking,28,26,0,2017-08-31,In Favour,Yes,92.85714285714286
+265 Evelyn Ave,Front Yard Parking,42,32,9,2017-08-31,In Favour,Yes,76.19047619047619
+18 Bayliss Ave,Appeal - Front Yard Parking,30,27,1,2017-09-07,In Favour,Yes,90
+52 Elmer Ave,Appeal - Front Yard Parking,57,19,38,2017-08-31,Opposed,Yes,33.33333333333333
+74 Scarboro Beach Blvd,Appeal - Front Yard Parking,62,42,10,2017-09-02,In Favour,Yes,67.74193548387096
+29 Wells Hill Ave,Appeal - Front Yard Parking,46,39,5,2017-09-02,In Favour,Yes,84.78260869565217
+52 Leuty Ave,Appeal - Front Yard Parking,31,15,14,2017-09-07,Opposed,Yes,48.38709677419355
+135 Duvernet Ave,Appeal - Front Yard Parking,36,16,19,2017-09-07,Opposed,Yes,44.44444444444444
+123 Belsize Dr,Front Yard Parking,15,12,2,2017-09-08,In Favour,Yes,80
+1312 St Clair Ave W,Boulevard Cafe,33,5,28,2017-09-09,Response Rate Not Met,No,15.151515151515152
+30 Mc Cord Rd,Front Yard Parking,32,29,1,2017-09-20,In Favour,Yes,90.625
+76 Gothic Ave,Front Yard Parking,42,29,13,2017-09-21,In Favour,Yes,69.04761904761905
+796 College St (former Toronto),Boulevard Cafe,33,16,10,2017-10-06,Opposed,Yes,48.484848484848484
+67 St Annes Rd,Front Yard Parking,29,24,1,2017-10-07,In Favour,Yes,82.75862068965517
+36 Morland Rd,Front Yard Parking,38,33,2,2017-10-13,In Favour,Yes,86.8421052631579
+1535 Yonge St,Boulevard Cafe,2,1,1,2017-10-19,Response Rate Not Met,No,50
+177 Arlington Ave,Front Yard Parking,24,13,11,2017-10-18,In Favour,Yes,54.166666666666664
+34 Ellerbeck St,Appeal - Front Yard Parking,32,7,24,2017-10-18,Opposed,Yes,21.875
+162 Moore Ave,Appeal - Front Yard Parking,31,25,1,2017-10-19,In Favour,Yes,80.64516129032258
+41 Thornhill Ave,Front Yard Parking,37,27,1,2017-10-19,In Favour,Yes,72.97297297297297
+358 Bartlett Ave N,Appeal - Front Yard Parking,94,61,9,2017-10-25,In Favour,Yes,64.8936170212766
+8 Cliff St,Front Yard Parking,19,16,1,2017-10-20,In Favour,Yes,84.21052631578947
+12 Pinehill Cres,Front Yard Parking,11,5,6,2017-11-09,Opposed,Yes,45.45454545454545
+289 Windermere Ave,Front Yard Parking,46,38,8,2017-11-04,In Favour,Yes,82.6086956521739
+3305 Yonge St,Boulevard Cafe,20,14,3,2017-11-10,In Favour,Yes,70
+415 Spadina Rd,Boulevard Cafe,40,39,1,2017-11-15,Response Rate Not Met,No,97.5
+186 Quebec Ave,Appeal - Front Yard Parking,47,30,16,2017-11-18,In Favour,Yes,63.829787234042556
+188 Quebec Ave,Appeal - Front Yard Parking,44,29,14,2017-11-18,In Favour,Yes,65.9090909090909
+859 Bloor St W,Boulevard Cafe,39,30,7,2017-11-29,In Favour,Yes,76.92307692307693
+76 Castlefield Ave,Front Yard Parking,74,69,2,2017-11-22,In Favour,Yes,93.24324324324324
+97 Roslin Ave,Appeal - Front Yard Parking,21,6,13,2017-11-29,Opposed,Yes,28.57142857142857
+2755 Dundas St W,Boulevard Cafe,31,17,6,2017-12-02,In Favour,Yes,54.83870967741935
+52 Belvidere Ave,Appeal - Front Yard Parking,23,17,5,2017-11-30,In Favour,Yes,73.91304347826086
+33 Church St (York),Front Yard Parking,5,5,0,2017-12-09,Response Rate Not Met,No,100
+128 Cameron Ave (York),Front Yard Parking,52,45,0,2017-12-13,In Favour,Yes,86.53846153846155
+87 Hanna Rd,Front Yard Parking,30,8,21,2018-01-03,Opposed,Yes,26.666666666666668
+9 Bellefair Ave,Appeal - Front Yard Parking,42,34,1,2018-01-03,In Favour,Yes,80.95238095238095
+383 Quebec Ave,Front Yard Parking,41,36,2,2018-01-06,In Favour,Yes,87.8048780487805
+108 Mountview Ave,Front Yard Parking,12,9,0,2018-01-06,In Favour,Yes,75
+22 Bushey Ave,Front Yard Parking,47,38,5,2018-01-10,In Favour,Yes,80.85106382978722
+492 St Clarens Ave,Appeal - Front Yard Parking,39,29,6,2018-01-12,In Favour,Yes,74.35897435897436
+479 Danforth Ave,Boulevard Cafe,17,12,4,2018-01-17,In Favour,Yes,70.58823529411765
+118 Robina Ave,Appeal - Front Yard Parking,57,30,5,2018-02-14,In Favour,Yes,52.63157894736842
+17 Dilworth Cres,Appeal - Front Yard Parking,53,46,2,2018-02-15,In Favour,Yes,86.79245283018868
+21 Braeside Rd,Front Yard Parking,31,30,0,2018-02-17,In Favour,Yes,96.7741935483871
+1288 Dundas St W,Boulevard Cafe,31,11,8,2018-02-21,Opposed,Yes,35.483870967741936
+125 Trowell Ave,Appeal - Front Yard Parking,28,24,1,2018-02-17,In Favour,Yes,85.71428571428571
+46 Bicknell Ave,Appeal - Front Yard Parking,12,12,0,2018-02-10,Response Rate Not Met,No,100
+255 Campbell Ave,Front Yard Parking,41,33,1,2018-02-14,In Favour,Yes,80.48780487804879
+24 Homeview Ave,Front Yard Parking,33,26,3,2018-02-14,In Favour,Yes,78.78787878787878
+50 Guestville Ave,Front Yard Parking,36,32,2,2018-02-16,In Favour,Yes,88.88888888888889
+14 Edgewood Grv,Front Yard Parking,19,19,0,2018-02-17,In Favour,Yes,100
+425 Armadale Ave,Front Yard Parking,33,33,0,2018-02-22,In Favour,Yes,100
+354 Wallace Ave,Front Yard Parking,23,23,0,2018-03-15,In Favour,Yes,100
+41 Rusholme Dr,Front Yard Parking,21,21,0,2018-02-24,In Favour,Yes,100
+19 Le May Rd,Appeal - Front Yard Parking,38,21,15,2018-02-28,In Favour,Yes,55.26315789473685
+26 St Annes Rd,Appeal - Front Yard Parking,26,24,0,2018-03-03,In Favour,Yes,92.3076923076923
+72 Coolmine Rd,Appeal - Front Yard Parking,46,37,5,2018-02-28,In Favour,Yes,80.43478260869566
+444 Westmount Ave,Appeal - Front Yard Parking,36,22,9,2018-02-28,Response Rate Not Met,No,61.111111111111114
+83 Campbell Ave,Appeal - Front Yard Parking,46,42,0,2018-03-01,In Favour,Yes,91.30434782608695
+884 Queen St E,Boulevard Cafe,33,26,5,2018-03-10,In Favour,Yes,78.78787878787878
+97 Roslin Ave,Appeal - Front Yard Parking,28,12,14,2018-03-07,Opposed,Yes,42.857142857142854
+160 Cedric Ave,Appeal - Front Yard Parking,53,23,23,2018-03-02,Opposed,Yes,43.39622641509434
+328 Glenholme Ave,Front Yard Parking,20,14,3,2018-03-16,In Favour,Yes,70
+165 Wallace Ave,Front Yard Parking,17,15,0,2018-03-17,Response Rate Not Met,No,88.23529411764706
+53 Brookside Ave,Appeal - Front Yard Parking,37,31,4,2018-03-28,In Favour,Yes,83.78378378378379
+55 Brookside Ave,Appeal - Front Yard Parking,37,31,3,2018-03-29,In Favour,Yes,83.78378378378379
+104 Mountview Ave,Appeal - Front Yard Parking,11,11,0,2018-03-29,In Favour,Yes,100
+299 Mortimer Ave,Appeal - Front Yard Parking,52,43,8,2018-03-23,In Favour,Yes,82.6923076923077
+161 Linsmore Cres,Appeal - Front Yard Parking,54,42,12,2018-03-23,In Favour,Yes,77.77777777777779
+102 Mountview Ave,Appeal - Front Yard Parking,13,13,0,2018-03-24,In Favour,Yes,100
+29 Rowland St,Front Yard Parking,32,29,0,2018-03-22,In Favour,Yes,90.625
+57 Beresford Ave,Front Yard Parking,41,33,4,2018-03-24,In Favour,Yes,80.48780487804879
+358 Fairlawn Ave,Front Yard Parking,29,27,0,2018-03-29,In Favour,Yes,93.10344827586206
+45 Poplar Plains Cres,Front Yard Parking,32,24,5,2018-04-04,In Favour,Yes,75
+119 Russett Ave,Front Yard Parking,63,56,2,2018-04-05,In Favour,Yes,88.88888888888889
+53 Denison Rd W,Front Yard Parking,47,39,0,2018-04-05,In Favour,Yes,82.97872340425532
+9 Durie St,Appeal - Front Yard Parking,30,25,3,2018-03-28,In Favour,Yes,83.33333333333334
+272 Rusholme Rd,Front Yard Parking,33,14,17,2018-03-30,Opposed,Yes,42.42424242424242
+266 Waverley Rd,Appeal - Front Yard Parking,49,23,23,2018-03-30,Opposed,Yes,46.93877551020408
+102 Bellefair Ave,Appeal - Front Yard Parking,43,13,30,2018-04-04,Opposed,Yes,30.23255813953488
+42 Bellhaven Rd,Appeal - Front Yard Parking,42,37,0,2018-04-12,In Favour,Yes,88.09523809523809
+117 Symington Ave,Front Yard Parking,91,86,1,2018-04-13,In Favour,Yes,94.5054945054945
+432 Margueretta St,Front Yard Parking,49,33,4,2018-04-06,In Favour,Yes,67.3469387755102
+5 Osler St,Front Yard Parking,35,29,3,2018-04-14,In Favour,Yes,82.85714285714286
+245 Symington Ave,Front Yard Parking,32,28,0,2018-04-18,In Favour,Yes,87.5
+715 Oriole Pkwy,Appeal - Front Yard Parking,7,5,1,2018-04-12,Response Rate Not Met,No,71.42857142857143
+890 College St (former Toronto),Boulevard Cafe,13,10,2,2018-04-07,Response Rate Not Met,No,76.92307692307693
+4 Glencairn Ave,Front Yard Parking,33,28,0,2018-04-19,In Favour,Yes,84.84848484848484
+62 Runnymede Rd,Front Yard Parking,58,48,6,2018-04-11,In Favour,Yes,82.75862068965517
+104 Highland Ave,Appeal - Front Yard Parking,5,4,0,2018-04-11,Response Rate Not Met,No,80
+633 Lauder Ave,Appeal - Front Yard Parking,10,8,1,2018-04-06,In Favour,Yes,80
+343 Melrose Ave,Front Yard Parking,11,9,0,2018-04-13,In Favour,Yes,81.81818181818183
+244 Perth Ave,Commercial Boulevard Parking,19,11,8,2018-04-27,In Favour,Yes,57.89473684210527
+223 Hamilton St,Appeal - Front Yard Parking,43,28,15,2018-04-20,In Favour,Yes,65.11627906976744
+249 Arlington Ave,Front Yard Parking,41,34,5,2018-04-19,In Favour,Yes,82.92682926829268
+17 Guestville Ave,Front Yard Parking,48,43,5,2018-04-20,In Favour,Yes,89.58333333333334
+392 Lauder Ave,Appeal - Front Yard Parking,25,22,1,2018-04-21,In Favour,Yes,88
+184 Rosemount Ave (former Toronto),Appeal - Front Yard Parking,34,31,0,2018-04-25,In Favour,Yes,91.17647058823529
+26 Baldwin St,Boulevard Cafe,31,20,9,2018-04-21,Response Rate Not Met,No,64.51612903225806
+74 Humewood Dr,Front Yard Parking,8,8,0,2018-04-26,In Favour,Yes,100
+38 Maxwell Ave,Appeal - Front Yard Parking,34,32,0,2018-04-28,In Favour,Yes,94.11764705882352
+604A Harvie Ave,Front Yard Parking,37,33,0,2018-05-03,In Favour,Yes,89.1891891891892
+34 Ellerbeck St,Appeal - Front Yard Parking,51,23,27,2018-05-09,Opposed,Yes,45.09803921568628
+106 Millwood Rd,Appeal - Front Yard Parking,38,31,2,2018-05-09,In Favour,Yes,81.57894736842105
+165 Fairlawn Ave,Front Yard Parking,76,67,1,2018-05-10,In Favour,Yes,88.1578947368421
+356 Bartlett Ave N,Front Yard Parking,61,31,6,2018-05-19,Opposed,Yes,50.81967213114754
+535 Queen St W,Boulevard Cafe,44,40,3,2018-05-26,In Favour,Yes,90.9090909090909
+1485 Dupont St,Boulevard Cafe,24,12,10,2018-06-02,Response Rate Not Met,No,50
+441 Soudan Ave,Front Yard Parking,37,31,0,2018-05-26,In Favour,Yes,83.78378378378379
+90 Chatsworth Dr,Front Yard Parking,25,23,2,2018-05-30,In Favour,Yes,92
+581 Willard Ave,Front Yard Parking,30,16,11,2018-06-15,In Favour,Yes,53.333333333333336
+71 Kings Park Blvd,Front Yard Parking,53,43,5,2018-06-21,In Favour,Yes,81.13207547169812
+97 Beresford Ave,Front Yard Parking,30,28,2,2018-06-16,In Favour,Yes,93.33333333333333
+88 St John's Rd,Front Yard Parking,28,28,0,2018-06-16,In Favour,Yes,100
+139 Northland Ave,Front Yard Parking,59,48,1,2018-06-21,In Favour,Yes,81.35593220338984
+29 Spring Grove Ave,Front Yard Parking,39,35,3,2018-06-15,In Favour,Yes,89.74358974358975
+477 Church St (former Toronto),Boulevard Cafe,29,15,13,2018-06-23,Response Rate Not Met,No,51.724137931034484
+137 Priscilla Ave,Front Yard Parking,38,33,1,2018-06-21,In Favour,Yes,86.8421052631579
+140 Hepbourne St,Front Yard Parking,28,14,9,2018-06-27,Opposed,Yes,50
+268 Prescott Ave,Front Yard Parking,37,35,0,2018-07-07,In Favour,Yes,94.5945945945946
+54 Rhodes Ave,Front Yard Parking,52,38,5,2018-07-07,In Favour,Yes,73.07692307692307
+324 Runnymede Rd,Front Yard Parking,45,39,1,2018-07-04,In Favour,Yes,86.66666666666667
+2592 Yonge St,Boulevard Cafe,40,5,35,2018-07-12,Opposed,Yes,12.5
+680 College St (former Toronto),Boulevard Cafe,22,19,3,2018-07-06,Response Rate Not Met,No,86.36363636363636
+242 Lauder Ave,Front Yard Parking,46,40,4,2018-07-11,In Favour,Yes,86.95652173913044
+1715 St Clair Ave W,Boulevard Cafe,48,38,3,2018-07-11,In Favour,Yes,79.16666666666666
+32 Gresham Rd,Front Yard Parking,56,47,3,2018-07-12,In Favour,Yes,83.92857142857143
+50 Roe Ave,Front Yard Parking,47,46,0,2018-07-27,In Favour,Yes,97.87234042553192
+77 Armadale Ave,Front Yard Parking,27,18,4,2018-07-25,In Favour,Yes,66.66666666666666
+90 Beech Ave,Appeal - Front Yard Parking,25,15,10,2018-08-02,In Favour,Yes,60
+118 Northland Ave,Front Yard Parking,46,35,8,2018-08-29,In Favour,Yes,76.08695652173914
+83 Astoria Ave,Front Yard Parking,18,13,2,2018-08-09,In Favour,Yes,72.22222222222221
+2190 Bloor St W,Boulevard Cafe,13,8,5,2018-08-11,Response Rate Not Met,No,61.53846153846154
+744 St Clair Ave W,Boulevard Cafe,24,4,8,2018-08-18,Opposed,Yes,16.666666666666664
+798 Bloor St W,Boulevard Cafe,20,4,13,2018-08-23,Opposed,Yes,20
+25 Humewood Dr,Front Yard Parking,38,19,16,2018-08-30,Opposed,Yes,50
+17 Nelles Ave,Front Yard Parking,20,11,6,2018-08-29,In Favour,Yes,55.00000000000001
+54 Coolmine Rd,Front Yard Parking,34,28,0,2018-08-31,In Favour,Yes,82.35294117647058
+100 Aileen Ave,Appeal - Front Yard Parking,32,26,0,2018-09-01,In Favour,Yes,81.25
+413A Spadina Rd,Boulevard Cafe,29,18,10,2018-09-12,Response Rate Not Met,No,62.06896551724138
+375 Beresford Ave,Front Yard Parking,41,40,1,2018-09-20,In Favour,Yes,97.5609756097561
+127 Greenlaw Ave,Front Yard Parking,32,26,0,2018-09-20,In Favour,Yes,81.25
+596 College St (former Toronto),Boulevard Cafe,26,20,4,2018-10-18,Response Rate Not Met,No,76.92307692307693
+1006 Bloor St W,Boulevard Cafe,22,13,2,2018-10-17,In Favour,Yes,59.09090909090909
+177 Cedric Ave,Front Yard Parking,49,34,11,2018-10-17,In Favour,Yes,69.38775510204081
+118 Everden Rd,Front Yard Parking,26,21,0,2018-10-18,In Favour,Yes,80.76923076923077
+68 Hilton Ave,Front Yard Parking,37,24,4,2018-10-19,In Favour,Yes,64.86486486486487
+545 Arlington Ave,Front Yard Parking,41,38,0,2019-01-03,In Favour,Yes,92.6829268292683
+103 Holwood Ave,Front Yard Parking,40,35,2,2019-01-04,In Favour,Yes,87.5
+1091 Queen St E,Boulevard Cafe,29,18,10,2019-01-04,In Favour,Yes,62.06896551724138
+1975 Queen St E,Boulevard Cafe,26,19,6,2019-01-05,In Favour,Yes,73.07692307692307
+11 River St,Commercial Boulevard Parking,8,2,6,2019-01-16,Opposed,Yes,25
+177 Glenview Ave,Front Yard Parking,68,59,3,2019-01-09,In Favour,Yes,86.76470588235294
+148 Glebeholme Blvd,Front Yard Parking,34,30,1,2019-01-11,In Favour,Yes,88.23529411764706
+37 Wolverton Ave,Front Yard Parking,42,33,7,2019-01-10,In Favour,Yes,78.57142857142857
+10 Watford Ave,Front Yard Parking,29,22,7,2019-01-10,In Favour,Yes,75.86206896551724
+68 Glencairn Ave,Front Yard Parking,39,29,9,2019-01-16,In Favour,Yes,74.35897435897436
+268 Jedburgh Rd,Front Yard Parking,13,10,1,2019-01-12,In Favour,Yes,76.92307692307693
+30 Harwood Rd,Front Yard Parking,19,16,0,2019-01-11,In Favour,Yes,84.21052631578947
+48 Pickering St,Front Yard Parking,43,31,8,2019-01-11,In Favour,Yes,72.09302325581395
+21 Sylvan Ave (former Toronto),Front Yard Parking,23,20,1,2019-01-12,In Favour,Yes,86.95652173913044
+9 Watford Ave,Front Yard Parking,27,16,6,2019-01-17,In Favour,Yes,59.25925925925925
+36 Hendrick Ave,Front Yard Parking,48,25,13,2019-01-19,In Favour,Yes,52.083333333333336
+140 Kenwood Ave,Front Yard Parking,26,23,2,2019-01-19,In Favour,Yes,88.46153846153845
+623 Mount Pleasant Rd,Boulevard Cafe,20,20,0,2019-02-23,In Favour,Yes,100
+59 Humewood Dr,Front Yard Parking,38,30,0,2019-02-16,In Favour,Yes,78.94736842105263
+29 Connie St,Commercial Boulevard Parking,16,4,9,2019-02-23,Opposed,Yes,25
+25 Hanson Rd,Front Yard Parking,22,21,0,2019-02-21,In Favour,Yes,95.45454545454545
+226 Lawrence Ave W,Commercial Boulevard Parking,4,4,0,2019-02-28,In Favour,Yes,100
+132 Chiltern Hill Rd,Front Yard Parking,22,22,0,2019-03-01,In Favour,Yes,100
+350 Lauder Ave,Front Yard Parking,42,41,0,2019-02-28,In Favour,Yes,97.61904761904762
+96 Ava Rd,Front Yard Parking,12,9,3,2019-02-27,In Favour,Yes,75
+513 Sammon Ave,Front Yard Parking,47,42,0,2019-03-07,In Favour,Yes,89.36170212765957
+98 Watson Ave,Front Yard Parking,62,55,2,2019-03-16,In Favour,Yes,88.70967741935483
+20 Sunnybrook Rd,Front Yard Parking,25,20,1,2019-03-16,In Favour,Yes,80
+800 Dundas St W,Boulevard Cafe,23,9,12,2019-03-30,Response Rate Not Met,No,39.130434782608695
+191 College St (former Toronto),Boulevard Cafe,27,2,25,2019-04-05,Opposed,Yes,7.4074074074074066
+768 Dundas St W,Boulevard Cafe,48,18,28,2019-04-19,Opposed,Yes,37.5
+997 Bay St,Boulevard Cafe,275,100,151,2019-04-13,Response Rate Not Met,No,36.36363636363637
+178 Duplex Ave (former Toronto),Front Yard Parking,11,9,2,2019-04-24,In Favour,Yes,81.81818181818183
+110 Kennedy Ave,Front Yard Parking,44,42,0,2019-05-02,In Favour,Yes,95.45454545454545
+338 Durie St,Front Yard Parking,55,40,10,2019-05-02,In Favour,Yes,72.72727272727273
+62 Benson Ave,Front Yard Parking,20,16,0,2019-04-19,In Favour,Yes,80
+108 Colbeck St,Front Yard Parking,24,19,4,2019-05-01,In Favour,Yes,79.16666666666666
+1638 Bloor St W,Boulevard Cafe,43,23,16,2019-05-04,In Favour,Yes,53.48837209302325
+33 Florence Cres,Front Yard Parking,28,21,0,2019-05-02,In Favour,Yes,75
+23 Falcon St,Front Yard Parking,49,45,4,2019-05-01,In Favour,Yes,91.83673469387756
+324 Osler St,Front Yard Parking,33,28,3,2019-05-11,In Favour,Yes,84.84848484848484
+1588 Dupont St,Boulevard Cafe,19,16,1,2019-05-08,In Favour,Yes,84.21052631578947
+80 Gladstone Ave,Boulevard Cafe,49,7,38,2019-05-25,Opposed,Yes,14.285714285714285
+17 Poplar Plains Cres,Front Yard Parking,16,14,2,2019-05-11,In Favour,Yes,87.5
+317 Caledonia Rd,Front Yard Parking,36,27,6,2019-05-15,In Favour,Yes,75
+1148 Queen St E,Boulevard Cafe,40,31,1,2019-05-18,In Favour,Yes,77.5
+1278 St Clair Ave W,Boulevard Cafe,50,30,14,2019-05-23,In Favour,Yes,60
+185 Clendenan Ave,Front Yard Parking,52,41,6,2019-05-16,In Favour,Yes,78.84615384615384
+135 Prescott Ave,Front Yard Parking,27,17,9,2019-05-25,Response Rate Not Met,No,62.96296296296296
+76 Branstone Rd,Front Yard Parking,43,34,2,2019-05-23,In Favour,Yes,79.06976744186046
+1043 Logan Ave,Front Yard Parking,35,30,5,2019-05-24,In Favour,Yes,85.71428571428571
+30 Cadorna Ave,Front Yard Parking,35,23,1,2019-06-14,In Favour,Yes,65.71428571428571
+92 Roseneath Gdns,Front Yard Parking,63,55,2,2019-06-14,In Favour,Yes,87.3015873015873
+19 Gormley Ave,Front Yard Parking,32,25,5,2019-06-22,In Favour,Yes,78.125
+41 Mount Royal Ave,Front Yard Parking,24,14,5,2019-06-22,In Favour,Yes,58.333333333333336
+770 St Clair Ave W,Boulevard Cafe,34,25,5,2019-07-05,In Favour,Yes,73.52941176470588
+139 Mavety St,Front Yard Parking,55,48,5,2019-07-12,In Favour,Yes,87.27272727272727
+1042 Gerrard St E,Boulevard Cafe,50,31,12,2019-07-19,In Favour,Yes,62
+1122 Queen St W,Boulevard Cafe,28,6,20,2019-08-02,Response Rate Not Met,No,21.428571428571427
+1640 Dupont St,Boulevard Cafe,20,15,3,2019-08-10,In Favour,Yes,75
+503 Windermere Ave,Front Yard Parking,67,55,11,2019-08-07,In Favour,Yes,82.08955223880598
+64 Westmount Ave,Front Yard Parking,69,50,11,2019-08-15,In Favour,Yes,72.46376811594203
+13 Armadale Ave,Front Yard Parking,31,25,3,2019-08-16,In Favour,Yes,80.64516129032258
+207 Willard Ave,Front Yard Parking,27,17,10,2019-08-14,In Favour,Yes,62.96296296296296
+236 Fairlawn Ave,Front Yard Parking,34,31,0,2019-08-15,In Favour,Yes,91.17647058823529
+978 St Clarens Ave,Front Yard Parking,33,18,6,2019-08-24,Response Rate Not Met,No,54.54545454545454
+178 Melrose Ave,Front Yard Parking,44,38,0,2019-08-28,In Favour,Yes,86.36363636363636
+42 Unsworth Ave,Front Yard Parking,45,30,13,2019-08-30,In Favour,Yes,66.66666666666666
+170 Bedford Rd,Commercial Boulevard Parking,18,14,4,2019-09-06,In Favour,Yes,77.77777777777779
+387 Broadview Ave,Boulevard Cafe,27,21,2,2019-09-14,In Favour,Yes,77.77777777777779
+140 Castlewood Rd,Front Yard Parking,14,11,1,2019-09-28,In Favour,Yes,78.57142857142857
+24 Birdsall Ave,Front Yard Parking,16,15,0,2019-09-28,In Favour,Yes,93.75
+3204 Yonge St,Boulevard Cafe,36,14,18,2019-09-21,Opposed,Yes,38.88888888888889
+796 Bloor St W,Boulevard Cafe,20,2,17,2019-09-27,Opposed,Yes,10
+642 Windermere Ave,Front Yard Parking,48,40,0,2019-10-09,In Favour,Yes,83.33333333333334
+3104 Dundas St W,Boulevard Cafe,28,24,2,2019-11-06,In Favour,Yes,85.71428571428571
+1090 Queen St W,Boulevard Cafe,33,8,21,2019-10-24,Opposed,Yes,24.242424242424242
+25 Warren Cres,Front Yard Parking,41,36,0,2019-11-27,In Favour,Yes,87.8048780487805
+518 Eglinton Ave W,Boulevard Cafe,18,7,11,2019-11-23,Opposed,Yes,38.88888888888889
+162 Aileen Ave,Front Yard Parking,49,43,0,2019-11-23,In Favour,Yes,87.75510204081633
+353 Winona Dr,Front Yard Parking,61,54,3,2019-11-29,In Favour,Yes,88.52459016393442
+2261 Queen St E,Boulevard Cafe,28,8,14,2019-11-27,Opposed,Yes,28.57142857142857
+31 Cheston Rd,Front Yard Parking,13,13,0,2019-12-05,In Favour,Yes,100
+132 St Clements Ave,Front Yard Parking,63,53,2,2019-12-04,In Favour,Yes,84.12698412698413
+344 Blackthorn Ave,Front Yard Parking,36,33,0,2019-12-13,In Favour,Yes,91.66666666666666
+537 Bloor St W,Boulevard Cafe,14,13,1,2019-12-06,In Favour,Yes,92.85714285714286
+182 Brookdale Ave,Front Yard Parking,75,68,0,2019-12-21,In Favour,Yes,90.66666666666666
+269 St John's Rd,Front Yard Parking,26,18,7,2019-12-20,In Favour,Yes,69.23076923076923
+43 Pinewood Ave,Front Yard Parking,43,34,6,2020-01-04,In Favour,Yes,79.06976744186046
+15 Pinewood Ave,Front Yard Parking,48,25,19,2020-01-04,In Favour,Yes,52.083333333333336
+49 Lee Ave,Appeal - Front Yard Parking,25,19,4,2020-02-05,In Favour,Yes,76
+14 Glenwood Ave,Front Yard Parking,50,40,4,2020-02-05,In Favour,Yes,80
+26 Mann Ave,Front Yard Parking,42,41,1,2020-02-06,In Favour,Yes,97.61904761904762
+386 Blackthorn Ave,Front Yard Parking,22,14,1,2020-02-08,In Favour,Yes,63.63636363636363
+75 Poplar Plains Cres,Front Yard Parking,16,7,9,2020-02-07,Opposed,Yes,43.75
+77 Poplar Plains Cres,Front Yard Parking,16,7,9,2020-02-08,Opposed,Yes,43.75
+409 Rushton Rd,Front Yard Parking,36,32,1,2020-02-14,In Favour,Yes,88.88888888888889
+20 Priscilla Ave,Front Yard Parking,55,49,2,2020-02-13,In Favour,Yes,89.0909090909091
+94 Kingsmount Park Rd,Front Yard Parking,49,40,5,2020-02-22,In Favour,Yes,81.63265306122449
+15 Conway Ave,Front Yard Parking,45,35,4,2020-03-14,In Favour,Yes,77.77777777777779
+49 Robina Ave,Front Yard Parking,39,29,4,2020-03-19,In Favour,Yes,74.35897435897436
+37 Ridley Blvd,Front Yard Parking,35,27,8,2020-03-13,In Favour,Yes,77.14285714285715
+139 Beresford Ave,Front Yard Parking,39,33,1,2020-03-13,In Favour,Yes,84.61538461538461
+105 Heddington Ave,Front Yard Parking,40,25,11,2020-03-21,In Favour,Yes,62.5
+163 High Park Ave,Front Yard Parking,40,27,12,2020-03-28,In Favour,Yes,67.5
+2475 Queen St E,Front Yard Parking,11,7,0,2020-03-28,In Favour,Yes,63.63636363636363
+285 Deloraine Ave,Front Yard Parking,54,41,10,2020-04-10,In Favour,Yes,75.92592592592592
+70 Cherrywood Ave,Front Yard Parking,68,58,6,2020-11-26,In Favour,Yes,85.29411764705883
+338 Brookdale Ave,Front Yard Parking,46,42,2,2020-12-04,In Favour,Yes,91.30434782608695
+92 Atlas Ave,Front Yard Parking,53,27,25,2020-12-05,Opposed,Yes,50.943396226415096
+101 Chandos Ave,Front Yard Parking,55,53,0,2020-12-23,In Favour,Yes,96.36363636363636
+47 Highview Cres,Front Yard Parking,39,28,3,2020-12-16,In Favour,Yes,71.7948717948718
+160 Robina Ave,Front Yard Parking,65,64,0,2020-12-24,In Favour,Yes,98.46153846153847
+311 Beresford Ave,Front Yard Parking,62,50,5,2021-01-01,In Favour,Yes,80.64516129032258
+111 Humbercrest Blvd,Front Yard Parking,41,35,0,2021-01-01,In Favour,Yes,85.36585365853658
+263 Fairlawn Ave,Front Yard Parking,70,63,1,2021-01-28,In Favour,Yes,90
+11 Shields Ave,Front Yard Parking,36,30,0,2021-01-29,In Favour,Yes,83.33333333333334
+14 Jillson Ave,Front Yard Parking,65,60,2,2021-01-21,In Favour,Yes,92.3076923076923
+26 Birchview Cres,Front Yard Parking,60,45,10,2021-03-26,In Favour,Yes,75
+403 Annette St,Front Yard Parking,23,20,1,2021-04-09,In Favour,Yes,86.95652173913044
+380 Roehampton Ave,Front Yard Parking,50,37,5,2021-04-14,In Favour,Yes,74
+87 Bristol Ave,Front Yard Parking,56,45,3,2021-04-17,In Favour,Yes,80.35714285714286
+463 St Clements Ave,Front Yard Parking,34,30,0,2021-03-05,In Favour,Yes,88.23529411764706
+193 Roe Ave,Commercial Boulevard Parking,20,6,10,2021-04-29,Opposed,Yes,30
+193 Atlas Ave,Front Yard Parking,47,38,5,2021-04-29,In Favour,Yes,80.85106382978722
+78 Ranleigh Ave,Front Yard Parking,22,21,1,2021-05-08,In Favour,Yes,95.45454545454545
+42 Warland Ave,Front Yard Parking,59,42,11,2021-04-22,In Favour,Yes,71.1864406779661
+28 Glendonwynne Rd,Front Yard Parking,33,23,6,2021-05-07,In Favour,Yes,69.6969696969697
+171 Willow Ave (former Toronto),Front Yard Parking,43,33,6,2021-05-14,In Favour,Yes,76.74418604651163
+141 Latimer Ave,Front Yard Parking,37,32,0,2021-05-15,In Favour,Yes,86.48648648648648
+141 Evelyn Ave,Front Yard Parking,47,30,13,2021-05-13,In Favour,Yes,63.829787234042556
+52 Gainsborough Rd,Front Yard Parking,59,54,4,2021-05-19,In Favour,Yes,91.52542372881356
+491 Silverthorn Ave,Front Yard Parking,28,18,4,2021-05-20,In Favour,Yes,64.28571428571429
+168 Ennerdale Rd,Front Yard Parking,69,63,2,2021-07-22,In Favour,Yes,91.30434782608695
+142 Kenilworth Ave,Front Yard Parking,58,54,2,2021-07-16,In Favour,Yes,93.10344827586206
+624 Davenport Rd,Front Yard Parking,21,18,2,2021-07-28,Response Rate Not Met,No,85.71428571428571
+380 Silverthorn Ave,Front Yard Parking,14,9,4,2021-07-23,Response Rate Not Met,No,64.28571428571429
+34 Mountview Ave,Front Yard Parking,41,35,4,2021-08-05,In Favour,Yes,85.36585365853658
+2040 Avenue Rd,Commercial Boulevard Parking,17,2,12,2021-07-24,Opposed,Yes,11.76470588235294
+17 Rockwell Ave,Front Yard Parking,7,5,2,2021-08-07,Response Rate Not Met,No,71.42857142857143
+362 Merton St,Front Yard Parking,39,32,0,2021-08-19,In Favour,Yes,82.05128205128204
+102 Sammon Ave,Front Yard Parking,36,31,1,2021-08-11,In Favour,Yes,86.11111111111111
+1 Hurndale Ave,Front Yard Parking,17,17,0,2021-08-11,In Favour,Yes,100
+3 Selkirk St,Front Yard Parking,8,8,0,2021-09-03,In Favour,Yes,100
+64 Banff Rd,Front Yard Parking,43,36,3,2021-08-13,In Favour,Yes,83.72093023255815
+68 Hounslow Heath Rd,Front Yard Parking,45,37,0,2021-09-04,In Favour,Yes,82.22222222222221
+40 Danesbury Ave,Front Yard Parking,9,7,0,2021-08-18,In Favour,Yes,77.77777777777779
+164 Castlefield Ave,Front Yard Parking,38,35,0,2021-09-02,In Favour,Yes,92.10526315789474
+133 Bingham Ave,Front Yard Parking,73,52,7,2021-08-21,In Favour,Yes,71.23287671232876
+104 Gothic Ave,Front Yard Parking,62,54,4,2021-09-29,In Favour,Yes,87.09677419354838
+51 Hambly Ave,Front Yard Parking,75,71,0,2021-08-27,In Favour,Yes,94.66666666666667
+78 Alberta Ave,Front Yard Parking,9,9,0,2021-08-28,In Favour,Yes,100
+399 St Clements Ave,Front Yard Parking,36,33,0,2021-09-11,In Favour,Yes,91.66666666666666
+30 Glen Manor Dr,Front Yard Parking,29,22,0,2021-09-08,In Favour,Yes,75.86206896551724
+30 Crestview Rd,Front Yard Parking,15,14,0,2021-09-30,In Favour,Yes,93.33333333333333
+281 Durie St,Front Yard Parking,52,41,2,2021-10-16,In Favour,Yes,78.84615384615384
+264 Blackthorn Ave,Front Yard Parking,33,22,9,2021-09-22,In Favour,Yes,66.66666666666666
+493 Rushton Rd,Front Yard Parking,56,50,4,2021-10-20,In Favour,Yes,89.28571428571429
+166 Oakmount Rd,Front Yard Parking,30,28,2,2021-10-16,In Favour,Yes,93.33333333333333
+156 Alexandra Blvd,Front Yard Parking,18,14,0,2021-10-20,In Favour,Yes,77.77777777777779
+125 Pinewood Ave,Front Yard Parking,26,26,0,2021-10-21,In Favour,Yes,100
+14 Lessard Ave,Front Yard Parking,52,47,2,2021-10-28,In Favour,Yes,90.38461538461539
+21 Scarboro Beach Blvd,Front Yard Parking,23,18,1,2021-10-29,In Favour,Yes,78.26086956521739
+66 Montcalm Ave,Front Yard Parking,30,24,0,2021-11-05,In Favour,Yes,80
+70 Methuen Ave,Front Yard Parking,69,63,1,2021-11-20,In Favour,Yes,91.30434782608695
+238 Belsize Dr,Front Yard Parking,45,39,0,2021-11-19,In Favour,Yes,86.66666666666667
+37 Springdale Blvd,Front Yard Parking,42,34,2,2021-11-26,In Favour,Yes,80.95238095238095
+528 Millwood Rd,Front Yard Parking,51,43,2,2021-11-17,In Favour,Yes,84.31372549019608
+193 Kane Ave,Front Yard Parking,15,13,2,2021-11-24,In Favour,Yes,86.66666666666667
+17 Rockwell Ave,Front Yard Parking,17,17,0,2021-10-27,In Favour,Yes,100
+22 Beresford Ave,Front Yard Parking,30,23,5,2021-12-01,In Favour,Yes,76.66666666666667
+50 Shields Ave,Front Yard Parking,36,32,0,2021-12-03,In Favour,Yes,88.88888888888889
+221 Gledhill Ave,Front Yard Parking,41,27,12,2021-12-04,In Favour,Yes,65.85365853658537
+180 Glenholme Ave,Front Yard Parking,50,32,6,2021-12-16,In Favour,Yes,64
+52 McNairn Ave,Front Yard Parking,28,25,1,2021-12-10,In Favour,Yes,89.28571428571429
+131 Parkhurst Blvd,Front Yard Parking,45,41,2,2021-12-15,In Favour,Yes,91.11111111111111
+9 Briarcroft Rd,Front Yard Parking,38,37,0,2021-12-17,In Favour,Yes,97.36842105263158
+4 Ladykirk Ave,Front Yard Parking,18,17,0,2021-12-22,In Favour,Yes,94.44444444444444
+812 Sammon Ave,Front Yard Parking,42,33,0,2021-12-23,In Favour,Yes,78.57142857142857
+621 Millwood Rd,Front Yard Parking,21,15,6,2021-12-24,In Favour,Yes,71.42857142857143
+285 Gainsborough Rd,Front Yard Parking,63,55,4,2021-12-30,In Favour,Yes,87.3015873015873
+40 Evelyn Ave,Front Yard Parking,38,36,0,2022-01-05,In Favour,Yes,94.73684210526315
+94 Scarboro Beach Blvd,Front Yard Parking,77,72,3,2022-01-06,In Favour,Yes,93.5064935064935
+58 Clendenan Ave,Front Yard Parking,11,10,0,2022-01-12,In Favour,Yes,90.9090909090909
+41 Latimer Ave,Front Yard Parking,51,42,5,2022-01-14,In Favour,Yes,82.35294117647058
+74 Dynevor Rd,Front Yard Parking,34,26,4,2022-01-08,In Favour,Yes,76.47058823529412
+76 Howick Ave,Front Yard Parking,31,25,0,2022-01-15,In Favour,Yes,80.64516129032258
+48 Norval St,Front Yard Parking,17,14,2,2022-02-16,Response Rate Not Met,No,82.35294117647058
+146 Silver Birch Ave,Front Yard Parking,40,34,5,2022-02-24,In Favour,Yes,85
+349 Manor Rd E,Front Yard Parking,29,23,3,2022-03-02,In Favour,Yes,79.3103448275862
+217 Clendenan Ave,Front Yard Parking,52,49,0,2022-03-05,In Favour,Yes,94.23076923076923
+93 Malvern Ave,Front Yard Parking,53,34,15,2022-02-11,In Favour,Yes,64.15094339622641
+39 Crewe Ave,Front Yard Parking,41,37,0,2022-02-16,In Favour,Yes,90.2439024390244
+32 Alberta Ave,Front Yard Parking,53,40,2,2022-02-26,In Favour,Yes,75.47169811320755
+1274 Kennedy Rd,Commercial Boulevard Parking,7,2,3,2022-03-09,Response Rate Not Met,No,28.57142857142857
+25 Kenora Cres,Front Yard Parking,36,32,0,2022-03-24,In Favour,Yes,88.88888888888889
+611 Hillsdale Ave E,Front Yard Parking,27,26,1,2022-04-07,In Favour,Yes,96.29629629629629
+133 Lee Ave,Front Yard Parking,86,77,1,2022-04-02,In Favour,Yes,89.53488372093024
+382 Elm Rd,Front Yard Parking,10,10,0,2022-04-06,In Favour,Yes,100
+379 Durie St,Front Yard Parking,64,47,15,2022-05-20,In Favour,Yes,73.4375
+277 Old Orchard Grv,Front Yard Parking,72,64,2,2022-05-04,In Favour,Yes,88.88888888888889
+297 Brookdale Ave,Front Yard Parking,39,37,1,2022-05-11,In Favour,Yes,94.87179487179486
+263 Robina Ave,Front Yard Parking,38,31,5,2022-05-21,In Favour,Yes,81.57894736842105
+57 Jedburgh Rd,Front Yard Parking,37,30,2,2022-05-13,In Favour,Yes,81.08108108108108
+35 Craydon Ave,Front Yard Parking,50,42,8,2022-05-25,In Favour,Yes,84
+511 Millwood Rd,Front Yard Parking,39,36,0,2022-05-28,In Favour,Yes,92.3076923076923
+14 Wrenson Rd,Front Yard Parking,24,20,4,2022-06-01,In Favour,Yes,83.33333333333334
+152 Stibbard Ave,Front Yard Parking,38,28,9,2022-06-08,In Favour,Yes,73.68421052631578
+11 Corley Ave,Front Yard Parking,43,41,1,2022-06-04,In Favour,Yes,95.34883720930233
+56 Carrick Ave,Front Yard Parking,23,22,1,2022-06-11,In Favour,Yes,95.65217391304348
+385 Willard Ave,Front Yard Parking,47,44,0,2022-06-15,In Favour,Yes,93.61702127659575
+445 Armadale Ave,Front Yard Parking,50,32,11,2022-06-18,In Favour,Yes,64
+215 Glenholme Ave,Front Yard Parking,42,41,0,2022-06-29,In Favour,Yes,97.61904761904762
+205 Bingham Ave,Front Yard Parking,79,66,10,2022-07-01,In Favour,Yes,83.54430379746836
+167 Brookside Dr,Front Yard Parking,31,27,1,2022-07-06,In Favour,Yes,87.09677419354838
+103 Wells Hill Ave,Front Yard Parking,13,13,0,2022-07-07,In Favour,Yes,100
+41 Willow Ave (former Toronto),Front Yard Parking,38,27,5,2022-06-24,In Favour,Yes,71.05263157894737
+241 Quebec Ave,Front Yard Parking,33,29,4,2022-07-09,In Favour,Yes,87.87878787878788
+49 Lee Ave,Front Yard Parking,18,18,0,2022-07-16,In Favour,Yes,100
+347 Lumsden Ave,Front Yard Parking,29,17,0,2022-07-27,In Favour,Yes,58.620689655172406
+253 Oakwood Ave,Front Yard Parking,20,15,5,2022-07-28,In Favour,Yes,75
+323 Armadale Ave,Front Yard Parking,22,20,0,2022-08-04,In Favour,Yes,90.9090909090909
+164 Waverley Rd,Front Yard Parking,63,58,3,2022-08-20,In Favour,Yes,92.06349206349206
+26 Wiley Ave,Front Yard Parking,73,68,0,2022-08-27,In Favour,Yes,93.15068493150685
+152 Hammersmith Ave,Front Yard Parking,64,44,13,2022-09-03,In Favour,Yes,68.75
+93 Greenlaw Ave,Front Yard Parking,14,10,0,2022-09-07,Response Rate Not Met,No,71.42857142857143
+93 Morningside Ave (former Toronto),Front Yard Parking,21,20,1,2022-09-17,In Favour,Yes,95.23809523809523
+141 Tyrrel Ave,Front Yard Parking,70,50,12,2022-10-07,In Favour,Yes,71.42857142857143
+291 Lauder Ave,Front Yard Parking,29,27,1,2022-10-19,In Favour,Yes,93.10344827586206
+496 Atlas Ave,Front Yard Parking,15,11,4,2022-10-21,In Favour,Yes,73.33333333333333
+17 Northcliffe Blvd,Front Yard Parking,47,35,6,2022-10-22,In Favour,Yes,74.46808510638297
+18 Wellwood Ave,Front Yard Parking,43,43,0,2022-10-26,In Favour,Yes,100
+35 Brumell Ave,Front Yard Parking,53,39,4,2022-11-10,In Favour,Yes,73.58490566037736
+21 Selwood Ave,Front Yard Parking,18,11,4,2022-11-16,In Favour,Yes,61.111111111111114
+543 Donlands Ave,Front Yard Parking,30,23,2,2022-11-19,In Favour,Yes,76.66666666666667
+171 Glebemount Ave,Front Yard Parking,12,7,0,2022-11-24,In Favour,Yes,58.333333333333336
+200 Glebeholme Blvd,Front Yard Parking,59,52,4,2022-11-24,In Favour,Yes,88.13559322033898
+12 Oak Park Ave,Front Yard Parking,13,9,0,2022-12-10,In Favour,Yes,69.23076923076923
+145 Roselawn Ave,Front Yard Parking,44,39,0,2022-12-08,In Favour,Yes,88.63636363636364
+302 Manor Rd E,Front Yard Parking,48,48,0,2022-12-22,In Favour,Yes,100
+351 Sammon Ave,Front Yard Parking,41,38,0,2022-12-29,In Favour,Yes,92.6829268292683
+87 Hanna Rd,Front Yard Parking,28,19,4,2023-02-22,In Favour,Yes,67.85714285714286
+92 Varsity Rd,Front Yard Parking,11,8,1,2023-02-25,In Favour,Yes,72.72727272727273
+303 Wychwood Ave,Front Yard Parking,29,11,16,2023-02-24,Opposed,Yes,37.93103448275862
+210 Milverton Blvd,Front Yard Parking,39,36,0,2023-03-03,In Favour,Yes,92.3076923076923
+270 Springdale Blvd,Front Yard Parking,60,56,1,2023-03-04,In Favour,Yes,93.33333333333333
+354 Lauder Ave,Front Yard Parking,81,72,0,2023-03-09,In Favour,Yes,88.88888888888889
+513 Rushton Rd,Front Yard Parking,28,27,0,2023-03-08,In Favour,Yes,96.42857142857143
+92 Donlands Ave,Front Yard Parking,21,15,5,2023-03-11,In Favour,Yes,71.42857142857143
+259 Eastwood Rd,Front Yard Parking,22,21,0,2023-03-15,In Favour,Yes,95.45454545454545
+10 Silver Birch Ave,Front Yard Parking,25,25,0,2023-03-16,In Favour,Yes,100
+236 Glenholme Ave,Front Yard Parking,22,20,0,2023-03-18,In Favour,Yes,90.9090909090909
+114 High Park Ave,Front Yard Parking,25,23,1,2023-03-29,In Favour,Yes,92
+573 Merton St,Front Yard Parking,50,37,3,2023-03-29,In Favour,Yes,74
+158 Ardagh St,Front Yard Parking,8,8,0,2023-03-30,In Favour,Yes,100
+64 Rhodes Ave,Front Yard Parking,32,28,0,2023-03-30,In Favour,Yes,87.5
+121 Hillsdale Ave W,Front Yard Parking,29,17,6,2023-03-31,In Favour,Yes,58.620689655172406
+35 Crang Ave,Front Yard Parking,68,59,2,2023-04-01,In Favour,Yes,86.76470588235294
+120 Rainsford Rd,Front Yard Parking,43,30,11,2023-04-05,In Favour,Yes,69.76744186046511
+497 Winona Dr,Front Yard Parking,34,33,0,2023-04-05,In Favour,Yes,97.05882352941177
+172 Pacific Ave,Front Yard Parking,71,37,27,2023-04-06,In Favour,Yes,52.112676056338024
+13 Methuen Ave,Front Yard Parking,42,33,9,2023-04-06,In Favour,Yes,78.57142857142857
+77 Kane Ave,Front Yard Parking,35,29,0,2023-04-12,In Favour,Yes,82.85714285714286
+47 Belsize Dr,Front Yard Parking,37,25,3,2023-04-13,In Favour,Yes,67.56756756756756
+108 Wineva Ave,Front Yard Parking,52,43,3,2023-04-14,In Favour,Yes,82.6923076923077
+227 Glendonwynne Rd,Front Yard Parking,24,22,0,2023-04-15,In Favour,Yes,91.66666666666666
+10 Crown Park Rd,Front Yard Parking,21,19,0,2023-04-15,In Favour,Yes,90.47619047619048
+159 Brookside Ave,Front Yard Parking,66,61,0,2023-04-19,In Favour,Yes,92.42424242424242
+260 Briar Hill Ave,Front Yard Parking,37,27,6,2023-04-20,In Favour,Yes,72.97297297297297
+70 Moberly Ave,Front Yard Parking,60,51,4,2023-04-20,In Favour,Yes,85
+80 Maclean Ave,Front Yard Parking,31,30,0,2023-04-21,In Favour,Yes,96.7741935483871
+122 Donlea Dr,Front Yard Parking,40,37,0,2023-04-21,In Favour,Yes,92.5
+564 Caledonia Rd,Front Yard Parking,33,25,2,2023-04-26,In Favour,Yes,75.75757575757575
+5 Cambrai Ave,Front Yard Parking,30,19,9,2023-04-28,In Favour,Yes,63.33333333333333
+44 Benlamond Ave,Front Yard Parking,61,52,1,2023-05-11,In Favour,Yes,85.24590163934425
+327 Silverthorn Ave,Front Yard Parking,30,26,1,2023-05-17,In Favour,Yes,86.66666666666667
+276 Broadway Ave,Front Yard Parking,37,32,3,2023-05-06,In Favour,Yes,86.48648648648648
+6 Rambert Cres,Front Yard Parking,26,25,1,2023-05-13,In Favour,Yes,96.15384615384616
+439 Annette St,Front Yard Parking,6,4,2,2023-05-12,Response Rate Not Met,No,66.66666666666666
+62 Wayland Ave,Front Yard Parking,42,28,9,2023-05-13,In Favour,Yes,66.66666666666666
+175 Winona Dr,Front Yard Parking,35,33,1,2023-05-19,In Favour,Yes,94.28571428571428
+4 Epsom Ave,Front Yard Parking,27,22,2,2023-05-20,In Favour,Yes,81.48148148148148
+167A Wheeler Ave,Front Yard Parking,51,50,0,2023-05-31,In Favour,Yes,98.0392156862745
+67 Harris Ave,Front Yard Parking,34,29,0,2023-06-03,In Favour,Yes,85.29411764705883
+77 Poplar Plains Cres,Front Yard Parking,29,17,12,2023-06-16,In Favour,Yes,58.620689655172406
+604 Windermere Ave,Front Yard Parking,86,77,0,2023-06-30,In Favour,Yes,89.53488372093024
+344 Beresford Ave,Front Yard Parking,43,37,4,2023-07-12,In Favour,Yes,86.04651162790698
+49 Dixon Ave,Front Yard Parking,24,22,0,2023-07-15,In Favour,Yes,91.66666666666666
+65 Springmount Ave (former Toronto),Front Yard Parking,34,23,6,2023-07-19,In Favour,Yes,67.64705882352942
+16 Bradley Ave,Front Yard Parking,24,19,0,2023-07-26,In Favour,Yes,79.16666666666666
+417 Oakwood Ave,Front Yard Parking,16,16,0,2023-07-29,In Favour,Yes,100
+575 Arlington Ave,Front Yard Parking,17,17,0,2023-08-09,In Favour,Yes,100
+392 St Germain Ave,Front Yard Parking,67,60,2,2023-08-18,In Favour,Yes,89.55223880597015
+256 Gledhill Ave,Front Yard Parking,39,32,4,2023-08-19,In Favour,Yes,82.05128205128204
+108 Mayfield Ave,Front Yard Parking,21,19,1,2023-08-26,In Favour,Yes,90.47619047619048
+247 Arlington Ave,Front Yard Parking,31,26,4,2023-09-02,In Favour,Yes,83.87096774193549
+264 Beech Ave,Front Yard Parking,39,24,10,2023-09-02,In Favour,Yes,61.53846153846154
+1 Hamstead Ave,Front Yard Parking,32,31,1,2023-09-09,In Favour,Yes,96.875
+63 Hammersmith Ave,Front Yard Parking,68,34,25,2023-08-26,Opposed,Yes,50
+15 Douglas Ave,Front Yard Parking,37,34,0,2023-09-21,In Favour,Yes,91.8918918918919
+27 Wells Hill Ave,Front Yard Parking,26,25,0,2023-09-23,In Favour,Yes,96.15384615384616
+21 Wallington Ave,Front Yard Parking,34,34,0,2023-09-29,In Favour,Yes,100
+55 Hillary Ave,Front Yard Parking,10,10,0,2023-10-19,In Favour,Yes,100
+106 Pine Crest Rd,Front Yard Parking,31,26,5,2023-10-27,In Favour,Yes,83.87096774193549
+135 Prescott Ave,Front Yard Parking,28,26,2,2023-10-28,Response Rate Not Met,No,92.85714285714286
+5 Barrie Ave,Front Yard Parking,30,27,2,2023-11-10,In Favour,Yes,90
+90 Laws St,Front Yard Parking,39,30,2,2023-11-30,In Favour,Yes,76.92307692307693
+307 Rushton Rd,Front Yard Parking,32,1,28,2023-11-18,Opposed,Yes,3.125
+23 Linnsmore Cres,Front Yard Parking,29,22,0,2023-11-18,In Favour,Yes,75.86206896551724
+44 Sunnybrae Cres,Front Yard Parking,20,20,0,2023-11-22,In Favour,Yes,100
+632 Rushton Rd,Front Yard Parking,20,17,2,2023-11-22,In Favour,Yes,85
+417 Armadale Ave,Front Yard Parking,43,41,0,2023-12-07,In Favour,Yes,95.34883720930233
+51 Oak Park Ave,Front Yard Parking,28,28,0,2023-12-06,In Favour,Yes,100
+40 Laws St,Front Yard Parking,53,48,1,2023-12-20,In Favour,Yes,90.56603773584906
+572 Windermere Ave,Front Yard Parking,44,42,0,2023-12-16,In Favour,Yes,95.45454545454545
+31 Nelles Ave,Front Yard Parking,40,37,2,2023-12-29,In Favour,Yes,92.5
+250 Glen Manor Dr W,Front Yard Parking,3,3,0,2024-01-06,In Favour,Yes,100
+66 Hiawatha Rd,Front Yard Parking,69,64,1,2024-02-01,In Favour,Yes,92.7536231884058
+122 Hilton Ave,Front Yard Parking,48,37,8,2024-02-28,In Favour,Yes,77.08333333333334
+68 Humewood Dr,Front Yard Parking,10,5,2,2024-03-02,Opposed,Yes,50
+470 Clendenan Ave,Front Yard Parking,61,51,9,2024-04-04,In Favour,Yes,83.60655737704919
+48 Dilworth Cres,Front Yard Parking,43,25,2,2024-03-23,In Favour,Yes,58.139534883720934
+14 Mc Cord Rd,Front Yard Parking,40,36,0,2024-03-29,In Favour,Yes,90
+155 Humewood Dr,Front Yard Parking,32,30,2,2024-04-13,In Favour,Yes,93.75
+58 Lyndhurst Ave,Front Yard Parking,1,1,0,2024-04-20,Response Rate Not Met,No,100
+25 Taunton Rd,Front Yard Parking,49,48,0,2024-04-24,In Favour,Yes,97.95918367346938
+76 Mayfield Ave,Front Yard Parking,41,38,2,2024-05-11,In Favour,Yes,92.6829268292683
+129 Eileen Ave,Front Yard Parking,34,30,0,2024-05-15,In Favour,Yes,88.23529411764706
+80 Brookside Dr,Front Yard Parking,43,39,3,2024-05-23,In Favour,Yes,90.69767441860465
+52 Guestville Ave,Front Yard Parking,26,23,3,2024-05-25,In Favour,Yes,88.46153846153845
+45 Roslin Ave,Front Yard Parking,6,6,0,2024-05-30,In Favour,Yes,100
+111 Brookdale Ave,Front Yard Parking,50,50,0,2024-06-14,In Favour,Yes,100
+52 Leuty Ave,Front Yard Parking,28,25,3,2024-06-07,In Favour,Yes,89.28571428571429
+42 Holwood Ave,Front Yard Parking,30,30,0,2024-06-12,In Favour,Yes,100
+150 Lascelles Blvd,Front Yard Parking,53,51,2,2024-06-19,In Favour,Yes,96.22641509433963
+26 Maclean Ave,Front Yard Parking,15,11,4,2024-06-29,In Favour,Yes,73.33333333333333
+24 Thurston Rd,Front Yard Parking,53,52,1,2024-07-03,In Favour,Yes,98.11320754716981
+527 Windermere Ave,Front Yard Parking,27,24,1,2024-07-27,In Favour,Yes,88.88888888888889
+89 Gainsborough Rd,Front Yard Parking,8,8,0,2024-07-27,In Favour,Yes,100
+20 Venn Cres,Front Yard Parking,19,13,0,2024-08-10,In Favour,Yes,68.42105263157895
+14 Roseneath Gdns,Front Yard Parking,46,32,2,2024-08-10,In Favour,Yes,69.56521739130434
+154 Roslin Ave,Front Yard Parking,33,32,0,2024-08-29,In Favour,Yes,96.96969696969697
+107 Humbercrest Blvd,Front Yard Parking,40,32,4,2024-08-30,In Favour,Yes,80
+24 Castlewood Rd,Front Yard Parking,34,32,0,2024-09-19,In Favour,Yes,94.11764705882352
