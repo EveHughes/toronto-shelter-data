@@ -1,0 +1,101 @@
+id,ADDRESS,APPLICATION_FOR,BALLOTS_CAST,BALLOTS_IN_FAVOUR,BALLOTS_OPPOSED,CLOSE_DATE,POLL_RESULT,RESPONSE_RATE_MET
+1,657 Example St,Front Yard Parking,39,20,2,2016-08-17,Opposed,No
+2,202 Example St,Front Yard Parking,11,20,6,2021-06-01,In Favour,No
+3,728 Example St,Front Yard Parking,21,10,6,2019-05-06,In Favour,No
+4,874 Example St,Sidewalk Construction,33,25,1,2016-08-22,In Favour,Yes
+5,526 Example St,Road Repairs,28,25,6,2023-09-05,In Favour,No
+6,363 Example St,Front Yard Parking,35,21,9,2017-12-01,In Favour,Yes
+7,986 Example St,Front Yard Parking,22,20,8,2022-07-24,Opposed,Yes
+8,632 Example St,Front Yard Parking,44,20,6,2019-08-21,In Favour,Yes
+9,431 Example St,Front Yard Parking,28,9,8,2015-05-18,Opposed,No
+10,273 Example St,Road Repairs,13,24,8,2020-12-14,Opposed,Yes
+11,202 Example St,Sidewalk Construction,29,9,1,2020-11-11,Opposed,Yes
+12,210 Example St,Road Repairs,16,24,8,2022-11-03,In Favour,Yes
+13,105 Example St,Road Repairs,42,11,10,2022-12-09,Opposed,No
+14,851 Example St,Front Yard Parking,33,12,10,2021-01-23,Opposed,No
+15,701 Example St,Road Repairs,33,24,3,2015-03-07,Opposed,No
+16,320 Example St,Sidewalk Construction,31,21,1,2020-04-01,Opposed,No
+17,812 Example St,Sidewalk Construction,36,18,8,2018-05-22,Opposed,No
+18,210 Example St,Front Yard Parking,45,10,0,2018-05-25,In Favour,No
+19,48 Example St,Front Yard Parking,24,17,5,2022-09-29,Opposed,No
+20,282 Example St,Sidewalk Construction,50,20,6,2019-04-11,Opposed,Yes
+21,105 Example St,Road Repairs,30,9,8,2016-02-18,Opposed,Yes
+22,604 Example St,Front Yard Parking,44,15,5,2021-08-07,In Favour,No
+23,427 Example St,Road Repairs,33,11,2,2023-05-16,Opposed,No
+24,362 Example St,Road Repairs,14,25,7,2018-06-21,Opposed,Yes
+25,207 Example St,Sidewalk Construction,46,13,4,2016-05-31,Opposed,Yes
+26,601 Example St,Sidewalk Construction,15,23,1,2021-11-18,In Favour,No
+27,60 Example St,Front Yard Parking,10,24,3,2016-11-05,In Favour,Yes
+28,913 Example St,Road Repairs,27,25,8,2020-07-12,Opposed,Yes
+29,555 Example St,Sidewalk Construction,13,22,5,2017-06-17,In Favour,No
+30,731 Example St,Front Yard Parking,26,20,4,2015-02-16,In Favour,No
+31,584 Example St,Front Yard Parking,31,25,2,2020-05-06,Opposed,Yes
+32,282 Example St,Front Yard Parking,42,7,1,2022-09-21,Opposed,Yes
+33,124 Example St,Front Yard Parking,40,16,9,2021-09-21,In Favour,No
+34,514 Example St,Road Repairs,26,17,6,2019-01-17,In Favour,Yes
+35,255 Example St,Sidewalk Construction,22,19,8,2019-03-17,Opposed,Yes
+36,657 Example St,Front Yard Parking,11,11,6,2023-04-10,Opposed,No
+37,632 Example St,Sidewalk Construction,22,11,7,2020-07-13,In Favour,No
+38,608 Example St,Front Yard Parking,26,15,4,2023-11-19,Opposed,Yes
+39,706 Example St,Front Yard Parking,40,12,9,2018-07-07,In Favour,No
+40,568 Example St,Sidewalk Construction,41,13,1,2019-10-17,In Favour,No
+41,431 Example St,Sidewalk Construction,24,20,10,2023-02-18,Opposed,No
+42,409 Example St,Road Repairs,19,22,1,2017-05-14,Opposed,No
+43,748 Example St,Sidewalk Construction,38,20,8,2020-02-05,In Favour,Yes
+44,879 Example St,Front Yard Parking,42,15,3,2015-03-25,In Favour,Yes
+45,281 Example St,Road Repairs,17,19,1,2020-05-22,Opposed,No
+46,15 Example St,Road Repairs,31,10,8,2015-04-09,In Favour,No
+47,213 Example St,Front Yard Parking,22,8,0,2022-05-22,In Favour,No
+48,454 Example St,Sidewalk Construction,36,21,2,2020-12-13,In Favour,Yes
+49,210 Example St,Road Repairs,30,13,1,2019-10-25,Opposed,Yes
+50,604 Example St,Road Repairs,46,10,4,2016-02-06,In Favour,No
+51,431 Example St,Front Yard Parking,19,14,8,2021-12-22,Opposed,Yes
+52,701 Example St,Front Yard Parking,11,20,4,2023-09-27,In Favour,Yes
+53,555 Example St,Road Repairs,20,19,8,2015-08-23,Opposed,No
+54,731 Example St,Front Yard Parking,14,5,2,2018-06-05,Opposed,No
+55,742 Example St,Front Yard Parking,22,17,1,2015-04-24,In Favour,Yes
+56,431 Example St,Road Repairs,15,5,7,2020-04-08,Opposed,Yes
+57,874 Example St,Front Yard Parking,31,10,8,2023-02-04,In Favour,Yes
+58,61 Example St,Road Repairs,37,6,0,2017-08-14,Opposed,Yes
+59,812 Example St,Sidewalk Construction,42,13,3,2017-03-18,Opposed,Yes
+60,320 Example St,Front Yard Parking,29,23,1,2015-02-03,In Favour,Yes
+61,851 Example St,Road Repairs,34,23,5,2022-12-22,In Favour,Yes
+62,480 Example St,Sidewalk Construction,45,17,9,2018-06-02,In Favour,Yes
+63,812 Example St,Sidewalk Construction,27,10,1,2022-12-05,Opposed,Yes
+64,604 Example St,Road Repairs,34,23,3,2018-05-12,In Favour,No
+65,95 Example St,Road Repairs,42,20,3,2015-04-02,Opposed,No
+66,601 Example St,Front Yard Parking,21,13,3,2023-12-02,Opposed,No
+67,470 Example St,Road Repairs,32,20,4,2020-12-08,Opposed,Yes
+68,555 Example St,Front Yard Parking,49,21,8,2017-06-10,In Favour,Yes
+69,632 Example St,Sidewalk Construction,34,24,2,2017-12-13,Opposed,Yes
+70,614 Example St,Road Repairs,43,11,6,2022-12-23,In Favour,Yes
+71,161 Example St,Front Yard Parking,41,8,1,2023-06-08,Opposed,No
+72,889 Example St,Road Repairs,15,12,9,2016-06-22,Opposed,Yes
+73,202 Example St,Front Yard Parking,42,21,10,2018-02-10,Opposed,No
+74,529 Example St,Road Repairs,16,21,2,2016-04-09,Opposed,No
+75,728 Example St,Road Repairs,14,13,0,2018-02-19,Opposed,Yes
+76,608 Example St,Front Yard Parking,37,16,5,2015-06-08,Opposed,No
+77,986 Example St,Road Repairs,28,23,10,2016-01-26,Opposed,Yes
+78,15 Example St,Front Yard Parking,22,21,10,2016-11-27,Opposed,Yes
+79,282 Example St,Road Repairs,26,5,9,2015-12-15,Opposed,No
+80,210 Example St,Front Yard Parking,35,10,0,2015-11-22,In Favour,Yes
+81,851 Example St,Front Yard Parking,42,24,10,2022-02-25,In Favour,No
+82,446 Example St,Front Yard Parking,50,14,0,2020-08-24,Opposed,Yes
+83,298 Example St,Road Repairs,45,11,7,2018-03-17,In Favour,No
+84,742 Example St,Sidewalk Construction,39,6,10,2020-02-05,In Favour,No
+85,313 Example St,Front Yard Parking,47,15,7,2021-05-04,In Favour,No
+86,209 Example St,Road Repairs,27,10,3,2017-12-21,In Favour,Yes
+87,774 Example St,Road Repairs,19,21,2,2016-02-03,In Favour,No
+88,480 Example St,Front Yard Parking,26,23,10,2020-02-19,In Favour,No
+89,330 Example St,Front Yard Parking,28,11,3,2015-09-12,In Favour,No
+90,653 Example St,Front Yard Parking,27,5,6,2021-11-10,Opposed,Yes
+91,717 Example St,Front Yard Parking,11,23,8,2019-06-23,Opposed,No
+92,35 Example St,Road Repairs,11,17,8,2019-01-18,In Favour,No
+93,878 Example St,Road Repairs,14,10,8,2019-01-01,Opposed,No
+94,5 Example St,Road Repairs,23,8,6,2023-01-02,Opposed,Yes
+95,614 Example St,Sidewalk Construction,13,15,9,2017-06-02,Opposed,No
+96,940 Example St,Road Repairs,43,13,8,2018-11-03,Opposed,Yes
+97,874 Example St,Sidewalk Construction,10,25,1,2018-11-29,Opposed,No
+98,601 Example St,Sidewalk Construction,32,11,2,2017-05-28,In Favour,Yes
+99,95 Example St,Road Repairs,43,23,10,2015-12-02,In Favour,Yes
+100,530 Example St,Front Yard Parking,42,18,2,2020-08-28,In Favour,No
