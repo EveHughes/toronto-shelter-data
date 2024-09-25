@@ -1,12 +1,12 @@
 ---
-title: "Analysis of Public Opinion Polls Conducted by the City of Toronto"
-subtitle: "Insights on Front Yard Parking, Traffic Calming, and Boulevard Cafes"
+title: "Analyzing Homelessness and Shelter Use in Toronto: A Data-Driven Approach"
+subtitle: "Analyzing Homelessness and Shelter Use in Toronto: A Data-Driven Approach"
 author:
   - "Tim Chen"
 thanks: "Code and data are available at: https://github.com/timchen0326/sta304_paper_1."
 date: today
 date-format: long
-abstract: "This paper analyzes data from the City of Toronto's public opinion polls on key municipal projects. We use a dataset covering several initiatives, including front yard parking, boulevard cafes, and traffic calming. Our analysis reveals significant variation in voter turnout and approval rates across these different projects. The findings provide insights into community engagement and policy preferences, with potential implications for future urban planning and public consultation processes"
+abstract: "This paper examines homelessness and shelter usage in Toronto by analyzing daily shelter occupancy data from the City of Toronto. Using data from 2021 to 2024, the analysis highlights key trends in shelter occupancy rates, bed capacity, and service user counts, broken down by program model and demographic sector. The results reveal a consistently high occupancy rate of beds, suggesting shelters are near capacity, with a growing demand for emergency services. Seasonal fluctuations in shelter usage, particularly during the winter months, point to the critical need for enhanced shelter services during extreme weather conditions. The analysis further uncovers disparities between emergency and transitional shelter capacities, emphasizing the necessity for targeted government policies to address the rising homelessness crisis. This paper aims to provide a deeper understanding of homelessness trends in Toronto and highlights the importance of data-driven solutions in addressing this ongoing social challenge."
 format: 
   pdf:
     toc: true
@@ -14,8 +14,6 @@ format:
 number-sections: true
 bibliography: references.bib
 ---
-
-# Setup and Libraries
 
 ```{r setup, include=FALSE}
 
@@ -33,7 +31,7 @@ data <- read.csv(here("data/analysis_data/analysis_data.csv"))
 
 # Introduction
 
-Homelessness, according to the United Nations, has been one of the most prominent social problems that is taking an increasingly important toll on societal well-being during recent decades. The state of being homeless is often understood as individuals' inability to stay in a permanent accommodation. As homelessness is a fundamental violation of several human rights, the United Nations points to state's failure to provide adequate and affordable housing as the leading cause of the staggering cases (<https://www.ohchr.org/en/special-procedures/sr-housing/homelessness-and-human-rights>). This phenomenon is also observed in Canada, where over 11% of Canadians have reported experiencing some form of homelessness (<https://www.statcan.gc.ca/o1/en/plus/5170-homelessness-how-does-it-happen>). Moreover, currently over 235,000 people experience homelessness everyday, according to statistics Canada (<https://www150.statcan.gc.ca/n1/pub/82-003-x/2021001/article/00002-eng.htm>). While the Canadian state continues to brush over the severeness of the homeless crisis by restating their initiative and program, which frame the narrative in a extremely positive manner, we would like to investigate into the rapidly increasing homeless population to shed light on the need for a more proactive initiative from the state with housing supply and secure social safety net. By analyzing in a time-series manner with further dissection by season and gender type, the analysis of this Canadian social crisis seeks to provide more details and insight into this phenomenon.
+Homelessness, according to the United Nations, has been one of the most prominent social problems that is taking an increasingly important toll on societal well-being during recent decades. The state of being homeless is often understood as individuals' inability to stay in a permanent accommodation. As homelessness is a fundamental violation of several human rights, the United Nations points to state's failure to provide adequate and affordable housing as the leading cause of the staggering cases (@ohchrhomelessness). This phenomenon is also observed in Canada, where over 11% of Canadians have reported experiencing some form of homelessness (@statcanhomelessness). Moreover, currently over 235,000 people experience homelessness everyday, according to statistics Canada (@statcanhealtharticle). While the Canadian state continues to brush over the severeness of the homeless crisis by restating their initiative and program, which frame the narrative in a extremely positive manner, we would like to investigate into the rapidly increasing homeless population to shed light on the need for a more proactive initiative from the state with housing supply and secure social safety net. By analyzing in a time-series manner with further dissection by season and gender type, the analysis of this Canadian social crisis seeks to provide more details and insight into this phenomenon.
 
 # Data {#sec-data}
 
@@ -41,9 +39,21 @@ Homelessness, according to the United Nations, has been one of the most prominen
 
 The data used in this paper is derived from Open Data Toronto and is accessed through the opendatatoronto library (Gelfand 2022). The particular dataset analyzed here focuses on daily shelter and overnight services usage in Toronto, including information about shelter occupancy, capacity, and vacancy (Toronto 2024). All data analysis was conducted using R (R Core Team 2023) with the assistance of several packages: tidyverse (Wickham et al. 2019), here (J. B. Kirill Müller 2020), dplyr (Hadley Wickham 2023), tibble (R. F. Kirill Müller, Hadley Wickham 2023), janitor (Sam Firke 2023), ggplot2 (Wickham 2016), and knitr (Xie 2023).
 
-The dataset is published by the City of Toronto and features daily shelter occupancy and capacity information across various shelter types, such as room-based and bed-based programs. Data collection occurs at 4 a.m. daily, and the dataset includes information on individual shelters' service user counts, the total number of beds or rooms available, and the occupancy rates. The data is refreshed regularly, and the particular dataset used in this paper is up-to-date as of April 23, 2024. Additionally, since this date, the dataset includes occupancy data from hotel-based shelters operated by the Canadian Red Cross Society for refugee claimants. The raw dataset also includes fields such as the shelter group (e.g., adult, family, youth, refugee) and the organization operating the shelter.
+The dataset is published by the City of Toronto and features daily shelter occupancy and capacity information across various shelter types, such as room-based and bed-based programs. Data collection occurs at 4 a.m. daily, and the dataset includes information on individual shelters' service user counts, the total number of beds or rooms available, and the occupancy rates. The data is refreshed regularly, and the particular dataset used in this paper is up-to-date as of April 23, 2024. Additionally, since this date, the dataset includes occupancy data from hotel-based shelters operated by the Canadian Red Cross Society for refugee claimants. The raw dataset also includes fields such as the shelter group (e.g., adult, family, youth, refugee) and the organization operating the shelter(@torontodailyshelter2).
 
 ## Cleaned Data
+
+To prepare the dataset for analysis, several cleaning steps were undertaken. First, all missing values (NA) present in the columns occupancy_rate_beds and program_model were removed to ensure consistency across the key variables used in the analysis. This allowed for a clearer and more accurate understanding of trends related to bed occupancy rates and the types of shelter programs available.
+
+The dataset used spans from 2021 to the present, and no specific dates or years were filtered out during the cleaning process, as all data points within this range were deemed relevant. In terms of selecting the appropriate data for analysis, the focus was placed on variables that demonstrated the most significant trends over time, particularly in relation to recent news articles and reports concerning homelessness and shelter usage in Toronto.
+
+The variables kept in the cleaned data included those that track trends over time, such as occupancy_date, service_user_count, and program_model, as these were essential for understanding how shelter use and capacity evolved over the study period.
+
+Although no transformations or new variables were created, the data from each year was initially provided as separate files. These annual datasets were merged into a single file to streamline the analysis and make it easier to observe long-term trends.
+
+The cleaning process was conducted using tools and packages such as tidyverse, dplyr, janitor, and ggplot2, which facilitated efficient manipulation and visualization of the data.
+
+\newpage
 
 ```{r, warning=FALSE}
 #| label: tbl-cleaned_data
@@ -75,6 +85,8 @@ ggplot(data, aes(x = occupancy_date, y = service_user_count)) +
 
 ```
 
+
+
 ## Basic Summary Statistics of the Data
 
 To gain a better understanding of the structure of the shelter occupancy data, we first examine the number of observations recorded in each year, as displayed in Table 1. Over the period from 2021 to 2024, the data collection appears relatively consistent, with the exception of 2024, which shows a noticeable decrease in the number of observations. This reduction in data for 2024 could be a result of incomplete data collection or other external factors that impacted data availability for that year. The total number of observations fluctuates slightly between 32,000 to 33,000 for 2021 to 2023, with a significant drop to 22,801 in 2024, hinting that additional observations might still be collected as the year progresses.
@@ -83,7 +95,6 @@ Moreover, Table 2 provides key summary statistics on critical variables such as 
 
 ```{r, warning=FALSE}
 #| label: tbl-observation-by-year
-#| fig-cap: Service User Count by year
 #| echo: false
 
 # Count the number of observations by year
@@ -108,12 +119,11 @@ mean_capacity_actual_bed <- mean(data$capacity_actual_bed, na.rm = TRUE)
 sd_capacity_actual_bed <- sd(data$capacity_actual_bed, na.rm = TRUE)
 
 # Table for observations by year
-kable(observations_table, caption = "Table: Number of observations by year")
+kable(observations_table, caption = "Number of observations by year")
 ```
 
 ```{r, warning=FALSE}
 #| label: tbl-summary-statistics
-#| fig-cap: Summary Statistics
 #| echo: false
 #| 
 summary_stats <- data.frame(
@@ -122,11 +132,13 @@ summary_stats <- data.frame(
   SD = c(sd_occupancy_rate, sd_service_user_count, sd_capacity_actual_bed)
 )
 
-kable(summary_stats, caption = "Table: Mean and standard deviation of key variables")
+kable(summary_stats, caption = "Mean and standard deviation of key variables")
 
 ```
 
 # Results {#sec-results}
+
+## Tracking the Growth in Shelter Bed Occupancy Rates
 
 ```{r, warning=FALSE}
 #| label: fig-occupancy-rate
@@ -143,16 +155,19 @@ yearly_data <- data %>%
 ggplot(yearly_data, aes(x = factor(year), y = Avg_Occupancy_Rate_Beds)) +
   geom_bar(stat = "identity", fill = "skyblue") +
   geom_text(aes(label = round(Avg_Occupancy_Rate_Beds, 1)), vjust = -0.5, color = "black") +
-  labs(title = "Average Occupancy Rate of Beds by year",
-       x = "year", y = "Average Occupancy Rate (Beds)") +
+  labs(x = "year", y = "Average Occupancy Rate (Beds)") +
   theme_minimal() +
   coord_cartesian(ylim = c(80, NA))
 
 ```
 
-With the graph that detailed the average occupancy rate of beds from 2021 to 2024, it is evident that there is a increasing need for shelter–which most probably translates to an increasing homeless population in Toronto. Although the government initiative claimed that there are more resources allocated to assist......
+From 2021 to 2024, average shelter bed occupancy rates consistently exceeded 96%, with a notable increase to 98.2% by 2024 (Figure 2). This suggests that Toronto’s shelters are nearing full capacity year-round, reflecting both the rise in homelessness and insufficient shelter space. Despite claims of increased government funding for homelessness in 2023 (@thestarhomelessencampments), the data does not show a corresponding reduction in occupancy rates. Instead, this discrepancy highlights a lag between policy implementation and real-world outcomes. 
 
 This result can also hint towards a the maximization of capacity that suggest the continuous need for resources, not a staggering increase, We will need to focus on other trends in data to get to the conclusion on whether there is a lack of resources in solving homelessness in Toronto.
+
+\newpage
+
+## Assessing Actual Bed Capacity by Program Type
 
 ```{r, warning=FALSE}
 #| label: fig-bed-capacity
@@ -171,20 +186,21 @@ yearly_bed_capacity <- filtered_data %>%
 # Plot: Actual Bed Capacity by Program Model and year
 ggplot(yearly_bed_capacity, aes(x = factor(year), y = Total_Bed_Capacity, fill = program_model)) +
   geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "Actual Bed Capacity by Program Model and year",
-       x = "year", y = "Actual Bed Capacity") +
+  labs(x = "year", y = "Actual Bed Capacity") +
   theme_minimal()
 
 
 ```
 
-The above graph shed light on the actual program model that exist in these shelters, giving us a deeper look into what resources the large homeless population in Toronto actually needs. The data is focused on two program models.... each meaning....
+The above graph shed light on the actual program model that exist in these shelters, giving us a deeper look into what resources the large homeless population in Toronto actually needs. The data reveals a significant disparity between Emergency and Transitional shelter capacities. Emergency shelters, designed for short-term relief, saw consistent growth in capacity from 2021 to 2024, reflecting the city’s attempt to address immediate needs. Transitional shelters, which are critical for helping individuals move towards permanent housing, did not experience the same level of capacity expansion. This disparity suggests that while the city is focused on emergency crisis management, it is under-investing in long-term solutions to homelessness(@torontodailyshelter). 
 
-with large disparity between the two types, we see a lack of desire in staying in shelter for an extended period of time, which may express the desire to get out of the homeless state or some undesirable nature of these shelters.
+With large disparity between the two types, we see a lack of desire in staying in shelter for an extended period of time, which may express the desire to get out of the homeless state or some undesirable nature of these shelters. Recent reports highlight that violence within Toronto’s shelter system has risen significantly, with incidents of interpersonal violence increasing by 283% between 2011 and 2021. This includes physical assaults, verbal abuse, and harassment, which create unsafe environments for both residents and staff. Overcrowding, lack of privacy, and restrictive policies further contribute to the discomfort many shelter users face. These conditions, coupled with the complex mental health and social challenges of residents, may explain why many prefer to leave the shelters as soon as possible. Improving safety and conditions within shelters is essential to making them more welcoming for longer-term stays and providing the necessary support for individuals to move out of homelessness permanently(@cbcsheltersafety).
 
-The gap between two capacities also can point to possible policy direction that the government and hone in on, as well as potential academic research on the underlying reason behind the great differences.
+The gap between the two capacities suggests potential policy directions for the government to focus on, such as increasing support for transitional shelters to provide more long-term solutions. This disparity could also prompt further research into the underlying causes, exploring whether funding limitations, policy focus, or other systemic factors are driving the imbalance.
 
 Moreover, we also see that the capacity for emergency category grew in size progressively within the years that the data has presented. This detail echoed the growing rate of occupancy presented above, as well as affirming the assumption on the growing population of homeless individuals. With a growing occupancy rate adding on to the actual growth of capacity, there is a strong possibility that the homeless population is seeing a exponential growth that the state has to focus on solving–with a more assertive policy outlook.
+
+## Monthly Trends in Shelter User Counts
 
 ```{r , warning=FALSE}
 #| label: fig-service-user-count
@@ -195,17 +211,23 @@ monthly_data <- data %>%
   summarise(service_user_count = sum(service_user_count, na.rm = TRUE), 
             .groups = "keep")
 
-
-# Plot: Service User Count Over Months by year
 ggplot(monthly_data, aes(x = month, y = service_user_count, color = factor(year), group = year)) +
   geom_line(size = 1) +
-  labs(title = "Service User Count Over Months by year",
-       x = "month", y = "Service User Count", color = "Year") +
+  labs(x = "month", y = "Service User Count", color = "Year") +
   theme_minimal() +
   scale_x_discrete(limits = month.abb)
 ```
 
-After looking into capacities of homeless shelters in Toronto, we will now look into service user count from 2021 to 2024, with a monthly distribution that give us a clearer sense of how the capacities
+Having examined the capacities of homeless shelters in Toronto, we now turn to the service user count from 2021 to 2024. By analyzing the monthly distribution of service users, we gain a clearer understanding of the factors contributing to the gradual increase in emergency shelter capacity over time.
+
+Shelter use spiked dramatically during the winter months each year, reflecting the severe impact of extreme weather on Toronto's homeless population (Figure 4). Despite the city's efforts to expand shelter space by adding 400 new spaces and additional warming centers, the system continues to struggle with overwhelming demand. The seasonal fluctuation in service use points to the need for more robust winter preparedness, including additional warming centers, mobile shelters, or other emergency accommodations. By focusing on seasonal fluctuations, the city could better align its homelessness strategy with the predictable increase in demand during the colder months. (@cbctorontohomelesswinter).
+
+In response to the increasing demand for shelters, especially during the winter months, the data in Figure 4 clearly shows significant spikes in shelter usage from November to February each year. These peaks highlight the seasonal pressures on Toronto’s shelter system, with shelter capacity being consistently stretched during colder months. The introduction of additional winter-specific services, such as warming centers and new shelter spaces, may help alleviate some of the strain. However, the persistent upward trend in service user counts over the years underscores that even with these measures, the system continues to face overwhelming demand. The data indicates that without further expansion of both short-term and long-term housing solutions, the shelter system will remain under significant pressure.(@cbctorontowinterhomelessnessplan).
+
+
+## Demographic Breakdown of Shelter Users by Year
+
+Following the analysis of overall service user counts across the years, it is essential to examine the distribution of shelter usage by different demographic sectors, including men, women, mixed adults, and youth. The graph below presents the total service user count by sector for each year from 2021 to 2024, offering deeper insight into how shelter demand has varied among different population groups.
 
 ```{r, warning=FALSE}
 #| label: fig-service-sector
@@ -222,7 +244,7 @@ sector_data_filtered <- sector_data %>%
 # Plot: Service User Count by sector for Each year
 ggplot(sector_data_filtered, aes(x = sector, y = Total_Service_User_Count, fill = sector)) +
   geom_bar(stat = "identity") +
-  labs(title = "Service User Count by sector for Each year", x = "sector", y = "Total Service User Count") +
+  labs(x = "sector", y = "Total Service User Count") +
   facet_wrap(~ year, ncol = 2) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
@@ -230,11 +252,25 @@ ggplot(sector_data_filtered, aes(x = sector, y = Total_Service_User_Count, fill 
 
 ```
 
-\newpage
+From first glance of the graph, we can see the large disparity between men and women organized in the few categories. According to research, by The National Women's Housing & Homelessness Network, based in Canada, average of 36% of homeless population are women. As we compare this data to the graph we see, service used by women do correlate proportionately with their share within the homeless population--while there might be bias within data collected. However, the same research found that 90% of the families using emergency shelters are headed by women--which can lead to a misscalculation in the actual number of women in need of a shelter. We could further theorize that if including women that use shelter within the family unit, the actual disparity between men and women might be smaller that the current number. National Women's Housing & Homelessness Network further suggested that in Canada, there are less shelter dedicated to women than men, men having more that double of dedicated shelters. This is a massive imporvenment that needs to be made in the gender disparity from the policy front, as well as a dataset better assist the imporving rights for homeless women. (@womenshomelessnesscanada)
 
-\appendix
+# Discussion
 
-# Appendix {.unnumbered}
+## Results and Implications
+
+The analysis of daily shelter occupancy data from 2021 to 2024 reveals several critical trends in Toronto’s shelter system. First, the bed occupancy rates consistently exceeded 96%, reaching a peak of 98.2% in 2024. This finding suggests that Toronto’s shelters are nearing full capacity year-round, reflecting both the rise in homelessness and the limited availability of shelter space. Despite efforts by the city, such as the addition of 400 new spaces, the shelter system remains strained, indicating an ongoing mismatch between demand and available resources.
+
+Seasonal variations in shelter use were also evident, with significant spikes during the colder months, particularly from November to February. This trend highlights the vulnerability of Toronto’s homeless population during extreme weather conditions, reinforcing the need for enhanced winter-specific services such as additional warming centers and emergency accommodations.
+
+The data also uncovers a disparity between emergency and transitional shelter capacities. While emergency shelters saw steady growth in capacity, transitional shelters did not experience the same level of investment. This gap reflects a policy focus on short-term crisis management at the expense of long-term solutions to homelessness. As a result, many individuals remain stuck in emergency shelters without adequate support to transition into permanent housing. Addressing this imbalance is critical for reducing the long-term impact of homelessness in Toronto.
+
+## Further Areas of Exploration
+
+Several areas warrant further exploration to fully understand the dynamics of homelessness and shelter use in Toronto. One key area is the demographic breakdown of shelter users, particularly the gender disparity in shelter access. While men dominate the use of emergency shelters, research suggests that women, especially those heading families, may be underrepresented in the data. Future studies should investigate the reasons behind this disparity, including whether women are more likely to seek shelter through family-focused programs, and the adequacy of shelter spaces dedicated to women.
+
+Additionally, the rising incidents of violence within shelters raise important questions about the safety and effectiveness of these facilities. With reports indicating a 283% increase in interpersonal violence in shelters over the past decade, further research is needed to explore the relationship between shelter conditions and users’ willingness to remain in these spaces(@cbcsheltersafety). Addressing safety concerns, overcrowding, and restrictive policies could make shelters more welcoming and supportive environments.
+
+Lastly, there is a need to explore the funding and policy limitations that contribute to the underinvestment in transitional shelters. By examining the systemic factors driving the imbalance between emergency and long-term shelter capacities, policymakers can develop more targeted solutions to address both immediate needs and long-term homelessness reduction.
 
 \newpage
 
