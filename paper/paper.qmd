@@ -9,116 +9,233 @@ date-format: long
 abstract: "This paper analyzes data from the City of Toronto's public opinion polls on key municipal projects. We use a dataset covering several initiatives, including front yard parking, boulevard cafes, and traffic calming. Our analysis reveals significant variation in voter turnout and approval rates across these different projects. The findings provide insights into community engagement and policy preferences, with potential implications for future urban planning and public consultation processes"
 format: 
   pdf:
-    toc: true        # Enables Table of Contents
-    toc-depth: 2     # Specifies depth level of headings included in the ToC
+    toc: true
+    toc-depth: 2    
 number-sections: true
 bibliography: references.bib
 ---
 
-```{r}
-#| include: false
-#| warning: false
-#| message: false
+# Setup and Libraries
 
-library(tidyverse)
-# Install and load the required packages
-options(repos = c(CRAN = "https://cran.rstudio.com/"))
+```{r setup, include=FALSE}
 
-data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(here)
+library(knitr)
+
+# Load the processed data
+data <- read.csv(here("data/analysis_data/analysis_data.csv"))
+
+
 ```
-
 
 # Introduction
 
-Public opinion polls are an essential part of local governance, offering insights into how communities perceive proposed municipal projects. In the City of Toronto, polls are regularly conducted on topics such as front yard parking, traffic calming, and the installation of boulevard cafes. These polls not only influence policy decisions but also serve as a proxy for measuring community engagement.
-
-The purpose of this paper is to explore the data collected from these polls and to uncover key trends in public opinion. Specifically, we analyze voter turnout, the proportion of favorable outcomes, and how these vary across different types of projects.
-
-The remainder of this paper is structured as follows. @sec-data provides a detailed description of the dataset used. @sec-results presents the analysis of the data, including graphical representations of the results. Finally, @sec-dis discusses the findings and concludes with potential implications for future polling processes.
+Homelessness, according to the United Nations, has been one of the most prominent social problems that is taking an increasingly important toll on societal well-being during recent decades. The state of being homeless is often understood as individuals' inability to stay in a permanent accommodation. As homelessness is a fundamental violation of several human rights, the United Nations points to state's failure to provide adequate and affordable housing as the leading cause of the staggering cases (<https://www.ohchr.org/en/special-procedures/sr-housing/homelessness-and-human-rights>). This phenomenon is also observed in Canada, where over 11% of Canadians have reported experiencing some form of homelessness (<https://www.statcan.gc.ca/o1/en/plus/5170-homelessness-how-does-it-happen>). Moreover, currently over 235,000 people experience homelessness everyday, according to statistics Canada (<https://www150.statcan.gc.ca/n1/pub/82-003-x/2021001/article/00002-eng.htm>). While the Canadian state continues to brush over the severeness of the homeless crisis by restating their initiative and program, which frame the narrative in a extremely positive manner, we would like to investigate into the rapidly increasing homeless population to shed light on the need for a more proactive initiative from the state with housing supply and secure social safety net. By analyzing in a time-series manner with further dissection by season and gender type, the analysis of this Canadian social crisis seeks to provide more details and insight into this phenomenon.
 
 # Data {#sec-data}
 
-The dataset used for this analysis was sourced from @opendatatorotno and conducted using @citeR. It contains information on several public polls, including fields such as the number of ballots cast, ballots in favor, ballots opposed, and poll results. The dataset spans a period from 2015 to 2023 and covers various municipal initiatives.
+## Raw Data
 
-The following figure shows the distribution of the number of ballots cast for different types of municipal applications, providing an overview of public participation.
-```{r}
-#| label: fig-ballots-cast
-#| fig-cap: Distribution of Ballots Cast by Application Type
+The data used in this paper is derived from Open Data Toronto and is accessed through the opendatatoronto library (Gelfand 2022). The particular dataset analyzed here focuses on daily shelter and overnight services usage in Toronto, including information about shelter occupancy, capacity, and vacancy (Toronto 2024). All data analysis was conducted using R (R Core Team 2023) with the assistance of several packages: tidyverse (Wickham et al. 2019), here (J. B. Kirill Müller 2020), dplyr (Hadley Wickham 2023), tibble (R. F. Kirill Müller, Hadley Wickham 2023), janitor (Sam Firke 2023), ggplot2 (Wickham 2016), and knitr (Xie 2023).
+
+The dataset is published by the City of Toronto and features daily shelter occupancy and capacity information across various shelter types, such as room-based and bed-based programs. Data collection occurs at 4 a.m. daily, and the dataset includes information on individual shelters' service user counts, the total number of beds or rooms available, and the occupancy rates. The data is refreshed regularly, and the particular dataset used in this paper is up-to-date as of April 23, 2024. Additionally, since this date, the dataset includes occupancy data from hotel-based shelters operated by the Canadian Red Cross Society for refugee claimants. The raw dataset also includes fields such as the shelter group (e.g., adult, family, youth, refugee) and the organization operating the shelter.
+
+## Cleaned Data
+
+```{r, warning=FALSE}
+#| label: tbl-cleaned_data
 #| echo: false
+data_head <- head(data)
 
-data %>%
-  ggplot(aes(x = application_for, y = ballots_cast, fill = application_for)) +
-  geom_boxplot() +
-  labs(x = "Application Type", y = "Number of Ballots Cast", title = "Distribution of Ballots Cast by Application Type") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+data_subset <- data_head[, c("occupancy_date", "service_user_count", "program_model")]
+
+# Create the table
+kable(data_subset, col.names = c('Occupancy Date', 'Service User Count', 'Program Model'), 
+      align = "ccc", caption = "Sample of Cleaned Shelter Occupancy Data")
 
 ```
 
-@tbl-poll-results provides a summary of the poll results for different application types, including the number of "In Favour" and "Opposed" results for each type.
-
-```{r}
-#| label: tbl-poll-results
+```{r, warning=FALSE}
+#| label: fig-service-user-trend
+#| fig-cap: Distribution of Service User Count Over Time by Date of Occupancy
 #| echo: false
-#| tbl-cap: "Summary of Poll Results"
-data %>%
-  group_by(application_for, poll_result) %>%
-  summarise(count = n(), .groups = 'drop') %>%
-  knitr::kable(col.names = c("Application Type", "Poll Result", "Count"))
+
+data$occupancy_date <- as.Date(data$occupancy_date, format="%Y-%m-%d")
+
+# Create the scatter plot
+ggplot(data, aes(x = occupancy_date, y = service_user_count)) +
+  geom_jitter(color = "gray", alpha = 0.5, width = 0.2, height = 0.2) +
+  theme_minimal() +
+  labs(x = "Date of Sample Collection", y = "Service User Count") +
+  scale_y_continuous(limits = c(0, 100)) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
 
 ```
 
-The dataset also contains information on whether the response rate was met, which is crucial for validating the results of a poll. The following figure shows the proportion of polls that met the response rate requirement.
+## Basic Summary Statistics of the Data
 
-```{r}
-#| label: fig-response-rate
-#| fig-cap: Response Rate Met by Application Type
+To gain a better understanding of the structure of the shelter occupancy data, we first examine the number of observations recorded in each year, as displayed in Table 1. Over the period from 2021 to 2024, the data collection appears relatively consistent, with the exception of 2024, which shows a noticeable decrease in the number of observations. This reduction in data for 2024 could be a result of incomplete data collection or other external factors that impacted data availability for that year. The total number of observations fluctuates slightly between 32,000 to 33,000 for 2021 to 2023, with a significant drop to 22,801 in 2024, hinting that additional observations might still be collected as the year progresses.
+
+Moreover, Table 2 provides key summary statistics on critical variables such as occupancy rate (beds), service user count, and capacity (actual beds). On average, the occupancy rate for beds is quite high at 96.18%, with a standard deviation of approximately 9.35%, indicating that most shelters are consistently near full capacity. Similarly, the mean service user count stands at 38.41, with a high standard deviation of 35.41, suggesting that there is substantial variability in the number of individuals using the shelters across the dataset. Notably, the data for capacity (actual beds) is missing, which may indicate incomplete reporting or issues in data collection regarding shelter bed availability. Further analysis is required to understand the implications of this missing data. The 'Families' sector was excluded from the final visualization due to a significant portion of missing data in the occupancy rate, which resulted in unreliable service user counts. Including this category would have distorted the interpretation of trends across sectors. Therefore, it was deemed appropriate to focus on the other sectors that have more complete and consistent data.
+
+```{r, warning=FALSE}
+#| label: tbl-observation-by-year
+#| fig-cap: Service User Count by year
 #| echo: false
 
-data %>%
-  ggplot(aes(x = application_for, fill = response_rate_met)) +
-  geom_bar(position = "dodge") +
-  labs(x = "Application Type", y = "Number of Polls", fill = "Response Rate Met", title = "Response Rate Met by Application Type") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+# Count the number of observations by year
+observations_by_year <- table(data$year)
+# Convert capacity_actual_bed to numeric (if it's not already)
 
+
+# Create a dataframe for the table
+observations_table <- data.frame(
+  Year = names(observations_by_year),
+  Number_of_Observations = as.vector(observations_by_year)
+)
+
+# Calculate mean and standard deviation for relevant columns
+mean_occupancy_rate <- mean(data$occupancy_rate_beds, na.rm = TRUE)
+sd_occupancy_rate <- sd(data$occupancy_rate_beds, na.rm = TRUE)
+
+mean_service_user_count <- mean(data$service_user_count, na.rm = TRUE)
+sd_service_user_count <- sd(data$service_user_count, na.rm = TRUE)
+
+mean_capacity_actual_bed <- mean(data$capacity_actual_bed, na.rm = TRUE)
+sd_capacity_actual_bed <- sd(data$capacity_actual_bed, na.rm = TRUE)
+
+# Table for observations by year
+kable(observations_table, caption = "Table: Number of observations by year")
+```
+
+```{r, warning=FALSE}
+#| label: tbl-summary-statistics
+#| fig-cap: Summary Statistics
+#| echo: false
+#| 
+summary_stats <- data.frame(
+  Variable = c("Occupancy Rate (Beds)", "Service User Count", "Capacity (Actual Beds)"),
+  Mean = c(mean_occupancy_rate, mean_service_user_count, mean_capacity_actual_bed),
+  SD = c(sd_occupancy_rate, sd_service_user_count, sd_capacity_actual_bed)
+)
+
+kable(summary_stats, caption = "Table: Mean and standard deviation of key variables")
 
 ```
 
 # Results {#sec-results}
 
+```{r, warning=FALSE}
+#| label: fig-occupancy-rate
+#| fig-cap: Average Occupancy Rate of Beds by year
+#| echo: false
 
-## Voter Turnout
-Voter turnout, as measured by the number of ballots cast, varies significantly across different application types. For example, Traffic calming initiatives attracted an average of 200 ballots per poll, while front yard parking attracted an average of 100 ballots, as seen in @fig-ballots-cast, while front yard parking proposals generally receive fewer votes. This suggests that residents are more engaged with policies that directly affect public infrastructure and safety.
+yearly_data <- data %>%
+  group_by(year) %>%
+  summarise(Avg_Occupancy_Rate_Beds = mean(as.numeric(occupancy_rate_beds), na.rm = TRUE), 
+            .groups = "keep")
 
-## Poll Results
-The majority of polls analyzed resulted in a favorable outcome ("In Favour"), particularly for front yard parking and boulevard cafes. As shown in , most applications were supported by the public, although there were notable exceptions in the case of traffic calming initiatives, which received a higher number of "Opposed" votes.
 
-## Response Rate
-Meeting the response rate requirement is essential for validating poll results. As shown in @fig-response-rate, response rates were more likely to be met for boulevard cafes and front yard parking polls. This could indicate a higher level of engagement in these areas, possibly due to their direct impact on property use.
+# Plot: Average Occupancy Rate of Beds by year
+ggplot(yearly_data, aes(x = factor(year), y = Avg_Occupancy_Rate_Beds)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  geom_text(aes(label = round(Avg_Occupancy_Rate_Beds, 1)), vjust = -0.5, color = "black") +
+  labs(title = "Average Occupancy Rate of Beds by year",
+       x = "year", y = "Average Occupancy Rate (Beds)") +
+  theme_minimal() +
+  coord_cartesian(ylim = c(80, NA))
 
-# Discussion {#sec-dis}
+```
 
-## Key Findings
-One of the most significant findings in this analysis is the variation in voter turnout based on the type of municipal application. Traffic calming initiatives, which have a direct impact on road use and safety, attracted the highest number of ballots cast, indicating strong public interest in infrastructure-related projects.
+With the graph that detailed the average occupancy rate of beds from 2021 to 2024, it is evident that there is a increasing need for shelter–which most probably translates to an increasing homeless population in Toronto. Although the government initiative claimed that there are more resources allocated to assist......
 
-In contrast, front yard parking polls typically received lower voter turnout, possibly because they are seen as affecting a smaller portion of the population. However, these polls still garnered high levels of support from those who participated.
+This result can also hint towards a the maximization of capacity that suggest the continuous need for resources, not a staggering increase, We will need to focus on other trends in data to get to the conclusion on whether there is a lack of resources in solving homelessness in Toronto.
 
-## Limitations and Future Work
-One limitation of this study is the potential for missing data. For instance, certain polls lack complete address information, which could impact the analysis of geographic trends in polling results. Future work could explore more granular patterns in voter engagement by incorporating additional demographic and geographic data.
+```{r, warning=FALSE}
+#| label: fig-bed-capacity
+#| fig-cap: Actual Bed Capacity by Program Model and year
+#| echo: false
+filtered_data <- data %>%
+  filter(program_model %in% c("Emergency", "Transitional"))
 
-Additionally, further research could investigate the long-term outcomes of these polls, examining whether the results led to sustained community satisfaction with the implemented policies.
+# Group by year, Program Model, and summarize actual bed capacity
+yearly_bed_capacity <- filtered_data %>%
+  group_by(year, program_model) %>%
+  summarise(Total_Bed_Capacity = sum(capacity_actual_bed, na.rm = TRUE), 
+            .groups = "keep")
+
+
+# Plot: Actual Bed Capacity by Program Model and year
+ggplot(yearly_bed_capacity, aes(x = factor(year), y = Total_Bed_Capacity, fill = program_model)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Actual Bed Capacity by Program Model and year",
+       x = "year", y = "Actual Bed Capacity") +
+  theme_minimal()
+
+
+```
+
+The above graph shed light on the actual program model that exist in these shelters, giving us a deeper look into what resources the large homeless population in Toronto actually needs. The data is focused on two program models.... each meaning....
+
+with large disparity between the two types, we see a lack of desire in staying in shelter for an extended period of time, which may express the desire to get out of the homeless state or some undesirable nature of these shelters.
+
+The gap between two capacities also can point to possible policy direction that the government and hone in on, as well as potential academic research on the underlying reason behind the great differences.
+
+Moreover, we also see that the capacity for emergency category grew in size progressively within the years that the data has presented. This detail echoed the growing rate of occupancy presented above, as well as affirming the assumption on the growing population of homeless individuals. With a growing occupancy rate adding on to the actual growth of capacity, there is a strong possibility that the homeless population is seeing a exponential growth that the state has to focus on solving–with a more assertive policy outlook.
+
+```{r , warning=FALSE}
+#| label: fig-service-user-count
+#| fig-cap: Service User Count Over Months by year
+#| echo: false
+monthly_data <- data %>%
+  group_by(year, month) %>%
+  summarise(service_user_count = sum(service_user_count, na.rm = TRUE), 
+            .groups = "keep")
+
+
+# Plot: Service User Count Over Months by year
+ggplot(monthly_data, aes(x = month, y = service_user_count, color = factor(year), group = year)) +
+  geom_line(size = 1) +
+  labs(title = "Service User Count Over Months by year",
+       x = "month", y = "Service User Count", color = "Year") +
+  theme_minimal() +
+  scale_x_discrete(limits = month.abb)
+```
+
+After looking into capacities of homeless shelters in Toronto, we will now look into service user count from 2021 to 2024, with a monthly distribution that give us a clearer sense of how the capacities
+
+```{r, warning=FALSE}
+#| label: fig-service-sector
+#| fig-cap: Service User Count by sector for Each year
+#| echo: false
+sector_data <- data %>%
+  group_by(year, sector) %>%
+  summarise(Total_Service_User_Count = sum(service_user_count, na.rm = TRUE), .groups = "drop")
+
+sector_data_filtered <- sector_data %>%
+  filter(sector != "Families")
+
+
+# Plot: Service User Count by sector for Each year
+ggplot(sector_data_filtered, aes(x = sector, y = Total_Service_User_Count, fill = sector)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Service User Count by sector for Each year", x = "sector", y = "Total Service User Count") +
+  facet_wrap(~ year, ncol = 2) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  coord_cartesian(ylim = c(0, NA))
+
+```
 
 \newpage
 
 \appendix
 
-# Appendix {-}
-
+# Appendix {.unnumbered}
 
 \newpage
 
-
 # References
-
-

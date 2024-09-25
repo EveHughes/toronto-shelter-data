@@ -14,11 +14,11 @@ library(tidyverse)
 
 #### Download data ####
 # get package
-package <- show_package("7bce9bf4-be5c-4261-af01-abfbc3510309")
+package <- show_package("21c83b32-d5a8-4106-a54f-010dbe49f6f2")
 package
  
 # get all resources for this package
-resources <- list_package_resources("7bce9bf4-be5c-4261-af01-abfbc3510309")
+resources <- list_package_resources("21c83b32-d5a8-4106-a54f-010dbe49f6f2")
  
 # identify datastore resources; by default, Toronto Open Data sets datastore resource format to CSV for non-geospatial and GeoJSON for geospatial resources
 datastore_resources <- filter(resources, tolower(format) %in% c('csv', 'geojson'))
@@ -32,6 +32,6 @@ data
 #### Save data ####
 # [...UPDATE THIS...]
 # change the_raw_data to whatever name you assigned when you downloaded it.
-write_csv(data, "data/raw_data/unedited_data.csv") 
+write_csv(data, "data/raw_data/daily-shelter-overnight-service-occupancy-capacity-2024.csvv") 
 
          

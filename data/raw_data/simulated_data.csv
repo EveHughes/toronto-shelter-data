@@ -1,101 +1,101 @@
-id,ADDRESS,APPLICATION_FOR,BALLOTS_CAST,BALLOTS_IN_FAVOUR,BALLOTS_OPPOSED,CLOSE_DATE,POLL_RESULT,RESPONSE_RATE_MET
-1,657 Example St,Front Yard Parking,39,20,2,2016-08-17,Opposed,No
-2,202 Example St,Front Yard Parking,11,20,6,2021-06-01,In Favour,No
-3,728 Example St,Front Yard Parking,21,10,6,2019-05-06,In Favour,No
-4,874 Example St,Sidewalk Construction,33,25,1,2016-08-22,In Favour,Yes
-5,526 Example St,Road Repairs,28,25,6,2023-09-05,In Favour,No
-6,363 Example St,Front Yard Parking,35,21,9,2017-12-01,In Favour,Yes
-7,986 Example St,Front Yard Parking,22,20,8,2022-07-24,Opposed,Yes
-8,632 Example St,Front Yard Parking,44,20,6,2019-08-21,In Favour,Yes
-9,431 Example St,Front Yard Parking,28,9,8,2015-05-18,Opposed,No
-10,273 Example St,Road Repairs,13,24,8,2020-12-14,Opposed,Yes
-11,202 Example St,Sidewalk Construction,29,9,1,2020-11-11,Opposed,Yes
-12,210 Example St,Road Repairs,16,24,8,2022-11-03,In Favour,Yes
-13,105 Example St,Road Repairs,42,11,10,2022-12-09,Opposed,No
-14,851 Example St,Front Yard Parking,33,12,10,2021-01-23,Opposed,No
-15,701 Example St,Road Repairs,33,24,3,2015-03-07,Opposed,No
-16,320 Example St,Sidewalk Construction,31,21,1,2020-04-01,Opposed,No
-17,812 Example St,Sidewalk Construction,36,18,8,2018-05-22,Opposed,No
-18,210 Example St,Front Yard Parking,45,10,0,2018-05-25,In Favour,No
-19,48 Example St,Front Yard Parking,24,17,5,2022-09-29,Opposed,No
-20,282 Example St,Sidewalk Construction,50,20,6,2019-04-11,Opposed,Yes
-21,105 Example St,Road Repairs,30,9,8,2016-02-18,Opposed,Yes
-22,604 Example St,Front Yard Parking,44,15,5,2021-08-07,In Favour,No
-23,427 Example St,Road Repairs,33,11,2,2023-05-16,Opposed,No
-24,362 Example St,Road Repairs,14,25,7,2018-06-21,Opposed,Yes
-25,207 Example St,Sidewalk Construction,46,13,4,2016-05-31,Opposed,Yes
-26,601 Example St,Sidewalk Construction,15,23,1,2021-11-18,In Favour,No
-27,60 Example St,Front Yard Parking,10,24,3,2016-11-05,In Favour,Yes
-28,913 Example St,Road Repairs,27,25,8,2020-07-12,Opposed,Yes
-29,555 Example St,Sidewalk Construction,13,22,5,2017-06-17,In Favour,No
-30,731 Example St,Front Yard Parking,26,20,4,2015-02-16,In Favour,No
-31,584 Example St,Front Yard Parking,31,25,2,2020-05-06,Opposed,Yes
-32,282 Example St,Front Yard Parking,42,7,1,2022-09-21,Opposed,Yes
-33,124 Example St,Front Yard Parking,40,16,9,2021-09-21,In Favour,No
-34,514 Example St,Road Repairs,26,17,6,2019-01-17,In Favour,Yes
-35,255 Example St,Sidewalk Construction,22,19,8,2019-03-17,Opposed,Yes
-36,657 Example St,Front Yard Parking,11,11,6,2023-04-10,Opposed,No
-37,632 Example St,Sidewalk Construction,22,11,7,2020-07-13,In Favour,No
-38,608 Example St,Front Yard Parking,26,15,4,2023-11-19,Opposed,Yes
-39,706 Example St,Front Yard Parking,40,12,9,2018-07-07,In Favour,No
-40,568 Example St,Sidewalk Construction,41,13,1,2019-10-17,In Favour,No
-41,431 Example St,Sidewalk Construction,24,20,10,2023-02-18,Opposed,No
-42,409 Example St,Road Repairs,19,22,1,2017-05-14,Opposed,No
-43,748 Example St,Sidewalk Construction,38,20,8,2020-02-05,In Favour,Yes
-44,879 Example St,Front Yard Parking,42,15,3,2015-03-25,In Favour,Yes
-45,281 Example St,Road Repairs,17,19,1,2020-05-22,Opposed,No
-46,15 Example St,Road Repairs,31,10,8,2015-04-09,In Favour,No
-47,213 Example St,Front Yard Parking,22,8,0,2022-05-22,In Favour,No
-48,454 Example St,Sidewalk Construction,36,21,2,2020-12-13,In Favour,Yes
-49,210 Example St,Road Repairs,30,13,1,2019-10-25,Opposed,Yes
-50,604 Example St,Road Repairs,46,10,4,2016-02-06,In Favour,No
-51,431 Example St,Front Yard Parking,19,14,8,2021-12-22,Opposed,Yes
-52,701 Example St,Front Yard Parking,11,20,4,2023-09-27,In Favour,Yes
-53,555 Example St,Road Repairs,20,19,8,2015-08-23,Opposed,No
-54,731 Example St,Front Yard Parking,14,5,2,2018-06-05,Opposed,No
-55,742 Example St,Front Yard Parking,22,17,1,2015-04-24,In Favour,Yes
-56,431 Example St,Road Repairs,15,5,7,2020-04-08,Opposed,Yes
-57,874 Example St,Front Yard Parking,31,10,8,2023-02-04,In Favour,Yes
-58,61 Example St,Road Repairs,37,6,0,2017-08-14,Opposed,Yes
-59,812 Example St,Sidewalk Construction,42,13,3,2017-03-18,Opposed,Yes
-60,320 Example St,Front Yard Parking,29,23,1,2015-02-03,In Favour,Yes
-61,851 Example St,Road Repairs,34,23,5,2022-12-22,In Favour,Yes
-62,480 Example St,Sidewalk Construction,45,17,9,2018-06-02,In Favour,Yes
-63,812 Example St,Sidewalk Construction,27,10,1,2022-12-05,Opposed,Yes
-64,604 Example St,Road Repairs,34,23,3,2018-05-12,In Favour,No
-65,95 Example St,Road Repairs,42,20,3,2015-04-02,Opposed,No
-66,601 Example St,Front Yard Parking,21,13,3,2023-12-02,Opposed,No
-67,470 Example St,Road Repairs,32,20,4,2020-12-08,Opposed,Yes
-68,555 Example St,Front Yard Parking,49,21,8,2017-06-10,In Favour,Yes
-69,632 Example St,Sidewalk Construction,34,24,2,2017-12-13,Opposed,Yes
-70,614 Example St,Road Repairs,43,11,6,2022-12-23,In Favour,Yes
-71,161 Example St,Front Yard Parking,41,8,1,2023-06-08,Opposed,No
-72,889 Example St,Road Repairs,15,12,9,2016-06-22,Opposed,Yes
-73,202 Example St,Front Yard Parking,42,21,10,2018-02-10,Opposed,No
-74,529 Example St,Road Repairs,16,21,2,2016-04-09,Opposed,No
-75,728 Example St,Road Repairs,14,13,0,2018-02-19,Opposed,Yes
-76,608 Example St,Front Yard Parking,37,16,5,2015-06-08,Opposed,No
-77,986 Example St,Road Repairs,28,23,10,2016-01-26,Opposed,Yes
-78,15 Example St,Front Yard Parking,22,21,10,2016-11-27,Opposed,Yes
-79,282 Example St,Road Repairs,26,5,9,2015-12-15,Opposed,No
-80,210 Example St,Front Yard Parking,35,10,0,2015-11-22,In Favour,Yes
-81,851 Example St,Front Yard Parking,42,24,10,2022-02-25,In Favour,No
-82,446 Example St,Front Yard Parking,50,14,0,2020-08-24,Opposed,Yes
-83,298 Example St,Road Repairs,45,11,7,2018-03-17,In Favour,No
-84,742 Example St,Sidewalk Construction,39,6,10,2020-02-05,In Favour,No
-85,313 Example St,Front Yard Parking,47,15,7,2021-05-04,In Favour,No
-86,209 Example St,Road Repairs,27,10,3,2017-12-21,In Favour,Yes
-87,774 Example St,Road Repairs,19,21,2,2016-02-03,In Favour,No
-88,480 Example St,Front Yard Parking,26,23,10,2020-02-19,In Favour,No
-89,330 Example St,Front Yard Parking,28,11,3,2015-09-12,In Favour,No
-90,653 Example St,Front Yard Parking,27,5,6,2021-11-10,Opposed,Yes
-91,717 Example St,Front Yard Parking,11,23,8,2019-06-23,Opposed,No
-92,35 Example St,Road Repairs,11,17,8,2019-01-18,In Favour,No
-93,878 Example St,Road Repairs,14,10,8,2019-01-01,Opposed,No
-94,5 Example St,Road Repairs,23,8,6,2023-01-02,Opposed,Yes
-95,614 Example St,Sidewalk Construction,13,15,9,2017-06-02,Opposed,No
-96,940 Example St,Road Repairs,43,13,8,2018-11-03,Opposed,Yes
-97,874 Example St,Sidewalk Construction,10,25,1,2018-11-29,Opposed,No
-98,601 Example St,Sidewalk Construction,32,11,2,2017-05-28,In Favour,Yes
-99,95 Example St,Road Repairs,43,23,10,2015-12-02,In Favour,Yes
-100,530 Example St,Front Yard Parking,42,18,2,2020-08-28,In Favour,No
+OCCUPANCY_DATE,SERVICE_USER_COUNT,OCCUPANCY_RATE_BEDS,CAPACITY_ACTUAL_BED,PROGRAM_MODEL,SECTOR
+2023-12-02,129,82.95339646283537,82,Transitional,Community
+2022-02-05,150,80.85687779821455,76,Transitional,Education
+2018-01-07,166,74.16166812181473,78,Transitional,Housing
+2020-01-13,151,66.65498749352992,69,Emergency,Housing
+2023-12-09,142,38.81711426656693,69,Emergency,Education
+2019-03-14,132,50.85970007348806,59,Transitional,Community
+2023-06-12,136,32.76873000431806,76,Emergency,Education
+2022-10-10,173,84.95006535667926,75,Transitional,Education
+2019-07-26,147,32.10969124920666,71,Transitional,Health
+2021-04-16,143,85.13222543988377,84,Transitional,Housing
+2020-10-20,136,20.655663590878248,61,Emergency,Education
+2023-02-06,138,27.10002677049488,98,Emergency,Education
+2023-07-30,144,93.08834867551923,73,Emergency,Community
+2018-07-08,151,27.73993439041078,73,Emergency,Community
+2023-08-31,140,80.68035519681871,68,Transitional,Housing
+2018-05-24,153,51.43286264501512,82,Emergency,Community
+2019-06-05,195,38.90253365971148,76,Emergency,Health
+2018-08-22,153,98.99741017725319,76,Emergency,Education
+2022-06-03,148,39.25061470363289,90,Transitional,Housing
+2021-09-30,142,1.0273958323523402,72,Transitional,Health
+2019-08-15,146,53.76433595083654,81,Transitional,Housing
+2018-10-21,153,65.50558670423925,76,Transitional,Community
+2018-11-25,160,70.47966867685318,96,Transitional,Education
+2019-10-31,159,79.83112779911608,75,Emergency,Community
+2023-03-10,139,58.69606325868517,74,Emergency,Community
+2020-05-15,136,4.371119802817702,84,Transitional,Community
+2019-02-26,161,9.737428091466427,93,Emergency,Community
+2022-12-09,129,43.03959724493325,81,Emergency,Community
+2019-04-12,160,42.81867942772806,73,Emergency,Education
+2020-06-27,163,86.03804123122245,78,Transitional,Education
+2022-01-31,150,19.256291072815657,85,Emergency,Community
+2021-08-13,142,73.31031463108957,74,Transitional,Community
+2023-06-04,144,26.55808108393103,78,Emergency,Education
+2022-02-09,148,4.332043346948922,85,Transitional,Health
+2023-08-17,147,58.8173589669168,72,Transitional,Health
+2022-10-23,139,96.22987229377031,78,Transitional,Health
+2018-05-17,156,43.83784004021436,71,Emergency,Education
+2020-06-20,162,7.908121240325272,80,Transitional,Housing
+2019-05-04,131,75.70335797499865,65,Emergency,Health
+2018-02-21,158,65.57928679976612,88,Transitional,Health
+2019-07-02,144,37.0043421164155,69,Transitional,Housing
+2020-10-24,153,17.74104470387101,78,Transitional,Education
+2019-10-18,167,88.30972807481885,85,Emergency,Education
+2020-06-28,126,34.283367288298905,69,Emergency,Education
+2023-06-27,131,27.763745398260653,81,Transitional,Education
+2020-12-07,150,48.696461017243564,80,Transitional,Education
+2021-01-05,137,6.259294529445469,64,Emergency,Housing
+2021-11-19,160,16.55341200530529,82,Emergency,Education
+2021-12-06,142,88.14862254075706,67,Emergency,Housing
+2018-08-07,133,6.427240581251681,80,Emergency,Health
+2021-05-12,163,70.05591990891844,77,Transitional,Housing
+2022-02-24,135,10.436147847212851,87,Emergency,Health
+2021-10-30,185,75.32850340940058,83,Transitional,Housing
+2020-09-18,150,74.64238491374999,81,Transitional,Education
+2018-12-30,156,30.04451107699424,70,Emergency,Housing
+2019-06-05,161,9.455270180478692,62,Transitional,Education
+2020-10-07,151,41.055478900671005,88,Emergency,Housing
+2022-11-17,155,76.61732023116201,76,Emergency,Community
+2023-12-19,157,91.3300895364955,76,Transitional,Community
+2021-10-02,155,43.4205551398918,78,Transitional,Housing
+2018-09-30,134,93.13729447312653,73,Emergency,Housing
+2020-08-14,137,60.96945186145604,79,Emergency,Education
+2022-12-15,140,76.02910117711872,74,Emergency,Health
+2021-03-24,153,47.399298078380525,72,Transitional,Housing
+2023-10-03,163,39.753124793060124,76,Emergency,Health
+2021-07-24,140,60.33213157206774,71,Emergency,Housing
+2021-02-03,155,39.05465502757579,84,Emergency,Housing
+2023-03-22,141,36.774247558787465,85,Emergency,Education
+2020-01-07,156,18.138537951745093,89,Emergency,Community
+2020-10-15,144,66.02477498818189,78,Emergency,Housing
+2023-03-05,168,12.109697540290654,90,Emergency,Community
+2018-04-20,163,19.948445120826364,87,Emergency,Housing
+2023-04-19,145,56.64569232612848,77,Transitional,Education
+2021-06-10,145,50.47388970851898,65,Emergency,Community
+2023-09-18,146,79.32152627035975,76,Transitional,Community
+2021-12-23,144,89.2256633611396,85,Transitional,Health
+2022-04-18,137,47.16325271874666,74,Emergency,Education
+2023-04-25,147,50.96623199060559,82,Emergency,Health
+2020-08-11,144,57.25921047851443,91,Transitional,Health
+2023-09-14,149,26.544305100105703,74,Emergency,Community
+2020-10-14,153,6.982789118774235,76,Transitional,Education
+2022-01-18,160,31.226693745702505,94,Transitional,Health
+2019-03-08,150,37.17968992423266,67,Transitional,Education
+2018-03-03,153,45.88850161526352,71,Transitional,Education
+2020-11-14,149,51.80373853072524,86,Transitional,Community
+2021-07-31,142,6.7631303099915385,89,Emergency,Education
+2023-03-05,158,34.06736375764012,79,Transitional,Housing
+2020-06-25,133,84.49213809799403,75,Transitional,Housing
+2020-04-16,132,13.251225231215358,67,Emergency,Housing
+2019-11-24,156,26.15285764914006,82,Transitional,Community
+2018-05-27,135,74.90387321449816,68,Transitional,Community
+2019-03-02,146,22.187291854061186,70,Transitional,Community
+2020-03-18,165,33.32579855341464,77,Transitional,Health
+2019-01-21,138,53.41786267235875,66,Emergency,Housing
+2020-11-22,151,82.00823222286999,77,Emergency,Housing
+2021-01-10,176,34.32313175871968,77,Transitional,Housing
+2023-05-29,172,28.687228285707533,77,Transitional,Community
+2018-03-26,162,58.20268352981657,116,Emergency,Health
+2021-11-18,124,98.80441210698336,75,Emergency,Housing
+2018-03-29,156,5.321666412055492,80,Emergency,Housing

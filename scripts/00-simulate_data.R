@@ -1,49 +1,37 @@
 #### Preamble ####
-# Purpose: Simulates Polls Conducted by the City dataset
+# Purpose: Simulates data
 # Author: Tim Chen
-# Date: 21 September 2024
+# Date: 19 September 2024
 # Contact: timwt.chen@mail.utoronto.ca
 # Pre-requisites: None
 # Any other information needed? None
 
 #### Workspace setup ####
 library(tidyverse)
+library(lubridate)
 
 #### Simulate data ####
 set.seed(304)
 
-# Define the start and end date for poll dates
-start_date <- as.Date("2015-01-01")
+# Define the start and end dates for random date generation
+start_date <- as.Date("2018-01-01")
 end_date <- as.Date("2023-12-31")
 
-# Number of polls to simulate
-number_of_polls <- 100
+# Number of random dates and observations
+n_dates <- 100
 
-# Simulate address data (fake addresses)
-addresses <- paste0(sample(1:1000, number_of_polls, replace = TRUE), " Example St")
-
-# Define possible application types
-applications <- c("Front Yard Parking", "Sidewalk Construction", "Road Repairs")
-
-# Simulate data with selected columns of interest
-poll_data <- tibble(
-  id = 1:number_of_polls,
-  ADDRESS = sample(addresses, number_of_polls, replace = TRUE),
-  APPLICATION_FOR = sample(applications, number_of_polls, replace = TRUE),
-  BALLOTS_CAST = sample(10:50, number_of_polls, replace = TRUE),
-  BALLOTS_IN_FAVOUR = sample(5:25, number_of_polls, replace = TRUE),
-  BALLOTS_OPPOSED = sample(0:10, number_of_polls, replace = TRUE),
-  CLOSE_DATE = as.Date(
-    runif(
-      n = number_of_polls,
-      min = as.numeric(start_date),
-      max = as.numeric(end_date)
-    ),
-    origin = "1970-01-01"
-  ),
-  POLL_RESULT = sample(c("In Favour", "Opposed"), number_of_polls, replace = TRUE),
-  RESPONSE_RATE_MET = sample(c("Yes", "No"), number_of_polls, replace = TRUE)
+# Create simulated data
+simulated_data <- tibble(
+  OCCUPANCY_DATE = as.Date(runif(n = n_dates, 
+                                 min = as.numeric(start_date), 
+                                 max = as.numeric(end_date)), 
+                           origin = "1970-01-01"),
+  SERVICE_USER_COUNT = rpois(n = n_dates, lambda = 150),
+  OCCUPANCY_RATE_BEDS = runif(n = n_dates, min = 0, max = 100),
+  CAPACITY_ACTUAL_BED = rpois(n = n_dates, lambda = 80),
+  PROGRAM_MODEL = sample(c("Emergency", "Transitional"), n_dates, replace = TRUE),
+  SECTOR = sample(c("Health", "Housing", "Education", "Community"), n_dates, replace = TRUE)
 )
 
-#### Write_csv ####
-write_csv(poll_data, file = "data/raw_data/simulated_data.csv")
+# Save the simulated data
+write_csv(simulated_data, "data/raw_data/simulated_data.csv")
