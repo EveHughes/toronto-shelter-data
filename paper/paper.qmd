@@ -74,11 +74,12 @@ kable(data_subset, col.names = c('Occupancy Date', 'Service User Count', 'Progra
 data$occupancy_date <- as.Date(data$occupancy_date, format="%Y-%m-%d")
 
 ggplot(data, aes(x = occupancy_date, y = service_user_count)) +
-  geom_jitter(color = "gray", alpha = 0.5, width = 0.2, height = 0.2) +
+  geom_jitter(color = "gray", alpha = 0.5, width = 0.2, height = 0.2, size = 0.1) + # Adjust size here
   theme_minimal() +
   labs(x = "Date of Sample Collection", y = "Service User Count") +
   scale_y_continuous(limits = c(0, 100)) +
   scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+
 
 ```
 
@@ -88,7 +89,7 @@ ggplot(data, aes(x = occupancy_date, y = service_user_count)) +
 
 To gain a better understanding of the structure of the shelter occupancy data, we first examine the number of observations recorded in each year, as displayed in @tbl-observation-by-year. Over the period from 2021 to 2024, the data collection appears relatively consistent, with the exception of 2024, which shows a noticeable decrease in the number of observations. This reduction in data for 2024 could be a result of incomplete data collection or other external factors that impacted data availability for that year. The total number of observations fluctuates slightly between 32,000 to 33,000 for 2021 to 2023, with a significant drop to 22,801 in 2024, hinting that additional observations might still be collected as the year progresses.
 
-Moreover, @tbl-summary-statistics provides key summary statistics on critical variables such as occupancy rate (beds), service user count, and capacity (actual beds). On average, the occupancy rate for beds is quite high at 96.18%, with a standard deviation of approximately 9.35%, indicating that most shelters are consistently near full capacity. Similarly, the mean service user count stands at 38.41, with a high standard deviation of 35.41, suggesting that there is substantial variability in the number of individuals using the shelters across the dataset. Notably, the data for capacity (actual beds) is missing, which may indicate incomplete reporting or issues in data collection regarding shelter bed availability. Further analysis is required to understand the implications of this missing data. The 'Families' sector was excluded from the final visualization due to a significant portion of missing data in the occupancy rate, which resulted in unreliable service user counts. Including this category would have distorted the interpretation of trends across sectors. Therefore, it was deemed appropriate to focus on the other sectors that have more complete and consistent data.
+Moreover, @tbl-summary-statistics provides key summary statistics on critical variables such as occupancy rate (beds), service user count, and capacity (actual beds). On average, the occupancy rate for beds is quite high at 96.18%, with a standard deviation of approximately 9.35%, indicating that most shelters are consistently near full capacity. Similarly, the mean service user count stands at 38.41, with a high standard deviation of 35.41, suggesting that there is substantial variability in the number of individuals using the shelters across the dataset. The 'Families' sector was excluded from the final visualization due to a significant portion of missing data in the occupancy rate, which resulted in unreliable service user counts. Including this category would have distorted the interpretation of trends across sectors. Therefore, it was deemed appropriate to focus on the other sectors that have more complete and consistent data.
 
 ```{r, warning=FALSE}
 #| label: tbl-observation-by-year
@@ -145,9 +146,10 @@ yearly_data <- data %>%
 ggplot(yearly_data, aes(x = factor(year), y = Avg_Occupancy_Rate_Beds)) +
   geom_bar(stat = "identity", fill = "skyblue") +
   geom_text(aes(label = round(Avg_Occupancy_Rate_Beds, 1)), vjust = -0.5, color = "black") +
-  labs(x = "year", y = "Average Occupancy Rate (Beds)") +
+  labs(x = "Year", y = "Average Occupancy Rate (Beds)") +
   theme_minimal() +
-  coord_cartesian(ylim = c(80, NA))
+  scale_y_continuous(expand = expansion(mult = c(0, 0.1)))  
+
 
 ```
 
@@ -171,7 +173,7 @@ yearly_bed_capacity <- filtered_data %>%
 
 ggplot(yearly_bed_capacity, aes(x = factor(year), y = Total_Bed_Capacity, fill = program_model)) +
   geom_bar(stat = "identity", position = "dodge") +
-  labs(x = "year", y = "Actual Bed Capacity") +
+  labs(x = "Year", y = "Actual Bed Capacity") +
   theme_minimal()
 
 
@@ -198,7 +200,7 @@ monthly_data <- data %>%
 
 ggplot(monthly_data, aes(x = month, y = service_user_count, color = factor(year), group = year)) +
   geom_line(size = 1) +
-  labs(x = "month", y = "Service User Count", color = "Year") +
+  labs(x = "Month", y = "Service User Count", color = "Year") +
   theme_minimal() +
   scale_x_discrete(limits = month.abb)
 ```
@@ -218,6 +220,8 @@ Following the analysis of overall service user counts across the years, it is es
 #| label: fig-service-sector
 #| fig-cap: Service User Count by sector for Each year
 #| echo: false
+library(scales)
+
 sector_data <- data %>%
   group_by(year, sector) %>%
   summarise(Total_Service_User_Count = sum(service_user_count, na.rm = TRUE), .groups = "drop")
@@ -227,8 +231,10 @@ sector_data_filtered <- sector_data %>%
 
 ggplot(sector_data_filtered, aes(x = sector, y = Total_Service_User_Count, fill = sector)) +
   geom_bar(stat = "identity") +
-  labs(x = "sector", y = "Total Service User Count") +
+  labs(x = "Sector", y = "Total Service User Count") +
   facet_wrap(~ year, ncol = 2) +
+  scale_y_continuous(labels = comma) +  # Format y-axis with whole numbers
+  scale_fill_discrete(name = "Sector") +  # Change legend title
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   coord_cartesian(ylim = c(0, NA))

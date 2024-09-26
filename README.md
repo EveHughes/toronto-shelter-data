@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repo provides students with a foundation for their own projects associated with *Telling Stories with Data*. You do not need every aspect for every paper and you should delete aspects that you do not need.
+This paper analyzes the dynamics of homelessness and shelter use in Toronto by examining daily shelter occupancy data collected from 2021 to 2024. The study aims to identify key trends in bed occupancy rates, shelter capacities, and service user counts. The findings highlight a consistent increase in shelter occupancy rates, particularly during winter months, revealing a pressing need for expanded shelter services and improved emergency response efforts. Furthermore, the paper underscores disparities in shelter capacities between emergency and transitional programs, calling for enhanced government policies to tackle the growing homelessness crisis. Through a data-driven approach, this analysis provides insights into the ongoing challenges within Toronto's shelter system and suggests pathways for more effective, long-term solutions.
 
 ## File Structure
 
