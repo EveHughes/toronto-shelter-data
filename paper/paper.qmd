@@ -174,6 +174,7 @@ yearly_bed_capacity <- filtered_data %>%
 ggplot(yearly_bed_capacity, aes(x = factor(year), y = Total_Bed_Capacity, fill = program_model)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(x = "Year", y = "Actual Bed Capacity") +
+  scale_y_continuous(labels = scales::comma) +
   theme_minimal()
 
 
@@ -201,7 +202,9 @@ ggplot(monthly_data, aes(x = month, y = service_user_count, color = factor(year)
   geom_line(size = 1) +
   labs(x = "Month", y = "Service User Count", color = "Year") +
   theme_minimal() +
-  scale_x_discrete(limits = month.abb)
+  scale_x_discrete(limits = month.abb) +
+  scale_y_continuous(labels = scales::comma)
+
 ```
 
 Having examined the capacities of homeless shelters in Toronto, we now turn to the service user count from 2021 to 2024. By analyzing the monthly distribution of service users, we gain a clearer understanding of the factors contributing to the gradual increase in emergency shelter capacity over time.
