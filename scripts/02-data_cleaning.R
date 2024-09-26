@@ -1,12 +1,11 @@
 #### Preamble ####
-# Purpose: Cleans the raw poll data from Polls Conducted by the City dataset
-# Author: [Your Name]
-# Date: [Update to current date]
-#### Workspace setup ####
-# Contact: [Your Email]
-# License: MIT
-# Pre-requisites: Raw data should be available in 'data/raw_data/unedited_data.csv'
+# Purpose: Cleans the raw shelter occupancy data from Daily Shelter Overnight Service Occupancy and Capacity dataset
+# Author: Tim Chen
+# Date: 26 September 2024
+# Contact: timwt.chen@mail.utoronto.ca
+# Pre-requisites: Raw data should be available in 'data/raw_data/' folder with CSV files for each year from 2021 to 2024
 # Any other information needed? None
+
 
 #### Workspace setup ###
 # Load necessary libraries

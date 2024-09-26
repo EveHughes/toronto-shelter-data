@@ -1,10 +1,10 @@
 #### Preamble ####
-# Purpose: Simulates data
+# Purpose: Simulates shelter occupancy data with random dates and various attributes
 # Author: Tim Chen
 # Date: 19 September 2024
 # Contact: timwt.chen@mail.utoronto.ca
-# Pre-requisites: None
-# Any other information needed? None
+# Pre-requisites: Install tidyverse and lubridate packages
+# Any other information needed? Data saved in CSV format for further use
 
 #### Workspace setup ####
 library(tidyverse)

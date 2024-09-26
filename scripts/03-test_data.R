@@ -1,11 +1,11 @@
 #### Preamble ####
 # Purpose: Sanity check of the shelter occupancy data
-# Author: [Your Name]
-# Date: [Update to current date]
-# Contact: [Your Email]
-# License: MIT
-# Pre-requisites: Need to have raw shelter data
+# Author: Tim Chen
+# Date: 26 September 2024
+# Contact: timwt.chen@mail.utoronto.ca
+# Pre-requisites: Raw shelter data should be available in 'data/analysis_data/analysis_data.csv'
 # Any other information needed? None.
+
 
 #### Workspace setup ####
 library(tidyverse)
