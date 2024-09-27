@@ -1,5 +1,5 @@
 ---
-title: "Analyzing Homelessness and Shelter Use in Toronto: A Data-Driven Approach"
+title: "Toronto’s Shelter System Under Pressure: Investigating Homelessness and Bed Occupancy"
 subtitle: "Understanding the Dynamics of Homelessness in Toronto through Data"
 author:
   - "Tim Chen"
