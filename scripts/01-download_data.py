@@ -1,10 +1,9 @@
-#### Preamble ####
-# Purpose: Downloads and saves the data from the Open Data Toronto portal
-# Author: Amie Liu
-# Date: 16 January 2024
-# Contact: amie.liu@mail.utoronto.ca
-# License: MIT
-# Pre-requisites: None
+# Purpose: Downloads and saves the data from Toronto Open Data (Daily Shelter Overnight Service Occupancy and Capacity)
+# Author: Tim Chen
+# Date: 26 September 2024
+# Contact: timwt.chen@mail.utoronto.ca
+# Pre-requisites: Install opendatatoronto and tidyverse packages; access to the Toronto Open Data portal
+# Any other information needed? The data will be saved in CSV format for future use
 
 import pandas as pd
 from io import StringIO

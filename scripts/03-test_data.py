@@ -1,46 +1,50 @@
 #### Preamble ####
 # Purpose: Sanity check of the shelter occupancy data
-# Author: Tim Chen
+# Author: Tim Chen (translated to Python)
 # Date: 26 September 2024
 # Contact: timwt.chen@mail.utoronto.ca
-# Pre-requisites: Raw shelter data should be available in 'data/analysis_data/analysis_data.csv'
-# Any other information needed? None.
+# Pre-requisites: pandas
+# Any other information needed? Expects data at 'data/analysis_data/analysis_data.csv'
 
+import unittest
+import pandas as pd
 
-#### Workspace setup ####
-library(tidyverse)
+class TestShelterOccupancyData(unittest.TestCase):
 
-#### Test data ####
-# Read in the raw data
-data <- read_csv("data/analysis_data/analysis_data.csv")
+    @classmethod
+    def setUpClass(cls):
+        cls.data = pd.read_csv("data/analysis_data/analysis_data.csv")
 
-# Test for negative numbers in relevant numeric columns
-# Checking service_user_count, occupancy_rate_beds, and capacity_actual_bed
-test_negative_values <- list(
-  service_user_count = min(data$service_user_count, na.rm = TRUE) >= 0,
-  occupancy_rate_beds = min(data$occupancy_rate_beds, na.rm = TRUE) >= 0,
-  capacity_actual_bed = min(data$capacity_actual_bed, na.rm = TRUE) >= 0
-)
+    # Test for non-negative values in numeric columns
+    def test_service_user_count_non_negative(self):
+        self.assertTrue((self.data["service_user_count"] >= 0).all())
 
-# Display test results for negative values
-test_negative_values
+    def test_occupancy_rate_beds_non_negative(self):
+        self.assertTrue((self.data["occupancy_rate_beds"] >= 0).all())
 
-# Test for NAs in critical columns
-# Check if there are any NAs in columns like occupancy_date, service_user_count, and program_model
-test_na_values <- list(
-  occupancy_date_na = all(!is.na(data$occupancy_date)),
-  service_user_count_na = all(!is.na(data$service_user_count)),
-  program_model_na = all(!is.na(data$program_model)),
-  sector_na = all(!is.na(data$sector)),
-  occupancy_rate_beds_na = all(!is.na(data$occupancy_rate_beds))
-)
+    def test_capacity_actual_bed_non_negative(self):
+        self.assertTrue((self.data["capacity_actual_bed"] >= 0).all())
 
-# Display test results for NAs
-test_na_values
+    # Test for no missing values in critical columns
+    def test_occupancy_date_not_na(self):
+        self.assertFalse(self.data["occupancy_date"].isna().any())
 
-# You can also add additional tests if needed, such as:
-# 1. Checking if occupancy rates are within a valid range (e.g., 0 to 100)
-test_valid_occupancy_rate_beds <- all(data$occupancy_rate_beds >= 0 & data$occupancy_rate_beds <= 100, na.rm = TRUE)
+    def test_service_user_count_not_na(self):
+        self.assertFalse(self.data["service_user_count"].isna().any())
 
-# Display the result of the occupancy rate test
-test_valid_occupancy_rate_beds
+    def test_program_model_not_na(self):
+        self.assertFalse(self.data["program_model"].isna().any())
+
+    def test_sector_not_na(self):
+        self.assertFalse(self.data["sector"].isna().any())
+
+    def test_occupancy_rate_beds_not_na(self):
+        self.assertFalse(self.data["occupancy_rate_beds"].isna().any())
+
+    # Test for valid occupancy rate range (0–100)
+    def test_occupancy_rate_beds_range(self):
+        valid = (self.data["occupancy_rate_beds"] >= 0) & (self.data["occupancy_rate_beds"] <= 100)
+        self.assertTrue(valid.all())
+
+if __name__ == "__main__":
+    unittest.main()
