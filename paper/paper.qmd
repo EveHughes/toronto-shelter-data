@@ -15,16 +15,16 @@ number-sections: true
 bibliography: references.bib
 ---
 
-```{r setup, include=FALSE}
+```{python setup, include=FALSE}
+#| include: false
 
-library(ggplot2)
-library(dplyr)
-library(lubridate)
-library(here)
-library(knitr)
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from datetime import datetime
+from matplotlib.ticker import FuncFormatter
 
-data <- read.csv(here("data/analysis_data/analysis_data.csv"))
-
+data = pd.read_csv("../data/analysis_data/analysis_data.csv")
 
 ```
 
@@ -54,32 +54,52 @@ Although no transformations or new variables were created, the data from each ye
 
 \newpage
 
-```{r, warning=FALSE}
+```{python, warning=FALSE}
 #| label: tbl-cleaned_data
+#| tbl-cap: Sample of Cleaned Shelter Occupancy Data
 #| echo: false
-data_head <- head(data)
 
-data_subset <- data_head[, c("occupancy_date", "service_user_count", "program_model")]
+# Subset and preview
+data_subset = data.loc[:, ["occupancy_date", "service_user_count", "program_model"]].head()
 
-kable(data_subset, col.names = c('Occupancy Date', 'Service User Count', 'Program Model'), 
-      align = "ccc", caption = "Sample of Cleaned Shelter Occupancy Data")
+# Rename columns for display
+data_subset.columns = ["Occupancy Date", "Service User Count", "Program Model"]
+
+data_subset
 
 ```
 
-```{r, warning=FALSE}
+```{python, warning=FALSE}
 #| label: fig-service-user-trend
 #| fig-cap: Distribution of Service User Count Over Time by Date of Occupancy
 #| echo: false
 
-data$occupancy_date <- as.Date(data$occupancy_date, format="%Y-%m-%d")
+#prepare data
+data["occupancy_date"] = pd.to_datetime(data["occupancy_date"])
 
-ggplot(data, aes(x = occupancy_date, y = service_user_count)) +
-  geom_jitter(color = "gray", alpha = 0.5, width = 0.2, height = 0.2, size = 0.1) + # Adjust size here
-  theme_minimal() +
-  labs(x = "Date of Sample Collection", y = "Service User Count") +
-  scale_y_continuous(limits = c(0, 100)) +
-  scale_x_date(date_breaks = "1 year", date_labels = "%Y")
+# Apply jitter manually
+x = data["occupancy_date"]
+y = data["service_user_count"]
+x_jittered = x + pd.to_timedelta(np.random.uniform(-0.2, 0.2, size=len(x)), unit="D")
+y_jittered = y + np.random.uniform(-0.2, 0.2, size=len(y))
 
+# Plot
+plt.figure(figsize=(10, 5))
+plt.scatter(x_jittered, y_jittered, color="gray", alpha=0.5, s=1)
+
+# Axis formatting
+plt.ylim(0, 100)
+plt.xlabel("Date of Sample Collection")
+plt.ylabel("Service User Count")
+plt.xticks(rotation=45)
+
+# Set yearly x-axis ticks
+years = pd.date_range(start=x.min(), end=x.max(), freq="YS")
+plt.xticks(years, [d.strftime("%Y") for d in years])
+
+plt.grid(False)
+plt.tight_layout()
+plt.show()
 
 ```
 
@@ -91,41 +111,54 @@ To gain a better understanding of the structure of the shelter occupancy data, w
 
 Moreover, @tbl-summary-statistics provides key summary statistics on critical variables such as occupancy rate (beds), service user count, and capacity (actual beds). On average, the occupancy rate for beds is quite high at 96.18%, with a standard deviation of approximately 9.35%, indicating that most shelters are consistently near full capacity. Similarly, the mean service user count stands at 38.41, with a high standard deviation of 35.41, suggesting that there is substantial variability in the number of individuals using the shelters across the dataset. The 'Families' sector was excluded from the final visualization due to a significant portion of missing data in the occupancy rate, which resulted in unreliable service user counts. Including this category would have distorted the interpretation of trends across sectors. Therefore, it was deemed appropriate to focus on the other sectors that have more complete and consistent data.
 
-```{r, warning=FALSE}
+```{python, warning=FALSE}
 #| label: tbl-observation-by-year
+#| tbl-cap: Number of observations by year
 #| echo: false
+data["year"] = pd.to_datetime(data["occupancy_date"]).dt.year
 
-
-observations_by_year <- table(data$year)
-
-observations_table <- data.frame(
-  Year = names(observations_by_year),
-  Number_of_Observations = as.vector(observations_by_year)
+# Create summary table
+observations_table = (
+    data["year"]
+    .value_counts()
+    .sort_index()
+    .reset_index()
+    .rename(columns={"index": "Year", "year": "Number of Observations"})
 )
 
-mean_occupancy_rate <- mean(data$occupancy_rate_beds, na.rm = TRUE)
-sd_occupancy_rate <- sd(data$occupancy_rate_beds, na.rm = TRUE)
-
-mean_service_user_count <- mean(data$service_user_count, na.rm = TRUE)
-sd_service_user_count <- sd(data$service_user_count, na.rm = TRUE)
-
-mean_capacity_actual_bed <- mean(data$capacity_actual_bed, na.rm = TRUE)
-sd_capacity_actual_bed <- sd(data$capacity_actual_bed, na.rm = TRUE)
-
-kable(observations_table, caption = "Number of observations by year")
+# Display summary table
+observations_table
 ```
 
-```{r, warning=FALSE}
+```{python, warning=FALSE}
 #| label: tbl-summary-statistics
+#| tbl-cap: Mean and standard deviation of key variables
 #| echo: false
-#| 
-summary_stats <- data.frame(
-  Variable = c("Occupancy Rate (Beds)", "Service User Count", "Capacity (Actual Beds)"),
-  Mean = c(mean_occupancy_rate, mean_service_user_count, mean_capacity_actual_bed),
-  SD = c(sd_occupancy_rate, sd_service_user_count, sd_capacity_actual_bed)
-)
 
-kable(summary_stats, caption = "Mean and standard deviation of key variables")
+# Compute summary stats
+summary_stats = pd.DataFrame({
+    "Variable": [
+        "Occupancy Rate (Beds)",
+        "Service User Count",
+        "Capacity (Actual Beds)"
+    ],
+    "Mean": [
+        data["occupancy_rate_beds"].mean(),
+        data["service_user_count"].mean(),
+        data["capacity_actual_bed"].mean()
+    ],
+    "SD": [
+        data["occupancy_rate_beds"].std(),
+        data["service_user_count"].std(),
+        data["capacity_actual_bed"].std()
+    ]
+})
+
+# Round for cleaner display (optional)
+summary_stats = summary_stats.round(5)
+
+# Display the table
+summary_stats
 
 ```
 
@@ -133,24 +166,39 @@ kable(summary_stats, caption = "Mean and standard deviation of key variables")
 
 ## Tracking the Growth in Shelter Bed Occupancy Rates
 
-```{r, warning=FALSE}
+```{python, warning=FALSE}
 #| label: fig-occupancy-rate
 #| fig-cap: Average Occupancy Rate of Beds by year
 #| echo: false
 
-yearly_data <- data %>%
-  group_by(year) %>%
-  summarise(Avg_Occupancy_Rate_Beds = mean(as.numeric(occupancy_rate_beds), na.rm = TRUE), 
-            .groups = "keep")
+# Group and compute average occupancy rate
+yearly_data = (
+    data.groupby("year")["occupancy_rate_beds"]
+    .mean()
+    .reset_index(name="Avg_Occupancy_Rate_Beds")
+)
 
-ggplot(yearly_data, aes(x = factor(year), y = Avg_Occupancy_Rate_Beds)) +
-  geom_bar(stat = "identity", fill = "skyblue") +
-  geom_text(aes(label = round(Avg_Occupancy_Rate_Beds, 1)), vjust = -0.5, color = "black") +
-  labs(x = "Year", y = "Average Occupancy Rate (Beds)") +
-  theme_minimal() +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.1)))  
+# Plot bar chart
+plt.figure(figsize=(8, 5))
+bars = plt.bar(
+    yearly_data["year"].astype(str),
+    yearly_data["Avg_Occupancy_Rate_Beds"],
+    color="skyblue"
+)
 
+# Add labels above bars
+for bar in bars:
+    height = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width() / 2, height + 1, f"{height:.1f}",
+             ha="center", va="bottom", color="black")
 
+# Axis labels and formatting
+plt.xlabel("Year")
+plt.ylabel("Average Occupancy Rate (Beds)")
+plt.ylim(0, yearly_data["Avg_Occupancy_Rate_Beds"].max() * 1.1)
+plt.tight_layout()
+plt.grid(False)
+plt.show()
 ```
 
 From 2021 to 2024, average shelter bed occupancy rates consistently exceeded 96%, with a notable increase to 98.2% by 2024 (@fig-occupancy-rate). This suggests that Toronto’s shelters are nearing full capacity year-round, reflecting both the rise in homelessness and insufficient shelter space. Despite claims of increased government funding for homelessness in 2023 (@thestarhomelessencampments), the data does not show a corresponding reduction in occupancy rates. Instead, this discrepancy highlights a lag between policy implementation and real-world outcomes. 
@@ -159,23 +207,47 @@ This result can also hint towards a the maximization of capacity that suggest th
 
 ## Assessing Actual Bed Capacity by Program Type
 
-```{r, warning=FALSE}
+```{python, warning=FALSE}
 #| label: fig-bed-capacity
 #| fig-cap: Actual Bed Capacity by Program Model and year
 #| echo: false
-filtered_data <- data %>%
-  filter(program_model %in% c("Emergency", "Transitional"))
 
-yearly_bed_capacity <- filtered_data %>%
-  group_by(year, program_model) %>%
-  summarise(Total_Bed_Capacity = sum(capacity_actual_bed, na.rm = TRUE), 
-            .groups = "keep")
+# Filter for Emergency and Transitional only
+filtered_data = data[data["program_model"].isin(["Emergency", "Transitional"])]
 
-ggplot(yearly_bed_capacity, aes(x = factor(year), y = Total_Bed_Capacity, fill = program_model)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  labs(x = "Year", y = "Actual Bed Capacity") +
-  scale_y_continuous(labels = scales::comma) +
-  theme_minimal()
+# Group and summarize bed capacity by year and program model
+yearly_bed_capacity = (
+    filtered_data
+    .groupby(["year", "program_model"])["capacity_actual_bed"]
+    .sum()
+    .reset_index(name="Total_Bed_Capacity")
+)
+
+# Prepare bar positions for grouped bars
+years = sorted(yearly_bed_capacity["year"].unique())
+models = ["Emergency", "Transitional"]
+bar_width = 0.35
+x = range(len(years))
+
+# Initialize plot
+fig, ax = plt.subplots(figsize=(8, 5))
+
+# Plot each program model as separate bars
+for i, model in enumerate(models):
+    subset = yearly_bed_capacity[yearly_bed_capacity["program_model"] == model]
+    offsets = [pos + (i - 0.5) * bar_width for pos in x]
+    ax.bar(offsets, subset["Total_Bed_Capacity"], width=bar_width, label=model)
+
+# Axes formatting
+ax.set_xticks(x)
+ax.set_xticklabels([str(y) for y in years])
+ax.set_xlabel("Year")
+ax.set_ylabel("Actual Bed Capacity")
+ax.legend(title="Program Model")
+ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f"{int(x):,}"))  # Add commas
+plt.tight_layout()
+plt.grid(False)
+plt.show()
 
 
 ```
@@ -189,21 +261,42 @@ Moreover, we also see that the capacity for emergency category grew in size prog
 
 ## Monthly Trends in Shelter User Counts
 
-```{r , warning=FALSE}
+```{python, warning=FALSE}
 #| label: fig-service-user-count
 #| fig-cap: Service User Count Over Months by year
 #| echo: false
-monthly_data <- data %>%
-  group_by(year, month) %>%
-  summarise(service_user_count = sum(service_user_count, na.rm = TRUE), 
-            .groups = "keep")
 
-ggplot(monthly_data, aes(x = month, y = service_user_count, color = factor(year), group = year)) +
-  geom_line(size = 1) +
-  labs(x = "Month", y = "Service User Count", color = "Year") +
-  theme_minimal() +
-  scale_x_discrete(limits = month.abb) +
-  scale_y_continuous(labels = scales::comma)
+# Ensure occupancy_date is datetime and year/month columns exist
+data["occupancy_date"] = pd.to_datetime(data["occupancy_date"])
+data["year"] = data["occupancy_date"].dt.year
+data["month"] = data["occupancy_date"].dt.strftime("%b")  # e.g., Jan, Feb
+
+# Group by year and month, summing service_user_count
+monthly_data = (
+    data.groupby(["year", "month"])["service_user_count"]
+    .sum()
+    .reset_index()
+)
+
+# Set month order
+month_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+monthly_data["month"] = pd.Categorical(monthly_data["month"], categories=month_order, ordered=True)
+monthly_data = monthly_data.sort_values(["year", "month"])
+
+# Plot
+plt.figure(figsize=(10, 5))
+for year, group in monthly_data.groupby("year"):
+    plt.plot(group["month"], group["service_user_count"], label=year, linewidth=1)
+
+plt.xlabel("Month")
+plt.ylabel("Service User Count")
+plt.legend(title="Year")
+plt.grid(False)
+plt.tight_layout()
+plt.gca().yaxis.set_major_formatter(FuncFormatter(lambda x, _: f"{int(x):,}"))  # Comma formatting
+plt.show()
+
 
 ```
 
@@ -218,29 +311,67 @@ In response to the increasing demand for shelters, especially during the winter 
 
 Following the analysis of overall service user counts across the years, it is essential to examine the distribution of shelter usage by different demographic sectors, including men, women, mixed adults, and youth. The graph below presents the total service user count by sector for each year from 2021 to 2024, offering deeper insight into how shelter demand has varied among different population groups.
 
-```{r, warning=FALSE}
+```{python, warning=FALSE}
 #| label: fig-service-sector
 #| fig-cap: Service User Count by sector for Each year
 #| echo: false
-library(scales)
 
-sector_data <- data %>%
-  group_by(year, sector) %>%
-  summarise(Total_Service_User_Count = sum(service_user_count, na.rm = TRUE), .groups = "drop")
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 
-sector_data_filtered <- sector_data %>%
-  filter(sector != "Families")
+# Group data
+sector_data = (
+    data.groupby(["year", "sector"])["service_user_count"]
+    .sum()
+    .reset_index(name="Total_Service_User_Count")
+)
 
-ggplot(sector_data_filtered, aes(x = sector, y = Total_Service_User_Count, fill = sector)) +
-  geom_bar(stat = "identity") +
-  labs(x = "Sector", y = "Total Service User Count") +
-  facet_wrap(~ year, ncol = 2) +
-  scale_y_continuous(labels = comma) +  # Format y-axis with whole numbers
-  scale_fill_discrete(name = "Sector") +  # Change legend title
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  coord_cartesian(ylim = c(0, NA))
+# Filter out 'Families' if needed
+sector_data = sector_data[sector_data["sector"] != "Families"]
 
+# Consistent color map
+sector_colors = {
+    "Men": "#F8766D",
+    "Mixed Adult": "#7CAE00",
+    "Women": "#00BFC4",
+    "Youth": "#C77CFF"
+}
+
+# Define layout
+years = sorted(sector_data["year"].unique())
+ncols = 2
+nrows = -(-len(years) // ncols)
+
+fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(12, 4 * nrows), constrained_layout=True)
+axes = axes.flatten()
+
+# Plot each year
+for i, year in enumerate(years):
+    ax = axes[i]
+    subset = sector_data[sector_data["year"] == year]
+    ax.bar(
+        subset["sector"],
+        subset["Total_Service_User_Count"],
+        color=[sector_colors.get(s, "gray") for s in subset["sector"]]
+    )
+    ax.set_title(str(year))
+    ax.set_xlabel("Sector")
+    ax.set_ylabel("Total Service User Count")
+    ax.set_xticks(range(len(subset)))
+    ax.set_xticklabels(subset["sector"], rotation=45, ha='right')
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda x, _: f"{int(x):,}"))
+
+# Remove unused subplots
+for j in range(i + 1, len(axes)):
+    fig.delaxes(axes[j])
+
+# Add shared legend
+handles = [plt.Rectangle((0, 0), 1, 1, color=c) for c in sector_colors.values()]
+labels = list(sector_colors.keys())
+fig.legend(handles, labels, title="Sector", loc="center right")
+
+plt.show()
 ```
 
 From first glance of @fig-service-sector, we can see the large disparity between men and women organized in the few categories. According to research, by The National Women's Housing & Homelessness Network, based in Canada, average of 36% of homeless population are women. As we compare this data to the graph we see, service used by women do correlate proportionately with their share within the homeless population--while there might be bias within data collected. However, the same research found that 90% of the families using emergency shelters are headed by women--which can lead to a misscalculation in the actual number of women in need of a shelter. We could further theorize that if including women that use shelter within the family unit, the actual disparity between men and women might be smaller that the current number. National Women's Housing & Homelessness Network further suggested that in Canada, there are less shelter dedicated to women than men, men having more that double of dedicated shelters. This is a massive imporvenment that needs to be made in the gender disparity from the policy front, as well as a dataset better assist the imporving rights for homeless women. [@womenshomelessnesscanada]
